@@ -246,7 +246,7 @@ p {
 .endGameTable {
   background-image: url(background.webp);
   background-size: cover;
-  background-color:  #00076ecf;
+  background-color:  #00076ecf; 
 }
 
 /* Colours */ 
@@ -297,7 +297,7 @@ p {
   color: white;
 }
 .endGameColor2 {
-  background-color: #bb0202;
+  background-color: #bb0202; 
 }
 .endGameColor3 {
   background-color: #36C5F0;
@@ -307,6 +307,9 @@ p {
 }
 .endGameColor6 {
   background-color: #2EB67D;
+}
+.transparentBackground {
+  background: transparent;
 }
 
 #next, #regen, #reset {
