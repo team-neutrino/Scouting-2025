@@ -2,7 +2,7 @@
 Scouting app for the 2025 season.
 
 
-
+ 
 Index of each button: 
 
 Auton
