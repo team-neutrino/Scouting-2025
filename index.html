@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+   <script src="./app.js"></script>
+    <script src="./qrcode.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="./epicStyle.css" rel="stylesheet" type="text/css"><link>
+   
+    <script>
+      let inRegenDisplay = false;
+      let zoom = false;
+      function regenMatch(matchNumber) {
+        if(!inRegenDisplay) {
+        let row2 = document.getElementById('row2');
+        let row3 = document.getElementById('row3');
+        let row4 = document.getElementById('row4');
+        let table = document.getElementById('indexTable');
+        let team = document.getElementById('teamNum');
+        let match = document.getElementById('matchNum');
+        let scout = document.getElementById('scout');
+        let red = document.getElementById('Red Alliance');
+        let blue = document.getElementById('Blue Alliance');
+        scout.style.boxShadow = '0px 0px 100vh 20vw white';
+        scout.style.backgroundColor = 'white';
+        scout.setAttribute("placeholder", "");
+        team.style.transform = 'translate(33.3vw, 0)';
+        team.style.opacity = '0';
+        match.style.transform = 'translate(-33.3vw, 0)';
+        match.style.opacity = '0';
+        match.style.transform = 'translate(-33.3vw, 0)';
+        red.style.transform = 'translate(0, -16.25vh)';
+        red.style.opacity = '0';
+        blue.style.transform = 'translate(0, -35vh)';
+        blue.style.opacity = '0';
+        setTimeout(() => {
+          scout.style.boxShadow = '0px 0px 100vh 20vw black';
+          scout.style.backgroundColor = 'black';
+          scout.style.color = 'black';
+          scout.style.borderColor = 'black';
+          scout.style.opacity = '0';
+          document.getElementById('goButton').style.backgroundColor = "red";
+          document.getElementById('goButton').style.color = "red";
+        }, 750);
+        setTimeout(() => {
+          row2.innerHTML = '<tr><td rowspan=\'3\' colspan=\'3\'  class=\'qrIndexHolder\'><div class=\'qrArea\' id=\'qrArea\' style=\'opacity: 0; transform: scale(0.9)\' onclick=\'qrBig()\'></div></td></tr>';
+          row3.innerHTML = '';
+          row4.innerHTML = '';
+          document.getElementById('goButton').innerHTML = "Close";
+          document.getElementById('goButton').style.color = "white";
+          document.getElementById('goButton').style.color = "white";
+          document.getElementById('goButton').setAttribute("onclick", "closeQr();");
+          initQRCode();
+          regenOldQRIndex(matchNumber);
+          inRegenDisplay = true;
+        }, 1750);
+      } else {
+          regenOldQRIndex(matchNumber);
+      }
+      }
+      
+      function regenOldQRIndex(match) {
+    var oldCompList = localStorage.getItem("comp" + match);
+    var oldED = localStorage.getItem("ED" + match);
+    OldCompressedList = JSON.parse(oldCompList);
+    OldExtraDataList = JSON.parse(oldED);
+    console.log('local storage: ', localStorage);
+    console.log('oldCompList: ', oldCompList);
+    let height = document.body.clientHeight;
+      let width = document.body.clientWidth;
+      let qrSize = 300;
+      if(height <= width) {
+        qrSize = height/2;
+      }
+      if(width < height) {
+        qrSize = width/2;
+      }
+    if (OldExtraDataList == null) {
+        alert("No match with this number!");
+        return;
+    }
+    qrcode.clear();
+    var sums = Array(16).fill(0);  
+        for (const item of OldCompressedList) {
+          sums[item-1]++;
+        }
+    qrcode.makeCode(OldExtraDataList[0] + "\t" + OldExtraDataList[1] + "\t" + OldExtraDataList[2] + "\t" + OldExtraDataList[3] + "\t" + OldExtraDataList[4] + "\t" + sums.join(",") + "\r");
+    document.getElementById('qrArea').style.width = qrSize + "px";
+    }
+    
+    function initQRCode() {
+      let height = document.body.clientHeight;
+      let width = document.body.clientWidth;
+      let qrSize = 300;
+      if(height <= width) {
+        qrSize = height/2;
+      }
+      if(width < height) {
+        qrSize = width/2;
+      }
+      qrcode = new QRCode(document.getElementById("qrArea"), {
+        text: "",
+
+        width: qrSize,
+
+        height: qrSize,
+
+        colorDark: "black",
+
+        colorLight: "white",
+
+        correctLevel: QRCode.CorrectLevel.M,
+      });
+      document.getElementById('qrArea').style.opacity = "1";
+      document.getElementById('qrArea').style.transform = "scale(1)";
+    }
+    function closeQr() {
+      let QR = document.getElementById('qrArea');
+      QR.style.opacity = "0";
+      QR.style.transform = "scale(1.1)";
+      document.getElementById('goButton').style.boxShadow = `0px 0px 1000vh 100vw black`;
+      document.getElementById('goButton').style.color = `black`;
+      document.getElementById('goButton').style.backgroundColor = `black`;
+      document.getElementById('goButton').style.border = `2px solid black`;
+      setTimeout(() => {
+        window.location.href = './index.html';
+        }, 1100);
+      
+    }
+      function qrBig() {
+      zoom = !zoom;
+      if(zoom) {
+        document.getElementById('qrArea').style.transform = "scale(1.75) translate(0vh, -2vh)";
+        document.getElementById('topCentre').style.transition = "";
+        document.getElementById('topCentre').style.transform = "translate(0vh, -25vh)";
+        document.getElementById('bottomLeft').style.transform = "translate(-20vh, 20vh)";
+        document.getElementById('bottomCentre').style.transform = "translate(0vh, 20vh)";
+        document.getElementById('bottomRight').style.transform = "translate(20vh, 20vh)";
+        document.getElementById('body').style.backdropFilter = "brightness(50%)";
+      } 
+      if(!zoom) {
+        document.getElementById('qrArea').style.transform = "scale(1)";
+        document.getElementById('topCentre').style.transform = "";
+        document.getElementById('bottomLeft').style.transform = "";
+        document.getElementById('bottomCentre').style.transform = "";
+        document.getElementById('bottomRight').style.transform = "";
+        document.getElementById('body').style.backdropFilter = "";
+      }
+    }
+    </script>
+</head>
+<body onload="pullIPadID();setTeampull(matchNum.value);loadTransition(5, 0)" id="body" style="overflow: scroll;">
+    <table  class="indexTable" id="indexTable">
+        <tr id="row1">
+            <th class="headerIndex" colspan="3" id="topCentre">
+                <img src="./header.png" class="headerImg">
+            </th>
+        </tr>
+        <tr class="inputRow" id="row2">
+            <td class="oneThrid">
+                <input class="inputBox" 
+                type="number" 
+                name="matchBox" 
+                placeholder="Team"
+                id = "teamNum"
+                maxlength="4" 
+                oninput="this.value=this.value.replace(/[^0-9]/g,'')"/>
+            </td>
+            <td class="oneThrid">
+                <input class="inputBox" 
+                type="text" 
+                name="matchBox" 
+                placeholder="Scout"  
+                maxlength="3" 
+                id="scout" 
+                oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase();"/>
+            </td>
+            <td class="oneThrid">
+
+                <input class="inputBox" 
+                type="number" 
+                name="matchBox" 
+                placeholder="Match"
+                id="matchNum" 
+                oninput="if(this.value.length > 3) { this.value = this.value.slice(0,3); }"
+                onchange="setTeam(this.value, iPadIDarea.value)" />
+
+            </td>
+        </tr>
+        <tr class="buttonRow" id="row3">
+            <td rowspan="2"></td>
+            <td>
+                <button class="allianceOfTheRedColour" 
+                id="Red Alliance" 
+                onclick="alliancePick(this.id)"
+                >Red Alliance</button>
+            </td>
+            <td rowspan="2"></td>
+        </tr>
+        <tr class="buttonRow" id="row4">
+          
+            <td>
+                <button class="allianceOfTheBlueColour"
+                id="Blue Alliance" 
+                onclick="alliancePick(this.id)"
+                >Blue Alliance</button>
+            </td>
+        </tr>
+        <tr class="buttonRow" id="row5" style="position: relative;">
+    <td class='indexBottom' id="bottomLeft" style="z-index: -1">
+        <input
+        id="iPadIDarea" 
+        type="number"
+        class="inputBox"
+        placeholder="ID"
+        onchange="setTeam(matchNum.value, this.value)"
+        maxlength="1"
+        style="position: relative; z-index: 1;"
+        />
+        <div class="labelText" id="fadeOnTrans1" style="position: relative; z-index: 1;">iPad Id</div>
+    </td>
+    <td class='indexBottom' id="bottomCentre" style="z-index: 1">
+        <button class="goButton" ondblclick="skipToQr(iPadIDarea.value, matchNum.value, scout.value)" onclick="GO(iPadIDarea.value, matchNum.value, scout.value, this.id);" id="goButton" style="position: relative; z-index: 2;">Go!</button>
+    </td>
+    <td class='indexBottom' id="bottomRight" style="z-index: -1">
+      <input
+        id="regenMatch" 
+        type="text"
+        class="inputBox" 
+        onchange="regenMatch(this.value)"
+        maxlength="3"
+        style="position: relative; z-index: 0;"
+        />
+        <div class="labelText" id="fadeOnTrans2" style="position: relative; z-index: 1;">Regenerate Qr</div>
+    </td>
+</tr>
+    </table>
+</html>
