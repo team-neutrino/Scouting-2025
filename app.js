@@ -1185,8 +1185,8 @@ function getData() {
 }
 
 function loadPage() {
-  getData();
-  displayBoxData();
+  // getData();
+  // displayBoxData();
 }
 
 function displayBoxData() {
@@ -1471,4 +1471,66 @@ function check() {
     extraData[4] = "Wrong";
     console.log(extraData[4]);
   }
+}
+
+function replaceClimb() {
+  var index1 = actionList.indexOf("Shallow Climb");
+  var index2 = actionList.indexOf("Shallow Fail");
+  var index3 = actionList.indexOf("Deep Climb");
+  var index4 = actionList.indexOf("Deep Fail");
+  var index5 = actionList.indexOf("Park");
+
+
+  if (index1 > -1) {
+    actionList.splice(index1, 1);
+  }
+  if (index2 > -1) {
+    actionList.splice(index2, 1);
+  }
+  if (index3 > -1){
+    actionList.splice(index3, 1);
+  }
+  if (index4 > -1){
+    actionList.splice(index4, 1);
+  }
+  if(index5 > -1){
+    actionList.splice(index5, 1);
+  }
+
+
+  var compressed1 = compressedList.indexOf(11);
+  var compressed2 = compressedList.indexOf(10);
+  var compressed3 = compressedList.indexOf(9);
+  var compressed4 = compressedList.indexOf(12);
+  var compressed5 = compressedList.indexOf(15);
+
+
+
+  if (compressed1 > -1) {
+    compressedList.splice(compressed1, 1);
+  }
+  if (compressed2 > -1) {
+    compressedList.splice(compressed2, 1);
+  }
+  if (compressed3 > -1){
+    compressedList.splice(compressed3, 1);
+  }
+  if (compressed4 > -1){
+    compressedList.splice(compressed4, 1);
+  }
+  if (compressed5 > -1){
+    compressedList.splice(compressed5, 1);
+  }
+
+  console.log(actionList);
+  updateLog();
+
+}
+
+function ChangeBorder(boxId){
+  var x = boxId;
+  document.getElementById(boxId).style.border = "solid #AA00FF";
+  setTimeout(() => {
+    document.getElementById(boxId).style.border = "solid #000000";
+    }, 500);
 }
