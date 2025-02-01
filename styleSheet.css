@@ -1,9 +1,6 @@
 table {
-    height: 97vh;
-    width: 97vw;
-    margin: 0;
-    padding: 0;
-    border-spacing: 0;
+    height: 100%;
+    width: 100%;
     text-align: center;
     font-family: Monospace; 
     transition: backdrop-filter 1s ease-in-out, -webkit-backdrop-filter 1s ease-in-out;
@@ -11,6 +8,7 @@ table {
 button {
     height: 13vh;
     width: 13vw;
+    margin: 1.2vh;
     border: 3px solid black;
     border-radius: 5px;
     color: black;
@@ -41,11 +39,22 @@ textarea {
     border: 3px solid black;
     text-align: left;
     color: black;
+    background: #b5b5b5;
     font-size: 1.5vh;
     scrollbar-width: thin;
     scrollbar-color: black rgba(0, 0, 0, 0.2);
     font-size:2vh;
     line-height: 1.51vw;
+}
+.autonHeader{
+    color: black;
+    font-size: 12vh;
+    text-shadow: 0px 0px 50px black;
+}
+.autonInfoBox{
+    background: #b5b5b5;
+    width: 13vw;
+    height: 6vh;
 }
 .invisibleButton{
     opacity: 0;
