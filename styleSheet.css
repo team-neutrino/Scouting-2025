@@ -9,7 +9,7 @@ table {
     transition: backdrop-filter 1s ease-in-out, -webkit-backdrop-filter 1s ease-in-out;
   }
 button {
-    height: 11vh;
+    height: 13vh;
     width: 13vw;
     border: 3px solid black;
     border-radius: 5px;

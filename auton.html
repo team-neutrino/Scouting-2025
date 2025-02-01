@@ -9,66 +9,58 @@
     <body>
     <table class="autonTable" id="table">
         <tr>
-            <td rowspan='1' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <input style='background:#fce5cd' placeholder='Team Num'>
             </td> 
-            <td rowspan='1' colspan='12' style='background:#fce5cd'>Auton</td> 
-            <td rowspan='1' colspan='4'>
+            <td rowspan='1' colspan='3' style='background:#fce5cd'>Auton</td> 
+            <td rowspan='1' colspan='1'>
                 <input style='background:#fce5cd' placeholder='Match Num'>
             </td> 
         </tr><tr> 
-            <td rowspan='3' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonL4" onclick="addAction('L4 (A)' ,5)">L4</button>
             </td> 
-            <td rowspan='3' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonCoralMiss" onclick="addAction('Coral Miss (A)',6)">Coral Miss</button>
             </td> 
-            <td rowspan="15" colspan="4">
+            <td rowspan="5" colspan="1">
                 <textarea readonly id="teamLog1" class="termnial" placeholder="Nothing to undo"></textarea>
                 <br>
-                <button class="undo" id="undo">Undo</button>
+                <button class="undo" id="undo" onclick="Undo()">Undo</button>
             </td>
-            <td rowspan='3' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonLeave" onclick="addAction('Leave' ,1)">Leave</button>
             </td> 
-            <td rowspan='3' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonNetScore" onclick="addAction('Net Score (A)' ,8)">Net Score</button>
             </td> 
         </tr><tr> 
-        </tr><tr> 
-        </tr><tr> 
-            <td rowspan='3' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonL3" onclick="addAction('L3 (A)' ,4)">L3</button>
             </td> 
-            <td rowspan='12' colspan='4'><button class="invisibleButton"></button></td> 
-            <td rowspan='12' colspan='4'><button class="invisibleButton"></button></td> 
-            <td rowspan='3' colspan='4'>
+            <td rowspan='4' colspan='1'><button class="invisibleButton"></button></td> 
+            <td rowspan='4' colspan='1'><button class="invisibleButton"></button></td> 
+            <td rowspan='1' colspan='1'>
                 <button id="autonNetMiss" onclick="addAction('Net Miss (A)' ,9)">Net Miss</button>
             </td> 
-        </tr><tr> 
-        </tr><tr> 
-        </tr><tr> 
-            <td rowspan='3' colspan='4'>
+        </tr><tr>  
+            <td rowspan='1' colspan='1'>
                 <button id="autonL2" onclick="addAction('L2 (A)' ,3)">L2</button>
             </td>
-            <td rowspan='3' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonRemove" onclick="addAction('Remove (A)' ,0)">Remove</button>
             </td>
         </tr><tr>
-        </tr><tr>
-        </tr><tr>
-            <td rowspan='3' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonL1" onclick="addAction('L1 (A)' ,2)">L1</button>
             </td> 
-            <td rowspan='3' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonProcesser" onclick="addAction('Processer (A)' ,7)">Processer</button>
             </td> 
         </tr><tr> 
-        </tr><tr> 
-        </tr><tr> 
-            <td rowspan='1' colspan='4'>
+            <td rowspan='1' colspan='1'>
             <button id="autonBack">Back</button>
-            <td rowspan='1' colspan='4'>
+            <td rowspan='1' colspan='1'>
                 <button id="autonNext">Next</button>
             </td> 
         </tr>
