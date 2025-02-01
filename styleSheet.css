@@ -21,12 +21,55 @@ button {
     transition: box-shadow 1s ease-in-out, transform 1s ease-in-out;
     text-overflow: clip;
 }
-.terminal{
-    width: 14vw; 
-    display: block; 
-    box-sizing: border-box;
-    margin: auto;
+textarea {
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 3px solid white;
+    color: white;
+    text-align: left;
+    font-size: 1.5vh;
+  }
+.termnial {
+    width: 20vw;
+    height: 60vh;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 3px solid white;
+    text-align: left;
+    color: white;
+    font-size: 1.5vh;
+    scrollbar-width: thin;
+    scrollbar-color: white rgba(0, 0, 0, 0.2);
+    font-size:2vh;
+    line-height: 1.51vw;
 }
 .invisibleButton{
     opacity: 0;
 }
+#undo{
+    height: 6vh;
+    background: #cc0000
+}
+#autonL4, #autonL2{
+    background: #c27ba0
+}
+#autonLeave{
+    background: #999999
+}
+#autonCoralMiss, #autonL3, #autonL1{
+    background: #a64d79
+}
+#autonNetScore, #autonProcesser{
+    background: #93c47d
+}
+#autonNetMiss, #autonRemove{
+    background: #6aa84f
+}
+#autonBack, #autonNext{
+    background: #674ea7
+}
+
