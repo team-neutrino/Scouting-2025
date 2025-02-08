@@ -1185,8 +1185,8 @@ function getData() {
 }
 
 function loadPage() {
-  // getData();
-  // displayBoxData();
+  getData();
+  displayBoxData();
 }
 
 function displayBoxData() {
@@ -1214,7 +1214,7 @@ function Undo() {
   var lastAction = actionList.pop();
 
   if (lastAction) {
-    document.getElementById('teamLog1').style.border = '5px solid red';
+    document.getElementById('teamLog1').style.border = '3px solid red';
     setTimeout(() => {
       document.getElementById('teamLog1').style.border = '3px solid white';
       document.getElementById('teamLog1').style.transition = 'border 1s ease-in-out';
