@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <script src="./app.js"></script>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Endgame</title>
-    <link href="./endgame.css" rel="stylesheet" type="text/css"><link>
+  <meta charset="UTF-8">
+  <title>Endgame</title>
+  <link href="./endgame.css" rel="stylesheet" type="text/css">
+  <link>
 </head>
-<body onload="loadPage()" id='body'  style="overflow: scroll;">
-<table class="endGameTable" id="table">
-  <tr class="top" id="row1">
-    <th class="topSideBox">
-      <input class="infoBox" type="text" name="teamBox" id="teamNumberBox" readonly/>
-    </th>
-    <th colspan="3" class="header">Endgame</th>
-    <th class="topSideBox">
-      <input class="infoBox" type="text" name="matchBox" id="matchNumberBox" readonly/>
-    </th>
-  </tr>
-  <tr id="row2">
-    <td rowspan="2">
-      <button class="halfHeightButton transparentBackground" id="Shallow Climb" onclick=" replaceClimb();ChangeBorder('Shallow Climb');addAction(this.id,10)">Shallow Climb</button>
-      <button class="halfHeightButton transparentBackground" id="Shallow Fail" onclick=" replaceClimb();ChangeBorder('Shallow Fail');addAction(this.id,11)">Shallow Fail</button>
-        <button class="halfHeightButton transparentBackground" id="Park" onclick=" replaceClimb();ChangeBorder('Park');addAction(this.id,15)">Park</button>
-    </td>
-    <td colspan="3">
-      <textarea class="coments" placeholder="Unleash your imagination" onchange="commentEdit(this.value)" id="coment"></textarea>
-    </td>
-    <td rowspan="2">
-    <button class="halfHeightButton transparentBackground" id="Deep Climb" onclick="replaceClimb();ChangeBorder('Deep Climb');addAction(this.id,9)">Deep Climb</button>
-      <button class="halfHeightButton transparentBackground" id="Deep Fail" onclick="replaceClimb();ChangeBorder('Deep Fail');addAction(this.id,12)">Deep Fail</button>
-        <button class="halfHeightButton transparentBackground" id="Disabled" onclick=" replaceDisabled();ChangeBorder('Disabled');addAction(this.id,13)">Disabled</button>
-    </td>
-  </tr>
-  <tr id="row3">
-    <td rowspan="2" colspan="3">
-      <textarea readonly id="teamLog1" class="termnialEndgame" placeholder="Nothing to undo"></textarea>
-      <br>
-      <button class="undo" id="undo" onclick="Undo()">Undo</button>
-    </td>
-  </tr>
-  <tr class="footer" id="row4">
-    <td>
-      <button class="backForth nextColor" id="next" onclick="saveData();window.location.href = './' + 'teleop' + '.html';">&larr;</button>
-    </td>
-    <td>
-      <button class="backForth nextColor" id="next" onclick="saveData();window.location.href = './' + 'qr' + '.html';">&rarr;</button>
-    </td>
-  </tr>
-</table>
+
+<body onload="loadPage()" id='body' style="overflow: scroll;">
+  <table class="endGameTable" id="table">
+    <tr class="top" id="row1">
+      <th class="topSideBox">
+        <input class="infoBox" type="text" name="teamBox" id="teamNumberBox" readonly />
+      </th>
+      <th colspan="3" class="header">Endgame</th>
+      <th class="topSideBox">
+        <input class="infoBox" type="text" name="matchBox" id="matchNumberBox" readonly />
+      </th>
+    </tr>
+    <tr id="row2">
+      <td rowspan="2">
+        <button class="halfHeightButton transparentBackground" id="Shallow Climb"
+          onclick=" replaceClimb();ChangeBorder('Shallow Climb');addAction(this.id,19)">Shallow Climb</button>
+        <button class="halfHeightButton transparentBackground" id="Shallow Fail"
+          onclick=" replaceClimb();ChangeBorder('Shallow Fail');addAction(this.id,20)">Shallow Fail</button>
+        <button class="halfHeightButton transparentBackground" id="Park"
+          onclick=" replaceClimb();ChangeBorder('Park');addAction(this.id,23)">Park</button>
+      </td>
+      <td colspan="3">
+        <textarea class="coments" placeholder="Unleash your imagination" onchange="commentEdit(this.value)"
+          id="coment"></textarea>
+      </td>
+      <td rowspan="2">
+        <button class="halfHeightButton transparentBackground" id="Deep Climb"
+          onclick="replaceClimb();ChangeBorder('Deep Climb');addAction(this.id,21)">Deep Climb</button>
+        <button class="halfHeightButton transparentBackground" id="Deep Fail"
+          onclick="replaceClimb();ChangeBorder('Deep Fail');addAction(this.id,22)">Deep Fail</button>
+        <button class="halfHeightButton transparentBackground" id="Disabled"
+          onclick=" replaceDisabled();ChangeBorder('Disabled');addAction(this.id,24)">Disabled</button>
+      </td>
+    </tr>
+    <tr id="row3">
+      <td rowspan="2" colspan="3">
+        <textarea readonly id="teamLog1" class="termnialEndgame" placeholder="Nothing to undo"></textarea>
+        <br>
+        <button class="undo" id="undo" onclick="Undo()">Undo</button>
+      </td>
+    </tr>
+    <tr class="footer" id="row4">
+      <td>
+        <button class="backForth nextColor" id="next"
+          onclick="saveData();window.location.href = './' + 'teleop' + '.html';">&larr;</button>
+      </td>
+      <td>
+        <button class="backForth nextColor" id="next"
+          onclick="saveData();window.location.href = './' + 'qr' + '.html';">&rarr;</button>
+      </td>
+    </tr>
+  </table>
 </body>
+
 </html>
