@@ -6,6 +6,7 @@ Scouting app for the 2025 season.
 Index of each button: 
 
 Auton
+Remove Algae: 0
 Leave: 1
 Coral L1: 2
 Coral L2: 3
@@ -35,3 +36,4 @@ Climb Deep Fail: 20
 Climb Shallow: 21
 Climb Shallow Fail: 22
 Park: 23
+Disabled: 24

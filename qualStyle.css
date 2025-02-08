@@ -1,0 +1,110 @@
+div{
+    box-shadow: 0px 0px 10px black;
+    border-radius: 5px;
+}
+
+.qualBox {
+	height: 35vh;
+}
+
+.infoBox {
+    height: 3vh;
+    width: 5vw;
+}
+
+.halfHeightButton {
+	margin-top: 2vh;
+	margin-left: 2vh;
+	height: 35vh;
+	width: 37vw;
+	margin: 10px;
+}
+
+.topSideBox {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.commentsBox{
+    /* Optional: add background-color temporarily for debugging */
+    background-color: rgba(72, 19, 195, 0.2);
+    width: 80%;
+    height: 90%;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size:2vh;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 3px solid white;
+    color: white;
+    text-align: left;
+    font-size: 1.5vh;
+  }
+/*
+  COLORING FOR BUTTONS ON QUALITATIVE
+  */
+.endGameColor1 {
+	background-color: #4A154B;
+	color: white;
+}
+
+.endGameColor2 {
+	background-color: #F4EDE4;
+}
+
+.endGameColor3 {
+	background-color: #36C5F0;
+}
+
+.endGameColor4 {
+	background-color: #e55683;
+}
+
+.endGameColor5 {
+	background-color: #ECB22E;
+}
+
+.endGameColor6 {
+	background-color: #2EB67D;
+}
+.buttonColumn {
+    text-align: center;
+    vertical-align: middle;
+} 
+
+
+.qualBoxHeader {
+	color: white;
+	text-shadow: 0px 0px 50px black;
+	text-align: center;
+	padding-left: 5px;
+    font-weight: bold;
+}
+
+.backForth {
+	text-align: center;
+	font-size: 5vh;
+	height: 10vh;
+	width: 20vw;
+}
+
+.nextColor {
+	background-color: #45C4B0;
+}
+/* STAR SIZING
+*/
+.star {
+	font-size: 8rem;
+	/* Adjust size as needed */
+	cursor: pointer;
+	color: rgb(115, 112, 112);
+	/* Default unselected color */
+	transition: color 0.2s ease-in-out;
+}
+
+.star.filled {
+	color: rgb(225, 194, 19);
+	/* Selected star color */
+}
