@@ -61,24 +61,25 @@ textarea {
 }
 #undo{
     height: 6vh;
-    background: #cc0000
+    background: #cc0000;
 }
 #autonL4, #autonL2{
-    background: #c27ba0
+    background: #c27ba0;
 }
 #autonLeave{
-    background: #999999
+    background: #999999;
 }
 #autonCoralMiss, #autonL3, #autonL1{
-    background: #a64d79
+    background: #a64d79;
 }
 #autonNetScore, #autonProcesser{
-    background: #93c47d
+    background: #93c47d;
 }
 #autonNetMiss, #autonRemove{
-    background: #6aa84f
+    background: #6aa84f;
 }
 #autonBack, #autonNext{
-    background: #674ea7
+    background: #674ea7;
+    font-size: 8vh;
 }
 
