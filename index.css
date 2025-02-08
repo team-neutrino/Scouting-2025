@@ -7,9 +7,7 @@ body {
     transition: opacity 3s ease-in-out, backdrop-filter 1s ease-in-out;
 }
 
-.oneThird {
-    width: 33.3vw;
-}
+/* header!! */
 
 .headerImg {
     height: 100%;
@@ -20,6 +18,12 @@ body {
 .headerIndex {
     height: 15vw;
     width: 100vw;
+}
+
+/* rows */
+
+.oneThird {
+    width: 33.3vw;
 }
 
 .inputRow {
@@ -35,16 +39,36 @@ body {
     height: 17.5vh;
 }
 
-.allianceOfTheRedColour {
+/* buttons */
+
+.redButton {
     background-color: rgb(195, 70, 70);
-    border: 2pax solid white;
+    border: 2px solid white;
     color: white;
     transition: all 1s ease-in-out;
 }
 
-.allianceOfTheBlueColour {
-    background-color: rgb(60, 133, 229);
+.blueButton {
+    background-color: rgb(30, 115, 206);
     border: 2px solid white;
     color: white;
     transition: all 1s ease-in-out;
+}
+
+.goButton {
+    background-color: rgb(50, 116, 68);
+    border: 2px solid white;
+    color: white;
+    transition: all 1s ease-in-out;
+}
+
+.labelText {
+    padding-top: 1vh;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 0px 0px 5px lightblue;
+}
+
+.indexBottom {
+    height: 15vh;
 }

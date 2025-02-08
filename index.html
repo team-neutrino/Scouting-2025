@@ -186,7 +186,6 @@
                     oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase();" />
             </td>
             <td class="oneThird">
-
                 <input class="inputBox" type="number" name="matchBox" placeholder="Match" id="matchNum"
                     oninput="if(this.value.length > 3) { this.value = this.value.slice(0,3); }"
                     onchange="setTeam(this.value, iPadIDarea.value)" />
@@ -197,16 +196,15 @@
         <tr class="buttonRow" id="row3">
             <td rowspan="2"></td>
             <td>
-                <button class="allianceOfTheRedColour" id="Red Alliance" onclick="alliancePick(this.id)">Red
+                <button class="redButton" id="Red Alliance" onclick="alliancePick(this.id)">Red
                     Alliance</button>
             </td>
             <td rowspan="2"></td>
         </tr>
 
         <tr class="buttonRow" id="row4">
-
             <td>
-                <button class="allianceOfTheBlueColour" id="Blue Alliance" onclick="alliancePick(this.id)">Blue
+                <button class="blueButton" id="Blue Alliance" onclick="alliancePick(this.id)">Blue
                     Alliance</button>
             </td>
         </tr>
