@@ -6,15 +6,15 @@
         <script src="app.js"></script>
         <link rel="styleSheet" type="text/css" href="styleSheet.css" /> 
     </head>
-    <body class="autonBody">
+    <body class="autonBody" onload="loadTransition(4, 1);loadPage()">
     <table class="autonTable" id="table">
         <tr class="top" id="row1">
             <th class="topSideBox">
-                <input class="autonInfoBox" type="text" name="teamBox" id="teamNumberBox"/>
+                <input class="autonInfoBox" type="text" name="teamBox" id="teamNumberBox" readonly/>
             </th>
             <th colspan="3" class="autonHeader" id="color">A<span style="display: inline-block;">u</span>ton</th>
             <th class="topSideBox">
-                <input class="autonInfoBox" type="text" name="matchBox" id="matchNumberBox"/>
+                <input class="autonInfoBox" type="text" name="matchBox" id="matchNumberBox" readonly/>
             </th>
         </tr><tr> 
             <td rowspan='1' colspan='2'>

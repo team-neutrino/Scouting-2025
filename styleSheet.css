@@ -43,7 +43,6 @@ textarea {
     font-size: 2vh;
     scrollbar-width: thin;
     scrollbar-color: black rgba(0, 0, 0, 0.2);
-    font-size:2vh;
     line-height: 1.51vw;
 }
 .autonBody{
@@ -64,7 +63,7 @@ textarea {
     height: 6vh;
 }
 .autonLongButton{
-    width: 20vw;
+    width: 22vw;
 }
 .invisibleButton{
     opacity: 0;
