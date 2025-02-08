@@ -994,7 +994,7 @@ function GO(iPadID,matchsaver,scoutsaver, id) {
   actionList[0] = extraData[4];
   saveData();
       if (allClear == 1) {
-        window.location.href = "./" + "auton2" + ".html";
+        window.location.href = "./" + "auton" + ".html";
       }
   //console.log(displaySavedData());
 }
