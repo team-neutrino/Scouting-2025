@@ -218,6 +218,10 @@ textarea {
   font-size: 5vh;
   height: 11vh;
   width: 13vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  border-color: black;
 }
 
 .qrHolder {
@@ -283,11 +287,6 @@ p {
   text-shadow: 0px 0px 5px lightblue;
 }
 
-.indexTable {
-  -webkit-backdrop-filter: hue-rotate(105deg);
-  backdrop-filter: hue-rotate(105deg);
-}
-
 .endGameTable {
   background-image: url(EndgameBackground.webp);
   background-size: cover;
@@ -296,54 +295,14 @@ p {
 
 /* Colours */
 
-.speakerColor {
-  background-color: #9AEBA3;
-}
-
-.speakerMissColor {
-  background-color: #578a5d;
-}
-
-.ampColor {
-  background-color: #DAFDBA;
-}
-
-.ampMissColor {
-  background-color: #8ea876;
-}
-
 .invisibleButton {
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
-.foulColor {
-  background-color: #005d8b;
-}
-
-.disabledColor {
-  background-color: #3ab0e2;
-}
-
 .nextColor {
   background-color: #45C4B0;
-}
-
-.climbFailColor {
-  background-color: #34A853
-}
-
-.trapColor {
-  background-color: #FBBC05;
-}
-
-.climbGoodColor {
-  background-color: #4285F4;
-}
-
-.MicrophoneColor {
-  background-color: #EA4335;
 }
 
 .reset {
@@ -352,7 +311,6 @@ p {
 
 .endGameColor1 {
   background-color: #4A154B;
-  color: white;
 }
 
 .endGameColor2 {
@@ -367,7 +325,11 @@ p {
   background-color: #e55683;
 }
 
-.endGameColor6 {
+.endGameColor5 {
+  background-color: #eeeeee;
+}
+
+.disabledColor {
   background-color: #2EB67D;
 }
 

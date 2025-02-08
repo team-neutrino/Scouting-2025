@@ -993,9 +993,9 @@ function GO(iPadID, matchsaver, scoutsaver, id) {
   sessionStorage.setItem("matchNum", matchsaver)
   actionList[0] = extraData[4];
   saveData();
-      if (allClear == 1) {
-        window.location.href = "./" + "auton" + ".html";
-      }
+  if (allClear == 1) {
+    window.location.href = "./" + "auton" + ".html";
+  }
   //console.log(displaySavedData());
 }
 
@@ -1531,6 +1531,6 @@ function ChangeBorder(boxId) {
   var x = boxId;
   document.getElementById(boxId).style.border = "solid #AA00FF";
   setTimeout(() => {
-    document.getElementById(boxId).style.border = "solid #000000";
+    document.getElementById(boxId).style.border = "solid rgb(255, 255, 255)";
   }, 500);
 }
