@@ -1185,8 +1185,8 @@ function getData() {
 }
 
 function loadPage() {
-  // getData();
-  // displayBoxData();
+  getData();
+  displayBoxData();
 }
 
 function displayBoxData() {
