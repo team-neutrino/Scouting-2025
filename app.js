@@ -1,5 +1,6 @@
 var scorer = 0
-var extraData = []; //['teamNum', 'matchNum', 'scout', 'comment', 'red']
+let extraData = []; //['teamNum', 'matchNum', 'scout', 'comment', 'red']
+//Cluttering of Field (C 1-5), Driver Skill (D 1-5), Accuracy (AR 1-5), Align Time (AT 1-5)]
 var matchNumber = []; //Match Number
 var teamNumber = []; //Team Number
 var actionList = [""]; //This is the list that populates the log with human friendly text.
@@ -1472,3 +1473,45 @@ function check() {
     console.log(extraData[4]);
   }
 }
+
+//Star function on the qualitative page
+document.addEventListener("DOMContentLoaded", function () {
+  const qualBoxes = document.querySelectorAll(".qualBox");
+
+  qualBoxes.forEach(box => {
+      const stars = box.querySelectorAll(".star");
+      const ratingValueElement = box.querySelector("p"); // Get the correct <p> inside the box
+
+      stars.forEach(star => {
+          star.addEventListener("click", function () {
+              let selectedValue = parseInt(star.getAttribute("data-value"));
+              let ratingId = ratingValueElement.id; // Get the ID of the <p> tag
+
+              // Update stars in this specific box
+              stars.forEach(s => {
+                  let starValue = parseInt(s.getAttribute("data-value"));
+                  s.classList.toggle("filled", starValue <= selectedValue);
+              });
+
+              // Update the rating display in this specific box
+              ratingValueElement.textContent = `Selected Rating: ${selectedValue}`;
+              logStarRating(ratingId, selectedValue);
+              // Log the updated extraData (for debugging)
+              console.log("Updated extraData:", extraData);
+          });
+      });
+  });
+});
+
+function logStarRating(id, rating){
+  if(id === 'ratingValue1') {
+  extraData[4] = rating;
+} else if(id === 'ratingValue2') {
+extraData[5] = rating;
+} else if(id === 'ratingValue3') {
+extraData[6] = rating;
+} else if(id === 'ratingValue4') {
+extraData[7] = rating;
+}
+};
+
