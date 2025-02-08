@@ -6,7 +6,7 @@
         <script src="app.js"></script>
         <link rel="styleSheet" type="text/css" href="styleSheet.css" /> 
     </head>
-    <body style="background-color: aquamarine;">
+    <body class="autonBody">
     <table class="autonTable" id="table">
         <tr class="top" id="row1">
             <th class="topSideBox">
@@ -17,49 +17,48 @@
                 <input class="autonInfoBox" type="text" name="matchBox" id="matchNumberBox"/>
             </th>
         </tr><tr> 
-            <td rowspan='1' colspan='1'>
-                <button id="autonL4" onclick="addAction('L4 (A)' ,5)">L4</button>
-            </td> 
-            <td rowspan='1' colspan='1'>
-                <button id="autonCoralMiss" onclick="addAction('Coral Miss (A)',6)">Coral Miss</button>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonL4" onclick="addAction('L4 (A)' ,5)">L4</button>
             </td> 
             <td rowspan="5" colspan="1">
                 <textarea readonly id="teamLog1" class="termnial" placeholder="Nothing to undo"></textarea>
                 <br>
                 <button class="undo" id="undo" onclick="Undo()">Undo</button>
             </td>
-            <td rowspan='1' colspan='1'>
-                <button id="autonLeave" onclick="addAction('Leave' ,1)">Leave</button>
-            </td> 
-            <td rowspan='1' colspan='1'>
-                <button id="autonNetScore" onclick="addAction('Net Score (A)' ,8)">Net Score</button>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonNetScore" onclick="addAction('Net Score (A)' ,8)">Net Score</button>
             </td> 
         </tr><tr> 
-            <td rowspan='1' colspan='1'>
-                <button id="autonL3" onclick="addAction('L3 (A)' ,4)">L3</button>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonL3" onclick="addAction('L3 (A)' ,4)">L3</button>
             </td> 
-            <td rowspan='4' colspan='1'><button class="invisibleButton"></button></td> 
-            <td rowspan='4' colspan='1'><button class="invisibleButton"></button></td> 
-            <td rowspan='1' colspan='1'>
-                <button id="autonNetMiss" onclick="addAction('Net Miss (A)' ,9)">Net Miss</button>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonNetMiss" onclick="addAction('Net Miss (A)' ,9)">Net Miss</button>
             </td> 
         </tr><tr>  
-            <td rowspan='1' colspan='1'>
-                <button id="autonL2" onclick="addAction('L2 (A)' ,3)">L2</button>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonL2" onclick="addAction('L2 (A)' ,3)">L2</button>
             </td>
-            <td rowspan='1' colspan='1'>
-                <button id="autonRemove" onclick="addAction('Remove (A)' ,0)">Remove</button>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonRemove" onclick="addAction('Remove (A)' ,0)">Remove</button>
             </td>
         </tr><tr>
-            <td rowspan='1' colspan='1'>
-                <button id="autonL1" onclick="addAction('L1 (A)' ,2)">L1</button>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonL1" onclick="addAction('L1 (A)' ,2)">L1</button>
             </td> 
-            <td rowspan='1' colspan='1'>
-                <button id="autonProcesser" onclick="addAction('Processer (A)' ,7)">Processer</button>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonProcesser" onclick="addAction('Processer (A)' ,7)">Processer</button>
             </td> 
         </tr><tr> 
             <td rowspan='1' colspan='1'>
             <button id="autonBack"onclick="saveData();saveData();window.location.href = './' + 'index' + '.html';">&larr;</button>
+            </td>
+            <td rowspan='1' colspan='1'>
+                <button id="autonCoralMiss" onclick="addAction('Coral Miss (A)',6)">Coral Miss</button>
+            </td> 
+            <td rowspan='1' colspan='1'>
+                <button id="autonLeave" onclick="addAction('Leave' ,1)">Leave</button>
+            </td> 
             <td rowspan='1' colspan='1'>
                 <button id="autonNext" onclick="saveData();saveData();window.location.href = './' + 'teleop' + '.html';">&rarr;</button>
             </td> 
