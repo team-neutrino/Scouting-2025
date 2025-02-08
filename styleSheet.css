@@ -7,6 +7,7 @@ table {
     border-spacing: 0;
     text-align: center;
     font-family: Monospace; 
+    transition: backdrop-filter 1s ease-in-out, -webkit-backdrop-filter 1s ease-in-out;
   }
   body {
     margin: 0;
@@ -16,19 +17,25 @@ table {
     background-repeat: no-repeat;
     background-size: cover; 
   }
-  button {
-    height: 11vh;
+
+button {
+    height: 13vh;
     width: 13vw;
+    margin: 1.2vh;
     border: 3px solid black;
     border-radius: 5px;
     color: black;
     font-size: 100%;
     font-family: inherit;
     box-shadow: 0px 0px 10px black;
+
     font-size: 2.5vh;
     text-overflow: clip;
   }
   textarea {
+    font-size: 3.5vh;
+    transition: box-shadow 1s ease-in-out, transform 1s ease-in-out;
+    text-overflow: clip;
     resize: none;
     background-color: rgba(0, 0, 0, 0.2);
     -webkit-backdrop-filter: blur(5px);
@@ -85,8 +92,6 @@ table {
   .inputRow {
     height: 15vh;
   }
-
-
   .buttonRow {
     height: 17.5vh;
   }
@@ -118,8 +123,9 @@ table {
     color: white;
     font-size: 3vh;
   }
-  .termnial {
-    height: 27vw;
+.termnial {
+    width: 20vw;
+    height: 60vh;
     resize: none;
     background-color: rgba(0, 0, 0, 0.2);
     -webkit-backdrop-filter: blur(5px);
@@ -132,7 +138,16 @@ table {
     scrollbar-color: white rgba(0, 0, 0, 0.2);
     font-size:2vh;
     line-height: 1.51vw;
+    background: #b5b5b5;
   }
+
+.invisibleButton{
+    opacity: 0;
+}
+#undo{
+    height: 10vh;
+    background: #cc0000;
+}
   
   .infoBox, .inputBox {
     background-color: rgba(0, 0, 0, 0.5);
