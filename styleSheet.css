@@ -51,61 +51,10 @@ textarea {
 
 }
 
-.autonHeader {
-    color: black;
-    font-size: 12vh;
-    text-shadow: 0px 0px 50px black;
-}
-
-.autonInfoBox {
-    background: #b5b5b5;
-    width: 13vw;
-    height: 6vh;
-}
-
 .invisibleButton {
     opacity: 0;
 }
 
-#undo {
-    height: 6vh;
-    background: #cc0000;
-}
-
-#autonL4,
-#autonL2 {
-    background: #c27ba0;
-}
-
-#autonLeave {
-    background: #999999;
-}
-
-#autonCoralMiss,
-#autonL3,
-#autonL1 {
-    background: #a64d79;
-}
-
-#autonNetScore,
-#autonProcesser {
-    background: #93c47d;
-}
-
-#autonNetMiss,
-#autonRemove {
-    background: #6aa84f;
-}
-
-#autonBack, #autonNext {
-    background: #674ea7;
-    font-size: 8vh;
-}
-
-.teleopBody{
-    background-image: url(teleopBackground.png);
-    background-size: cover;
-}
 #undo{
     height: 10vh;
     background: #cc0000;
