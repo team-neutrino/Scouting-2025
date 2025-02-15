@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <title>index</title>
     <script src="app.js"></script>
-    <link ref="stylesheet" href="styleSheet.css">
-
-<body>
+    <link rel="stylesheet" type="text/css" href="styleSheet.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
 
     <script>
         let inRegenDisplay = false;
@@ -165,71 +164,70 @@
             }
         }
     </script>
-    </head>
 
-    <body onload="pullIPadID();setTeampull(matchNum.value);loadTransition(5, 0)" id="body" style="overflow: scroll;">
-        <table class="indexTable" id="indexTable">
+</head>
 
-            <tr id="row1">
-                <th class="headerIndex" colspan="3" id="topCentre">
-                    <img src="./header.png" class="headerImg">
-                </th>
-            </tr>
+<body onload="pullIPadID();setTeampull(matchNum.value);loadTransition(5, 0)" id="body" style="overflow: scroll;">
+    <table class="table" id="indexTable">
 
-            <tr class="inputRow" id="row2">
-                <td class="oneThrid">
-                    <input class="inputBox" type="number" name="matchBox" placeholder="Team" id="teamNum" maxlength="4"
-                        oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
-                </td>
-                <td class="oneThrid">
-                    <input class="inputBox" type="text" name="matchBox" placeholder="Scout" maxlength="3" id="scout"
-                        oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase();" />
-                </td>
-                <td class="oneThrid">
+        <tr id="row1">
+            <th class="headerIndex" colspan="3" id="topCentre">
+                <img src="./reefscapeheader.png" class="headerImg">
+            </th>
+        </tr>
 
-                    <input class="inputBox" type="number" name="matchBox" placeholder="Match" id="matchNum"
-                        oninput="if(this.value.length > 3) { this.value = this.value.slice(0,3); }"
-                        onchange="setTeam(this.value, iPadIDarea.value)" />
+        <tr class="inputRow" id="row2">
+            <td class="oneThird">
+                <input class="inputBox" type="number" name="matchBox" placeholder="Team" id="teamNum" maxlength="4"
+                    oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+            </td>
+            <td class="oneThird">
+                <input class="inputBox" type="text" name="matchBox" placeholder="Scout" maxlength="3" id="scout"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').toUpperCase();" />
+            </td>
+            <td class="oneThird">
+                <input class="inputBox" type="number" name="matchBox" placeholder="Match" id="matchNum"
+                    oninput="if(this.value.length > 3) { this.value = this.value.slice(0,3); }"
+                    onchange="setTeam(this.value, iPadIDarea.value)" />
 
-                </td>
-            </tr>
+            </td>
+        </tr>
 
-            <tr class="buttonRow" id="row3">
-                <td rowspan="2"></td>
-                <td>
-                    <button class="allianceOfTheRedColour" id="Red Alliance" onclick="alliancePick(this.id)">Red
-                        Alliance</button>
-                </td>
-                <td rowspan="2"></td>
-            </tr>
+        <tr class="buttonRow" id="row3">
+            <td rowspan="2"></td>
+            <td>
+                <button class="redButton" id="Red Alliance" onclick="alliancePick(this.id)">Red
+                    Alliance</button>
+            </td>
+            <td rowspan="2"></td>
+        </tr>
 
-            <tr class="buttonRow" id="row4">
+        <tr class="buttonRow" id="row4">
+            <td>
+                <button class="blueButton" id="Blue Alliance" onclick="alliancePick(this.id)">Blue
+                    Alliance</button>
+            </td>
+        </tr>
 
-                <td>
-                    <button class="allianceOfTheBlueColour" id="Blue Alliance" onclick="alliancePick(this.id)">Blue
-                        Alliance</button>
-                </td>
-            </tr>
-
-            <tr class="buttonRow" id="row5" style="position: relative;">
-                <td class='indexBottom' id="bottomLeft" style="z-index: -1">
-                    <input id="iPadIDarea" type="number" class="inputBox" placeholder="ID"
-                        onchange="setTeam(matchNum.value, this.value)" maxlength="1"
-                        style="position: relative; z-index: 1;" />
-                    <div class="labelText" id="fadeOnTrans1" style="position: relative; z-index: 1;">iPad Id</div>
-                </td>
-                <td class='indexBottom' id="bottomCentre" style="z-index: 1">
-                    <button class="goButton" ondblclick="skipToQr(iPadIDarea.value, matchNum.value, scout.value)"
-                        onclick="GO(iPadIDarea.value, matchNum.value, scout.value, this.id);" id="goButton"
-                        style="position: relative; z-index: 2;">Go!</button>
-                </td>
-                <td class='indexBottom' id="bottomRight" style="z-index: -1">
-                    <input id="regenMatch" type="text" class="inputBox" onchange="regenMatch(this.value)" maxlength="3"
-                        style="position: relative; z-index: 0;" />
-                    <div class="labelText" id="fadeOnTrans2" style="position: relative; z-index: 1;">Regenerate Qr</div>
-                </td>
-            </tr>
-        </table>
-    </body>
+        <tr class="buttonRow" id="row5" style="position: relative;">
+            <td class='indexBottom' id="bottomLeft" style="z-index: -1">
+                <input id="iPadIDarea" type="number" class="inputBox" placeholder="ID"
+                    onchange="setTeam(matchNum.value, this.value)" maxlength="1"
+                    style="position: relative; z-index: 1;" />
+                <div class="labelText" id="fadeOnTrans1" style="position: relative; z-index: 1;">iPad Id</div>
+            </td>
+            <td class='indexBottom' id="bottomCentre" style="z-index: 1">
+                <button class="goButton" ondblclick="skipToQr(iPadIDarea.value, matchNum.value, scout.value)"
+                    onclick="GO(iPadIDarea.value, matchNum.value, scout.value, this.id);" id="goButton"
+                    style="position: relative; z-index: 2;">Go!</button>
+            </td>
+            <td class='indexBottom' id="bottomRight" style="z-index: -1">
+                <input id="regenMatch" type="text" class="inputBox" onchange="regenMatch(this.value)" maxlength="3"
+                    style="position: relative; z-index: 0;" />
+                <div class="labelText" id="fadeOnTrans2" style="position: relative; z-index: 1;">Regenerate Qr</div>
+            </td>
+        </tr>
+    </table>
+</body>
 
 </html>
