@@ -777,7 +777,7 @@ var num = 0;
 let activeAnimations = [];
 let nonDblClick = true;
 var Notes = "";
-var Notes2 ="";
+var Notes2 = "";
 var answer = "";
 
 /* Function List
@@ -904,33 +904,33 @@ function rgbaFromRgb(rgb, alpha) {
   // Extract RGB values
   const match = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
   if (!match) return rgb;
-  
+
   // Convert RGB to RGBA
   const rgba = `rgba(${match[1]}, ${match[2]}, ${match[3]}, ${alpha})`;
   return rgba;
 }
 
 function addButtonGlowEffect(id) {
- /* if(!activeAnimations.includes(id)) {
-    activeAnimations.push(id);
-  const button = document.getElementById(id);
-  const buttonBgColor = window.getComputedStyle(button).getPropertyValue('background-color');
-  const backgroundColorWithAlpha = rgbaFromRgb(buttonBgColor, 0.75);
-  console.log(backgroundColorWithAlpha);
-  console.log(buttonBgColor);
-  button.style.boxShadow = `0px 0px 100vh 10vw ${backgroundColorWithAlpha}`;
-  // After 1 second, change the blur to the defualt blur
-  setTimeout(() => {
-    button.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0)`;
-  }, 1000);
-  
-  // After 3 seconds, remove both classes
-  setTimeout(() => {
-    button.removeAttribute('style');
-    activeAnimations.splice(activeAnimations.indexOf(id), 1);
-  }, 2000);
-  
-}*/
+  /* if(!activeAnimations.includes(id)) {
+     activeAnimations.push(id);
+   const button = document.getElementById(id);
+   const buttonBgColor = window.getComputedStyle(button).getPropertyValue('background-color');
+   const backgroundColorWithAlpha = rgbaFromRgb(buttonBgColor, 0.75);
+   console.log(backgroundColorWithAlpha);
+   console.log(buttonBgColor);
+   button.style.boxShadow = `0px 0px 100vh 10vw ${backgroundColorWithAlpha}`;
+   // After 1 second, change the blur to the defualt blur
+   setTimeout(() => {
+     button.style.boxShadow = `0px 0px 0px rgba(0, 0, 0, 0)`;
+   }, 1000);
+   
+   // After 3 seconds, remove both classes
+   setTimeout(() => {
+     button.removeAttribute('style');
+     activeAnimations.splice(activeAnimations.indexOf(id), 1);
+   }, 2000);
+   
+ }*/
 }
 
 function addAction(action, number) { //Used for buttons that have a data validation script
@@ -943,11 +943,11 @@ function addAction(action, number) { //Used for buttons that have a data validat
 
 function alliancePick(alliance) {
   addButtonGlowEffect(alliance);
-  if(alliance == "Red Alliance") {
+  if (alliance == "Red Alliance") {
     document.getElementById('indexTable').style['-webkit-backdrop-filter'] = 'hue-rotate(170deg)';
     document.getElementById('indexTable').style['backdrop-filter'] = 'hue-rotate(170deg)';
   }
-  if(alliance == "Blue Alliance") {
+  if (alliance == "Blue Alliance") {
     document.getElementById('indexTable').style['-webkit-backdrop-filter'] = 'hue-rotate(40deg)';
     document.getElementById('indexTable').style['backdrop-filter'] = 'hue-rotate(40deg)';
   }
@@ -955,7 +955,7 @@ function alliancePick(alliance) {
   console.log(extraData);
 }
 
-function GO(iPadID,matchsaver,scoutsaver, id) {
+function GO(iPadID, matchsaver, scoutsaver, id) {
   getBoxData();
   var message = "You need to add ";
   var allClear = 1;
@@ -965,37 +965,37 @@ function GO(iPadID,matchsaver,scoutsaver, id) {
   scoutSave = document.getElementById("scout").value;
   matchSave = document.getElementById("matchNum").value;
   if (extraData[0] === "" || extraData[1] === "" || extraData[2] === "") {
-        if (extraData[0] === "") {
-              message += "a team number, ";
-              team.style.border = "5px solid red";
-        }
-        if (extraData[1] === "") {
-              message += "a match number, ";
-              match.style.border = "5px solid red";
-        }
-        if (extraData[2] === "") {
-              message += "your initials, ";
-              scout.style.border = "5px solid red";
-        }
-        message = message.substring(0, message.length - 3);
-        message += "!";
-        //console.log(message);
-      //  alert(message);
-        allClear = 0;
-        sessionStorage.setItem("selectedOption", JSON.stringify(selectedOption))
+    if (extraData[0] === "") {
+      message += "a team number, ";
+      team.style.border = "5px solid red";
+    }
+    if (extraData[1] === "") {
+      message += "a match number, ";
+      match.style.border = "5px solid red";
+    }
+    if (extraData[2] === "") {
+      message += "your initials, ";
+      scout.style.border = "5px solid red";
+    }
+    message = message.substring(0, message.length - 3);
+    message += "!";
+    //console.log(message);
+    //  alert(message);
+    allClear = 0;
+    sessionStorage.setItem("selectedOption", JSON.stringify(selectedOption))
 
-        console.log(sessionStorage);
-        
-        extraData[4] = "red";
+    console.log(sessionStorage);
+
+    extraData[4] = "red";
   }
-  localStorage.setItem("iPadId",iPadID)
+  localStorage.setItem("iPadId", iPadID)
   sessionStorage.setItem("scoutInitials", scoutsaver)
-  sessionStorage.setItem("matchNum", matchsaver)  
+  sessionStorage.setItem("matchNum", matchsaver)
   actionList[0] = extraData[4];
   saveData();
-      if (allClear == 1) {
-        window.location.href = "./" + "auton2" + ".html";
-      }
+  if (allClear == 1) {
+    window.location.href = "./" + "auton" + ".html";
+  }
   //console.log(displaySavedData());
 }
 
@@ -1071,46 +1071,46 @@ function indexOut(page) {
   document.getElementById('indexTable').setAttribute("onclick", "window.location.href ='./" + page + ".html'");
   team.style.textShadow = "0px 0px 2vh white";
   team.style.boxShadow = "0px 0px 200vh 2vw white";
-  setTimeout (() => {
+  setTimeout(() => {
     team.style.fontSize = "0vh";
     team.style.width = "0vw";
     team.style.opacity = "0";
   }, 250);
   setTimeout(() => {
-  scout.style.textShadow = "0px 0px 2vh white";
-  scout.style.boxShadow = "0px 0px 200vh 2vw white";
-  setTimeout (() => {
-    scout.style.fontSize = "0vh";
-    scout.style.width = "0vw";
-    scout.style.opacity = "0";
-  }, 250);
+    scout.style.textShadow = "0px 0px 2vh white";
+    scout.style.boxShadow = "0px 0px 200vh 2vw white";
+    setTimeout(() => {
+      scout.style.fontSize = "0vh";
+      scout.style.width = "0vw";
+      scout.style.opacity = "0";
+    }, 250);
   }, 150);
   setTimeout(() => {
-  match.style.textShadow = "0px 0px 2vh white";
-  match.style.boxShadow = "0px 0px 200vh 2vw white";
-  setTimeout (() => {
-    match.style.fontSize = "0vh";
-    match.style.width = "0vw";
-    match.style.opacity = "0";
-  }, 250);
+    match.style.textShadow = "0px 0px 2vh white";
+    match.style.boxShadow = "0px 0px 200vh 2vw white";
+    setTimeout(() => {
+      match.style.fontSize = "0vh";
+      match.style.width = "0vw";
+      match.style.opacity = "0";
+    }, 250);
   }, 300);
   setTimeout(() => {
-  let button = document.getElementById('goButton');
-  button.style.transform = "scale(1.2)";
-  button.style.boxShadow = `0px 0px 1000vh 100vw black`;
-  document.getElementById('iPadIDarea').style.transition = "opacity 0.5s ease-in-out";
-  document.getElementById('iPadIDarea').style.opacity = "0";
-  document.getElementById('regenMatch').style.transition = "opacity 0.5s ease-in-out";
-  document.getElementById('regenMatch').style.opacity = "0";
-  document.getElementById('row1').style.transition = "opacity 0.5s ease-in-out";
-  document.getElementById('row2').style.transition = "opacity 0.5s ease-in-out";
-  document.getElementById('row3').style.transition = "opacity 0.5s ease-in-out";
-  document.getElementById('row4').style.transition = "opacity 0.5s ease-in-out";
-  
-  for(let i = 4; i > 0 ; i--) {
-    setTimeout(() => {
-      document.getElementById('row' + i).style.opacity = "0";
-    }, i);
+    let button = document.getElementById('goButton');
+    button.style.transform = "scale(1.2)";
+    button.style.boxShadow = `0px 0px 1000vh 100vw black`;
+    document.getElementById('iPadIDarea').style.transition = "opacity 0.5s ease-in-out";
+    document.getElementById('iPadIDarea').style.opacity = "0";
+    document.getElementById('regenMatch').style.transition = "opacity 0.5s ease-in-out";
+    document.getElementById('regenMatch').style.opacity = "0";
+    document.getElementById('row1').style.transition = "opacity 0.5s ease-in-out";
+    document.getElementById('row2').style.transition = "opacity 0.5s ease-in-out";
+    document.getElementById('row3').style.transition = "opacity 0.5s ease-in-out";
+    document.getElementById('row4').style.transition = "opacity 0.5s ease-in-out";
+
+    for (let i = 4; i > 0; i--) {
+      setTimeout(() => {
+        document.getElementById('row' + i).style.opacity = "0";
+      }, i);
     }
     setTimeout(() => {
       button.style.opacity = "0";
@@ -1124,18 +1124,18 @@ function indexOut(page) {
       window.location.href = "./" + page + ".html";
     }, 800);
   }, 500);
-} 
+}
 
 function qrOut(id) {
   let button = document.getElementById(id);
   button.style.transform = "scale(1.2)";
   button.style.boxShadow = `0px 0px 1000vh 100vw black`;
- setTimeout(() => {
-   document.getElementById('tableQR').style.opacity = '0';
-   document.getElementById('body').style.background = 'black';
+  setTimeout(() => {
+    document.getElementById('tableQR').style.opacity = '0';
+    document.getElementById('body').style.background = 'black';
     button.style.opacity = "0";
-  }, 1200); 
-  
+  }, 1200);
+
 }
 
 function getBoxData() {
@@ -1190,14 +1190,14 @@ function loadPage() {
 }
 
 function displayBoxData() {
-  if(extraData[0] !== undefined) {
+  if (extraData[0] !== undefined) {
     document.getElementById('teamNumberBox').value = extraData[0];
   }
-  if(extraData[1] !== undefined) {
+  if (extraData[1] !== undefined) {
     document.getElementById('matchNumberBox').value = extraData[1];
   }
-  if(extraData[3] !== undefined) {
-  document.getElementById('coment').value = extraData[3];
+  if (extraData[3] !== undefined) {
+    document.getElementById('coment').value = extraData[3];
   }
 }
 
@@ -1212,12 +1212,12 @@ function commentEdit(comment) {
 }
 function Undo() {
   var lastAction = actionList.pop();
-  
+
   if (lastAction) {
-    document.getElementById('teamLog1').style.border = '5px solid red';
+    document.getElementById('teamLog1').style.border = '3px solid red';
     setTimeout(() => {
       document.getElementById('teamLog1').style.border = '3px solid white';
-    document.getElementById('teamLog1').style.transition = 'border 1s ease-in-out';
+      document.getElementById('teamLog1').style.transition = 'border 1s ease-in-out';
     }, 100);
     setTimeout(() => {
       document.getElementById('teamLog1').removeAttribute('style');
@@ -1262,16 +1262,16 @@ function pullIPadID() {
 */
 
 function setTeam(matchnumb, id) {
-  
+
   var teamnumb = document.getElementById("teamNum");
-  
-   var ipadID = id
-  
+
+  var ipadID = id
+
   matchnum = parseInt(matchnumb);
-  
+
   if (blue1[0] != -12) {
     if (ipadID == 1) {
-      
+
       document.getElementById("teamNum").value = blue1[matchnum - 1];
       console.log(blue1[matchnum - 1]);
     }
@@ -1301,11 +1301,11 @@ function setTeam(matchnumb, id) {
 function setTeampull(matchnumb) {
   console.log("test")
   var teamnumb = document.getElementById("teamNum");
-  
-   var ipadID = localStorage.getItem("iPadId")
-  
+
+  var ipadID = localStorage.getItem("iPadId")
+
   matchnum = parseInt(matchnumb);
-  
+
   if (blue1[0] != -12) {
     if (ipadID == 1) {
       console.log("testagain")
@@ -1340,8 +1340,8 @@ function setTeampull(matchnumb) {
 function saveQR() {
   var compSavename = "comp" + extraData[1];
   var EDsaveName = "ED" + extraData[1];
-  localStorage.setItem(compSavename,JSON.stringify(compressedList));
-  localStorage.setItem(EDsaveName,JSON.stringify(extraData));
+  localStorage.setItem(compSavename, JSON.stringify(compressedList));
+  localStorage.setItem(EDsaveName, JSON.stringify(extraData));
 }
 
 function loadTransition(times, page) {
@@ -1378,7 +1378,7 @@ function leaveTransition(times, page) {
     setTimeout(() => {
       window.location.href = window.location.href = './' + page + '.html';
     }, times*100); */
-    
+
 }
 function skipTransition(page) {
   window.location.href = window.location.href = './' + page + '.html';
@@ -1396,24 +1396,24 @@ function getOU() {
 
   const options = ["Teleop Speaker", "Teleop Amp", "Total Notes"];
 
-// Function to pick a random option
+  // Function to pick a random option
   function getRandomOption() {
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
-}
+  }
 
-// Assign the random option to a variable
-   selectedOption = getRandomOption();
+  // Assign the random option to a variable
+  selectedOption = getRandomOption();
 
-// Create the OU variable based on the selected option
+  // Create the OU variable based on the selected option
   let OU;
-    if (selectedOption === "Teleop Speaker" || selectedOption === "Teleop Amp") {
-      OU = `${"Over or Under"} ${Notes} ${selectedOption} ${"?"}`;
-    } else if (selectedOption === "Total Notes") {
-      OU = `${"Over or Under"} ${Notes2} ${selectedOption} ${"?"}`;
+  if (selectedOption === "Teleop Speaker" || selectedOption === "Teleop Amp") {
+    OU = `${"Over or Under"} ${Notes} ${selectedOption} ${"?"}`;
+  } else if (selectedOption === "Total Notes") {
+    OU = `${"Over or Under"} ${Notes2} ${selectedOption} ${"?"}`;
   }
   document.getElementById('OU').value = OU
-  }
+}
 
 function check() {
   console.log("check")
@@ -1424,42 +1424,42 @@ function check() {
   var Totalnotes = Aspeakercount + Aampcount + Tspeakercount + Tampcount;
   if (selectedOption === "Teleop Speaker") {
     if (Tspeakercount > Notes) {
-       answer = "Over";
-       console.log("Over");
-       console.log(selectedOption);
-       console.log(Notes);
+      answer = "Over";
+      console.log("Over");
+      console.log(selectedOption);
+      console.log(Notes);
     } else {
-       answer = "Under";
-       console.log(selectedOption);
-       console.log(Notes);
-       console.log("Under");
+      answer = "Under";
+      console.log(selectedOption);
+      console.log(Notes);
+      console.log("Under");
 
     }
   } else if (selectedOption === "Teleop Amp") {
     if (Tampcount > Notes) {
-       answer = "Over";
-       console.log(selectedOption);
-       console.log(Notes);
-       console.log("Over");
+      answer = "Over";
+      console.log(selectedOption);
+      console.log(Notes);
+      console.log("Over");
     } else {
-       answer = "Under";
-       console.log(selectedOption);
-       console.log(Notes);
-       console.log("Under");
+      answer = "Under";
+      console.log(selectedOption);
+      console.log(Notes);
+      console.log("Under");
 
     }
 
   } else if (selectedOption === "Total Notes") {
     if (Totalnotes > Notes2) {
-       answer = "Over";
-       console.log(selectedOption);
-       console.log(Notes2);
-       console.log("Answer: Over");
+      answer = "Over";
+      console.log(selectedOption);
+      console.log(Notes2);
+      console.log("Answer: Over");
     } else {
-       answer = "Under";
-       console.log(selectedOption);
-       console.log(Notes2);
-       console.log("Answer: Under");
+      answer = "Under";
+      console.log(selectedOption);
+      console.log(Notes2);
+      console.log("Answer: Under");
 
     }
 
@@ -1471,4 +1471,66 @@ function check() {
     extraData[4] = "Wrong";
     console.log(extraData[4]);
   }
+}
+
+function replaceClimb() {
+  var index19 = actionList.indexOf("Deep Climb");
+  var index20 = actionList.indexOf("Deep Fail");
+  var index21 = actionList.indexOf("Shallow Climb");
+  var index22 = actionList.indexOf("Shallow Fail");
+  var index23 = actionList.indexOf("Park");
+
+
+  if (index19 > -1) {
+    actionList.splice(index19, 1);
+  }
+  if (index20 > -1) {
+    actionList.splice(index20, 1);
+  }
+  if (index21 > -1) {
+    actionList.splice(index21, 1);
+  }
+  if (index22 > -1) {
+    actionList.splice(index22, 1);
+  }
+  if (index23 > -1) {
+    actionList.splice(index23, 1);
+  }
+
+
+  var compressed19 = compressedList.indexOf(19);
+  var compressed20 = compressedList.indexOf(20);
+  var compressed21 = compressedList.indexOf(21);
+  var compressed22 = compressedList.indexOf(22);
+  var compressed23 = compressedList.indexOf(23);
+
+
+
+  if (compressed19 > -1) {
+    compressedList.splice(compressed19, 1);
+  }
+  if (compressed20 > -1) {
+    compressedList.splice(compressed20, 1);
+  }
+  if (compressed21 > -1) {
+    compressedList.splice(compressed21, 1);
+  }
+  if (compressed22 > -1) {
+    compressedList.splice(compressed22, 1);
+  }
+  if (compressed23 > -1) {
+    compressedList.splice(compressed23, 1);
+  }
+
+  console.log(actionList);
+  updateLog();
+
+}
+
+function ChangeBorder(boxId) {
+  var x = boxId;
+  document.getElementById(boxId).style.border = "solid #AA00FF";
+  setTimeout(() => {
+    document.getElementById(boxId).style.border = "solid rgb(255, 255, 255)";
+  }, 500);
 }

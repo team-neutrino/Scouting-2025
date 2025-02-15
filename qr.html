@@ -279,4 +279,286 @@
   </tr>
 </table>
 </body>
+=======
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>teleop</title>
+    <script src="./qrCode.js"></script>
+    <link ref="stylesheet" href="styleSheet.css">
+
+    <script>
+        let zoom = false;
+        let going = false;
+        function initQRCode() {
+            console.log('here ', localStorage);
+            console.log("fourth");
+            let height = document.body.clientHeight;
+            let width = document.body.clientWidth;
+            let qrSize = 300;
+            if (height <= width) {
+                qrSize = height / 2;
+            }
+            if (width < height) {
+                qrSize = width / 2;
+            }
+            qrcode = new QRCode(document.getElementById("qrArea"), {
+                text: "",
+
+                width: qrSize,
+
+                height: qrSize,
+
+                colorDark: "black",
+
+                colorLight: "white",
+
+                correctLevel: QRCode.CorrectLevel.M,
+            });
+            document.getElementById('qrArea').style.width = qrSize + "px";
+            console.log(displaySavedData());
+            let unparsedActionList = sessionStorage.getItem("actionList");
+            let unparsedExtradata = sessionStorage.getItem("extraData");
+            let unparsedCompressedList = sessionStorage.getItem("compressedList");
+            actionList = JSON.parse(unparsedActionList);
+            compressedList = JSON.parse(unparsedCompressedList);
+            extraData = JSON.parse(unparsedExtradata);
+            console.log(actionList);
+            console.log(compressedList);
+            console.log(extraData);
+            var sums = Array(16).fill(0);
+            for (const item of compressedList) {
+                sums[item]++;
+            }
+
+            qrcode.clear();
+            qrcode.makeCode("test me")
+            qrcode.makeCode(
+                extraData[0] +
+                "\t" +
+                extraData[1] +
+                "\t" +
+                extraData[2] +
+                "\t" +
+                //encodeURI(extraData[3]) +
+                extraData[3] +
+                "\t" +
+                extraData[4] +
+                "\t" +
+                sums.join(",")
+            );
+        }
+
+        window.onload = () => {
+            console.log("first");
+            console.log("third");
+            loadTransition(3, 4);
+            initQRCode();
+            displayBoxData();
+        };
+
+        function regenOldQR() {
+            var matchToregen = prompt("What Match?");
+            var oldCompList = localStorage.getItem("comp" + matchToregen);
+            var oldED = localStorage.getItem("ED" + matchToregen);
+            OldCompressedList = JSON.parse(oldCompList);
+            OldExtraDataList = JSON.parse(oldED);
+            console.log('local storage: ', localStorage);
+            console.log('oldCompList: ', oldCompList);
+            if (OldExtraDataList == null) {
+                alert("No match with this number!");
+                return;
+            }
+            qrcode.clear();
+            var sums = Array(16).fill(0);
+            for (const item of OldCompressedList) {
+                sums[item - 1]++;
+            }
+            qrcode.makeCode(OldExtraDataList[0] + "\t" + OldExtraDataList[1] + "\t" + OldExtraDataList[2] + "\t" + OldExtraDataList[3] + "\t" + OldExtraDataList[4] + "\t" + sums.join(",") + "\r")
+        }
+
+        function reset() {
+            let QR = document.getElementById('qrArea');
+            QR.style.opacity = "0";
+            QR.style.transform = "scale(1.1)";
+            let resetStuff = "<div class=\'confirmDIV\' id=\'confirmDIV\'> <p>Reset?</p> <button class=\'confirm yes\' id=\'yes\' onclick=\'resetConf(this.id)\' style=\'position: relative; z-index: 2\'>Yes</button> <button class='confirm no\' id=\'no\' onclick=\'resetConf(this.id)\' style=\'position: relative; z-index: 1\'>No</button> </div> ";
+            setTimeout(() => {
+                document.getElementById('displayArea').innerHTML = resetStuff;
+            }, 525);
+            setTimeout(() => {
+                document.getElementById('confirmDIV').style.opacity = "1";
+                document.getElementById('confirmDIV').style.transform = "scale(1)";
+            }, 550);
+
+        }
+
+        function resetConf(id) {
+            if (id == "no") {
+                document.getElementById('confirmDIV').style.opacity = "0";
+                document.getElementById('confirmDIV').style.transform = "scale(0.9)";
+                setTimeout(() => {
+                    document.getElementById('displayArea').innerHTML = "";
+                    document.getElementById('displayArea').innerHTML = "<div class=\'qrArea\' id=\'qrArea\' style=\'opacity: 0; transform: scale(1.1)\' onclick=\"qrBig()\"></div>";
+                    initQRCode();
+                }, 500);
+                setTimeout(() => {
+                    document.getElementById('qrArea').style.opacity = "1";
+                    document.getElementById('qrArea').style.transform = "scale(1)";
+                }, 525);
+            }
+            if (id == "yes") {
+                let quotePack = getQuote();
+                document.getElementById('next').style.opacity = '0';
+                document.getElementById('regen').style.opacity = '0';
+                document.getElementById('reset').style.opacity = '0';
+                document.getElementById('yes').style.boxShadow = '0px 0px 100vh 100vw black';
+                document.getElementById('yes').style.transform = 'scale(1.2)';
+                document.getElementById('yes').style.borderColor = 'white';
+                document.getElementById('yes').style.backgroundColor = 'white';
+                document.getElementById('yes').style.color = 'white';
+                document.getElementById('yes').style.fontSize = 'auto';
+                setTimeout(() => {
+                    document.getElementById('body').setAttribute("onclick", "skip();");
+                    document.getElementById('confirmDIV').style.width = '70vw';
+                    document.getElementById('yes').style.width = '60vw';
+                    document.getElementById('yes').style.height = '15vh';
+                    document.getElementById('yes').style.transform = 'translate(0, -5vh)';
+                }, 500);
+                setTimeout(() => {
+                    document.getElementById('yes').innerHTML = quotePack[0];
+                    document.getElementById('yes').style.color = 'black';
+                    document.getElementById('tableQR').opacity = '0';
+                    document.getElementById('body').backgroundColor = "black";
+                }, 1500);
+                setTimeout(() => {
+                    document.getElementById('body').style.background = 'black';
+                    document.getElementById('tableQR').style.transition = 'opacity 2s ease-in-out';
+                    document.getElementById('tableQR').style.opacity = '0';
+                }, quotePack[1]);
+                setTimeout(() => {
+                    sessionStorage.removeItem("actionList");
+                    sessionStorage.removeItem("compressedList");
+                    sessionStorage.removeItem("extraData");
+                    console.log('1: ', sessionStorage.getItem("matchNum"));
+                    incmatchnumber = parseInt(sessionStorage.getItem("matchNum"));
+                    console.log('2: ', incmatchnumber);
+                    savescout = sessionStorage.getItem("scoutInitials");
+                    incmatchnumber++; //increses the variable by one
+                    console.log('3: ', incmatchnumber);
+                    sessionStorage.setItem("matchNum", incmatchnumber);
+                    sessionStorage.setItem("scoutInitials", savescout);
+                    window.location.href = './index.html';
+                    //window.location.href ='./qr.html';
+                }, quotePack[1] + 2100);
+            }
+        }
+
+        function qrBig() {
+            zoom = !zoom;
+            if (zoom) {
+                document.getElementById('qrArea').style.transform = "scale(1.75)";
+                document.getElementById('topLeft').style.transform = "translate(-20vh, -20vh)";
+                document.getElementById('topCentre').style.transition = "";
+                document.getElementById('topCentre').style.transform = "translate(0vh, -20vh)";
+                document.getElementById('topRight').style.transform = "translate(20vh, -20vh)";
+                document.getElementById('bottomLeft').style.transform = "translate(-20vh, 20vh)";
+                document.getElementById('bottomCentre').style.transform = "translate(0vh, 20vh)";
+                document.getElementById('bottomRight').style.transform = "translate(20vh, 20vh)";
+                document.getElementById('body').style.backdropFilter = "brightness(50%)";
+            }
+            if (!zoom) {
+                document.getElementById('qrArea').style.transform = "scale(1)";
+                document.getElementById('topLeft').style.transform = "";
+                document.getElementById('topCentre').style.transform = "";
+                document.getElementById('topRight').style.transform = "";
+                document.getElementById('bottomLeft').style.transform = "";
+                document.getElementById('bottomCentre').style.transform = "";
+                document.getElementById('bottomRight').style.transform = "";
+                document.getElementById('body').style.backdropFilter = "";
+            }
+        }
+        function skip() {
+            sessionStorage.removeItem("actionList");
+            sessionStorage.removeItem("compressedList");
+            sessionStorage.removeItem("extraData");
+            console.log('1: ', sessionStorage.getItem("matchNum"));
+            incmatchnumber = parseInt(sessionStorage.getItem("matchNum"));
+            console.log('2: ', incmatchnumber);
+            savescout = sessionStorage.getItem("scoutInitials");
+            incmatchnumber++; //increses the variable by one
+            console.log('3: ', incmatchnumber);
+            sessionStorage.setItem("matchNum", incmatchnumber);
+            sessionStorage.setItem("scoutInitials", savescout);
+            window.location.href = './index.html';
+            //window.location.href ='./qr.html'; 
+        }
+
+        function spinTitle(id) {
+            if (!going) {
+                going = true
+                let title = document.getElementById(id);
+                title.style.transition = 'transform 5s ease-in-out';
+                title.style.transform = 'rotateY(1800deg)';
+                setTimeout(() => {
+                    title.style.transition = 'transform 0s ease-in-out';
+                    title.style.transform = '';
+                }, 5100);
+                setTimeout(() => {
+                    title.style.transition = '';
+                    going = false
+                }, 5150);
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-image: url(endgameBG.png);
+        }
+
+        #body {
+            transition: backdrop-filter 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <table class="qrTable" id="tableQR">
+        <tr class="top" id="row1">
+            <th class="topSideBox" id="topLeft">
+                <input class="infoBox" type="text" name="teamBox" id="teamNumberBox" readonly />
+            </th>
+            <th colspan="3" class="header" id="topCentre" onclick="spinTitle(this.id)">Qr Code</th>
+            <th class="topSideBox" id="topRight">
+                <input class="infoBox" type="text" name="matchBox" id="matchNumberBox" readonly />
+            </th>
+        </tr>
+        <tr id="row2" style="z-index: 1">
+            <td></td>
+            <td class="qrHolder" colspan="3" id="displayArea" style="z-index: 1">
+                <div class="qrArea" id="qrArea" onclick="qrBig()" style="position: relative; z-index: 2;">
+                </div>
+                <!--<div class='confirmDIV' id='confirmDIV'>
+               <p>Reset?</p>
+               <button class='confirm yes' id='yes' onclick='resetConf(this.id)' style="position: relative; z-index: 2;">Yes</button>
+               <button class='confirm no' id='no' onclick='resetConf(this.id)' style="position: relative; z-index: 1;">No</button>
+               </div> -->
+            </td>
+            <td></td>
+        </tr>
+        <tr class="footer" id="row3" style="z-index: -1">
+            <td id="bottomLeft">
+                <button class="backForth nextColor" id="next" onclick="leaveTransition(3, 'endgame2')"
+                    style="position: relative; z-index: -1;">&larr;</button>
+            </td>
+            <td colspan="3" id="bottomCentre">
+                <button onclick="getQuote()" style="background-color: green;position: relative; z-index: -1;"
+                    id="regen">Regen QR</button>
+            </td>
+            <td id="bottomRight">
+                <button class="reset" onclick="reset()" id="reset">Reset</button>
+            </td>
+        </tr>
+    </table>
+</body>
 </html>
