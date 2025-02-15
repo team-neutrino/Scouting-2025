@@ -18,20 +18,20 @@
 .autonLongButton{
     width: 22vw;
 }
-#autonL4, #autonL2{
-    background: #c27ba0;
+#autonL4, #autonL2, #autonCoralMiss{
+    background: #e69138;
 }
 #autonLeave{
     background: #999999;
 }
-#autonCoralMiss, #autonL3, #autonL1{
-    background: #a64d79;
+#autonL3, #autonL1{
+    background: #f6b26b;
 }
-#autonNetScore, #autonProcesser{
-    background: #93c47d;
+#autonNetMiss, #autonProcesser{
+    background: #3c78d8;
 }
-#autonNetMiss, #autonRemove{
-    background: #6aa84f;
+#autonNetScore, #autonRemove{
+    background: #6fa8dc;
 }
 #autonBack, #autonNext{
     background: #674ea7;
