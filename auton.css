@@ -19,19 +19,19 @@
     width: 22vw;
 }
 #autonL4, #autonL2, #autonCoralMiss{
-    background: #c27ba0;
+    background: #e69138;
 }
 #autonLeave{
     background: #999999;
 }
 #autonL3, #autonL1{
-    background: #a64d79;
+    background: #f6b26b;
 }
 #autonNetMiss, #autonProcesser{
-    background: #93c47d;
+    background: #3c78d8;
 }
 #autonNetScore, #autonRemove{
-    background: #6aa84f;
+    background: #6fa8dc;
 }
 #autonBack, #autonNext{
     background: #674ea7;
