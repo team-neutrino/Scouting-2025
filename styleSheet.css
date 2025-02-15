@@ -48,6 +48,10 @@ textarea {
 .invisibleButton{
     opacity: 0;
 }
+.teleopBody{
+    background-image: url(teleopBackground.png);
+    background-size: cover;
+}
 #undo{
     height: 10vh;
     background: #cc0000;

@@ -2,11 +2,68 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>teleop</title>
+        <title>auton</title>
         <script src="app.js"></script>
-        <link ref="stylesheet" href="styleSheet.css">
+        <link rel="styleSheet" type="text/css" href="styleSheet.css">
+        <link rel="styleSheet" type="text/css" href="auton.css"> 
     </head>
-    <body>
-    
+    <body class="teleopBody" onload="loadTransition(4, 1);loadPage()">
+    <table class="autonTable" id="table">
+        <tr class="top" id="row1">
+            <th class="topSideBox">
+                <input class="autonInfoBox" type="text" name="teamBox" id="teamNumberBox" readonly/>
+            </th>
+            <th colspan="3" class="autonHeader" id="color">T<span style="display: inline-block;">e</span>leop</th>
+            <th class="topSideBox">
+                <input class="autonInfoBox" type="text" name="matchBox" id="matchNumberBox" readonly/>
+            </th>
+        </tr><tr> 
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonL4" onclick="addAction('L4 (T)' ,13)">L4</button>
+            </td> 
+            <td rowspan="5" colspan="1">
+                <textarea readonly id="teamLog1" class="termnial" placeholder="Nothing to undo"></textarea>
+                <br>
+                <button class="undo" id="undo" onclick="Undo()">Undo</button>
+            </td>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonNetScore" onclick="addAction('Net Score (T)' ,16)">Net Score</button>
+            </td> 
+        </tr><tr> 
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonL3" onclick="addAction('L3 (T)' ,12)">L3</button>
+            </td> 
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonNetMiss" onclick="addAction('Net Miss (T)' ,17)">Net Miss</button>
+            </td> 
+        </tr><tr>  
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonL2" onclick="addAction('L2 (T)' ,11)">L2</button>
+            </td>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonRemove" onclick="addAction('Remove (T)' ,18)">Remove</button>
+            </td>
+        </tr><tr>
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonL1" onclick="addAction('L1 (T)' ,10)">L1</button>
+            </td> 
+            <td rowspan='1' colspan='2'>
+                <button class="autonLongButton" id="autonProcesser" onclick="addAction('Processer (T)' ,15)">Processer</button>
+            </td> 
+        </tr><tr> 
+            <td rowspan='1' colspan='1'>
+            <button id="autonBack"onclick="saveData();saveData();window.location.href = './' + 'auton' + '.html';">&larr;</button>
+            </td>
+            <td rowspan='1' colspan='1'>
+                <button id="autonCoralMiss" onclick="addAction('Coral Miss (T)',14)">Coral Miss</button>
+            </td> 
+            <td rowspan='1' colspan='1'>
+                <button class="invisibleButton"></button>
+            </td> 
+            <td rowspan='1' colspan='1'>
+                <button id="autonNext" onclick="saveData();saveData();window.location.href = './' + 'endgame' + '.html';">&rarr;</button>
+            </td> 
+        </tr>
+    </table>
     </body>
 </html>
