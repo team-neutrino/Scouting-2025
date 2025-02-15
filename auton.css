@@ -2,7 +2,6 @@
 .autonBody{
     background-image: url(autonBackground.png);
     background-size: cover;
-    background-color: #6625cfc0;
 }
 .autonHeader{
     color: lightblue;
