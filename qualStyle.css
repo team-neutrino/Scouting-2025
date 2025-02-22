@@ -1,3 +1,7 @@
+.qualBackground {
+    background-image: './backgroundImage.png';
+  }
+
 div{
     box-shadow: 0px 0px 10px black;
     border-radius: 5px;
@@ -27,7 +31,6 @@ div{
 
 .commentsBox{
     /* Optional: add background-color temporarily for debugging */
-    background-color: rgba(72, 19, 195, 0.2);
     width: 80%;
     height: 90%;
     margin-left: 5px;
