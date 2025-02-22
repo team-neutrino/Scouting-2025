@@ -1,14 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>qualitative</title>
-        <script src="./app.js"></script>
-        <script src="./qrCode.js"></script>
-        <script src="./quote.js"></script>
-        <link ref="stylesheet" href="./styleSheet.css">
-    </head>
-    <body>
-    
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <title>Qualitative</title>
+    <script src="./app.js"></script>
+    <script src="./qrCode.js"></script>
+    <script src="./quote.js"></script>
+    <link rel="stylesheet" href="./styleSheet.css">
+    <link rel="stylesheet" href="./qualStyle.css">
+  </head>
+  <body onload="loadTransition(4, 3);loadPage()" id="body">
+    <table class="endGameTable" id="table">
+      <!-- Define 5 columns using colgroup -->
+      <colgroup>
+        <col class="sideCol" style="width:30vw;">
+        <col class="commentsCol" style="width:10vw;">
+        <col class="sideCol" style="width:20vw;">
+      </colgroup>
+
+      <!-- Top Row: Team box, centered header, match box -->
+      <tr class="top" id="row1">
+        <td class="topSideBox">
+          <input class="infoBox" type="text" name="teamBox" id="teamNumberBox" readonly/>
+        </td>
+        <td class="header" style="font-weight:bold;" colspan="1">Qualitative</td>
+        <td class="topSideBox">
+          <input class="infoBox" type="text" name="matchBox" id="matchNumberBox" readonly/>
+        </td>
+      </tr>
+
+      <!-- Button Row: left buttons, spacer, right buttons -->
+      <tr id="row2">
+        <td>
+          <div class="halfHeightButton endGameColor1 qualBox" data-rating="1">
+            <h1 style="font-size: 25px;">Cluttering of field 1 - 5? <br> (1 = caused it, 5 = cleared it)</h1>
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+            <p id="ratingValue1">Selected Rating: 0</p>
+          </div>
+          <div class="halfHeightButton endGameColor3 qualBox" data-rating="2">
+            <h1 class="">Driver's skill 1 - 5? <br> (1 = worst, 5 = best)</h1>
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+            <p id="ratingValue2">Selected Rating: 0</p>
+          </div>
+        </td>
+        <td colspan="1">
+          <textarea class="commentsBox" placeholder="Add your comments here" onchange="commentEdit(this.value)" id="coment"></textarea>
+        </td>
+        <td class="buttonColumn">
+          <div class="halfHeightButton endGameColor6 qualBox" data-rating="3">
+            <h1 class="">Accuaracy 1 - 5? <br> (1 = worst, 5 = best)</h1>
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+            <p id="ratingValue3">Selected Rating: 0</p>
+          </div>
+          <div class="halfHeightButton endGameColor4 qualBox" data-rating="4">
+            <h1 class="">Align time 1 - 5? <br> (1 = slow, 5 = automatic)</h1>
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+            <p id="ratingValue4">Selected Rating: 0</p>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Footer Row (example structure) -->
+      <tr class="footer" id="row3">
+        <td>
+          <button class="backForth nextColor" id="prev" onclick="saveData();leaveTransition(4, 'endgame')">&larr;</button>
+        </td>
+        <td colspan="1"></td>
+        <td>
+          <button class="backForth nextColor" id="next" onclick="saveData();leaveTransition(4, 'qr');saveQR();">&rarr;</button>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>
