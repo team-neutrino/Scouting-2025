@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Teleop</title>
+    <link rel="stylesheet" href="cascadingStyleSheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Coustard:wght@400;900&family=Playpen+Sans:wght@100..800&family=Seaweed+Script&display=swap" rel="stylesheet">
+    
+    
+    <style>
+      button, input {
+        transition: opacity ease-out 0.25s, transform ease-out 0.25s, box-shadow 0.5s ease-in-out;
+      }
+      button, input, textarea {
+        opacity: 0;
+        transform: scale(0.9, 0.9);
+      }
+
+    </style>
+    <script src="./helloWorld.js"></script>
+</head>
+
+<body onload="load(false)">
+
+<div class="flex-container" >
+    <div class="flex-header" id="flexHeader">
+        <div class="flex-small">
+            <input type="text" placeholder="Team" value="39280">
+        </div>
+        <div class="flex-wide">
+            <h1>Teleop</h1>
+        </div>
+        <div class="flex-small"> 
+            <input type="text" placeholder="Match" value="37">
+        </div>
+    </div>
+
+    <div class="flex-center">
+        <div class="grid-button-tall" id="left">
+            <button class="C4" onclick="buttonEfffect(this)">Coral L4</button>
+            <button class="C3" onclick="buttonEfffect(this)">Coral L3</button>
+            <button class="C2" onclick="buttonEfffect(this)">Coral L2</button>
+            <button class="C1" onclick="buttonEfffect(this)">Coral L1</button>
+        </div>
+        <div class="grid-button">
+            <button class="coral-miss" onclick="buttonEfffect(this)">Coral Miss</button>
+            <button class="foul" onclick="buttonEfffect(this)">Foul</button>
+        </div>
+        <div class="grid-termnial">
+            <textarea class="termnial" id="termnial"></textarea>
+            <button class="undo" onclick="buttonEfffect(this)">
+                <span class="material-symbols-outlined" style="margin-right: 0.5vw">undo</span>
+                Undo
+            </button>
+        </div>
+        <div class="grid-button-tall" id="right">
+            <button class="A4" onclick="buttonEfffect(this)">Algae Net Score</button>
+            <button class="A3" onclick="buttonEfffect(this)">Algae Net Miss</button>
+            <button class="A2" onclick="buttonEfffect(this)">Remove Algae</button>
+            <button class="A1" onclick="buttonEfffect(this)">Process Algae</button>
+        </div>
+    </div>
+
+    <div class="flex-bottom">
+        <div class="flex-small">
+            <button class="back" onclick="load(true, 'qr')">
+                <span class="material-symbols-outlined">chevron_left</span>
+                Back
+            </button>
+        </div>
+        <div class="flex-wide">
+
+        </div>
+        <div class="flex-small">
+            <button class="next" onclick="load(true, 'qr')">
+                Next
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+</body>
+</html>
