@@ -1515,7 +1515,6 @@ extraData[7] = rating;
 }
 };
 
-=======
 function replaceClimb() {
   var index19 = actionList.indexOf("Deep Climb");
   var index20 = actionList.indexOf("Deep Fail");
