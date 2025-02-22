@@ -19,8 +19,8 @@ div{
 .halfHeightButton {
 	margin-top: 2vh;
 	margin-left: 2vh;
-	height: 35vh;
-	width: 37vw;
+	height: 32vh;
+	width: 40vw;
 	margin: 10px;
 }
 
@@ -99,7 +99,7 @@ div{
 /* STAR SIZING
 */
 .star {
-	font-size: 7rem;
+	font-size: 5.8vw;
 	/* Adjust size as needed */
 	cursor: pointer;
 	color: rgb(115, 112, 112);
@@ -110,4 +110,13 @@ div{
 .star.filled {
 	color: rgb(225, 194, 19);
 	/* Selected star color */
+}
+
+.boxHeader {
+	margin: 0px;
+	font-size:2vw
+}
+
+.rating {
+	margin: 0px;
 }
