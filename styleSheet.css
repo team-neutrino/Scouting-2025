@@ -21,6 +21,12 @@ button {
     text-overflow: clip;
 }
 
+header {
+    color: white;
+    font-size: 15vh;
+    text-shadow: 0px 0px 50px black;
+}
+
 textarea {
     resize: none;
     background-color: rgba(0, 0, 0, 0.2);

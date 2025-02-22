@@ -993,6 +993,9 @@ function GO(iPadID, matchsaver, scoutsaver, id) {
   sessionStorage.setItem("matchNum", matchsaver)
   actionList[0] = extraData[4];
   saveData();
+      if (allClear == 1) {
+        window.location.href = "./" + "auton" + ".html";
+      }
   if (allClear == 1) {
     window.location.href = "./" + "auton" + ".html";
   }
@@ -1533,4 +1536,53 @@ function ChangeBorder(boxId) {
   setTimeout(() => {
     document.getElementById(boxId).style.border = "solid rgb(255, 255, 255)";
   }, 500);
+}
+
+// Initialize extraData as a global array
+let extraData = [];
+
+// Star function on the qualitative page
+document.addEventListener("DOMContentLoaded", function () {
+  const qualBoxes = document.querySelectorAll(".qualBox");
+
+  qualBoxes.forEach(box => {
+      const stars = box.querySelectorAll(".star");
+      const ratingValueElement = box.querySelector("p"); // Get the correct <p> inside the box
+
+      stars.forEach(star => {
+          star.addEventListener("click", function () {
+              let selectedValue = parseInt(star.getAttribute("data-value"));
+              let ratingId = ratingValueElement.id; // Get the ID of the <p> tag
+
+              // Update stars in this specific box
+              stars.forEach(s => {
+                  let starValue = parseInt(s.getAttribute("data-value"));
+                  s.classList.toggle("filled", starValue <= selectedValue);
+              });
+
+              // Update the rating display in this specific box
+              ratingValueElement.textContent = `Selected Rating: ${selectedValue}`;
+              
+              // Log the rating in extraData using our custom function
+              logStarRating(ratingId, selectedValue);
+              
+              // Log the updated extraData (for debugging)
+              console.log("Updated extraData:", extraData);
+          });
+      });
+  });
+});
+function logStarRating(id, rating) {
+  if (!extraData) {
+    extraData = [];
+  }
+  if (id === 'ratingValue1') {
+    extraData[4] = rating;
+  } else if (id === 'ratingValue2') {
+    extraData[5] = rating;
+  } else if (id === 'ratingValue3') {
+    extraData[6] = rating;
+  } else if (id === 'ratingValue4') {
+    extraData[7] = rating;
+  }
 }
