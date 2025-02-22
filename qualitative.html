@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <title>Qualitative</title>
+    <link href="./styleSheet.css" rel="stylesheet" type="text/css"><link>
     <script src="./app.js"></script>
     <script src="./qrCode.js"></script>
     <script src="./quote.js"></script>
     <link rel="stylesheet" href="./styleSheet.css">
     <link rel="stylesheet" href="./qualStyle.css">
   </head>
-  <body onload="loadTransition(4, 3);loadPage()" id="body">
-    <table class="endGameTable" id="table">
+  <body onload="loadTransition(4, 3);loadPage()" style="background-image:'./backgroundImage.png'" id="body">
+    <table class="qualBackground" id="table">
       <!-- Define 5 columns using colgroup -->
       <colgroup>
         <col class="sideCol" style="width:30vw;">
@@ -65,7 +66,7 @@
             <p id="ratingValue3">Selected Rating: 0</p>
           </div>
           <div class="halfHeightButton endGameColor4 qualBox" data-rating="4">
-            <h1 class="">Align time 1 - 5? <br> (1 = slow, 5 = automatic)</h1>
+            <h1 class="">Defense 1 - 5? <br> (1 = bad, 5 = Stupendous)</h1>
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
             <span class="star" data-value="3">&#9733;</span>
@@ -79,11 +80,11 @@
       <!-- Footer Row (example structure) -->
       <tr class="footer" id="row3">
         <td>
-          <button class="backForth nextColor" id="prev" onclick="saveData();leaveTransition(4, 'endgame')">&larr;</button>
+          <button class="backForth nextColor" id="prev" onclick="saveData();window.location.href = './' + 'endgame' + '.html';">&larr;</button>
         </td>
         <td colspan="1"></td>
         <td>
-          <button class="backForth nextColor" id="next" onclick="saveData();leaveTransition(4, 'qr');saveQR();">&rarr;</button>
+          <button class="backForth nextColor" id="next" onclick="saveData();window.location.href = './' + 'qr' + '.html';">&rarr;</button>
         </td>
       </tr>
     </table>
