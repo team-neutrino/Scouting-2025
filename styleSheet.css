@@ -731,12 +731,6 @@ textarea {
     -webkit-backdrop-filter: hue-rotate(105deg);
     backdrop-filter: hue-rotate(105deg);
   }
-  .autonTable {
-    background: #0f3f4d;
-  }
-  .teleopTable {
-    background: #2e0f4d;
-  }
   .endGameTable {
     background: #4d0f45;
   }
