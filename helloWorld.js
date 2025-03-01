@@ -149,7 +149,7 @@ function toQuotes() {
     insertQuote.style.transform = "scale(1.5, 1.5)";
   }, 3500+length);
   setTimeout(() => {
-    window.location.href = `./qrJackson.html`;
+    window.location.href = `./index.html`;
   }, 3500+length+1000);
   
   

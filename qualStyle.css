@@ -1,5 +1,5 @@
-.qualBackground {
-    background-image: './backgroundImage.png';
+body {
+    background-image: url(./EndgameBackground.webp);
   }
 
 div{
@@ -114,7 +114,8 @@ div{
 
 .boxHeader {
 	margin: 0px;
-	font-size:2vw
+	font-size:2vw;
+	color:white;
 }
 
 .rating {
