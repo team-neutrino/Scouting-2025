@@ -19,15 +19,15 @@ Algae Net Miss 9
 
 
 Teleop
-Coral L1: 10
-Coral L2: 11
-Coral L3: 12
-Coral L4: 13
-Coral Miss: 14
-Algae Processor: 15
-Algae Net: 16
-Algae Net Miss: 17
-Remove Algae: 18
+Remove Algae: 10
+Coral L1: 11
+Coral L2: 12
+Coral L3: 13
+Coral L4: 14
+Coral Miss: 15
+Algae Processor: 16
+Algae Net: 17
+Algae Net Miss: 18
 
 
 Endgame
