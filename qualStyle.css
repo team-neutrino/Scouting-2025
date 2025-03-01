@@ -115,9 +115,13 @@ div{
 .boxHeader {
 	margin: 0px;
 	font-size:2vw;
-	color:white;
+	color:black;
 }
 
 .rating {
 	margin: 0px;
+}
+
+#clutterHeader{
+	color: white;
 }
