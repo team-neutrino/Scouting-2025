@@ -47,7 +47,7 @@
       console.log(actionList);
       console.log(compressedList);
       console.log(extraData);
-      var sums = Array(16).fill(0);
+      var sums = Array(25).fill(0);
       for (const item of compressedList) {
         sums[item]++;
       }
@@ -91,7 +91,7 @@
         return;
     }
     qrcode.clear();
-    var sums = Array(16).fill(0);  
+    var sums = Array(25).fill(0);  
         for (const item of OldCompressedList) {
           sums[item-1]++;
         }
