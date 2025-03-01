@@ -900,26 +900,6 @@ function replaceDisabled() {
 
 }
 
-function replaceLeave() {
-  var disabledAction = actionList.indexOf("Leave");
-
-
-
-  if (disabledAction > -1) {
-    actionList.splice(disabledAction, 1);
-  }
-  var disabledCompressed = compressedList.indexOf(13);
-
-  if (disabledCompressed > -1) {
-    compressedList.splice(disabledCompressed, 1);
-  }
-
-  console.log(actionList);
-  updateLog();
-
-}
-
-
 function rgbaFromRgb(rgb, alpha) {
   // Extract RGB values
   const match = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
