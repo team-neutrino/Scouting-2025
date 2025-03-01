@@ -2,7 +2,6 @@ body {
     margin: 0;
     background-position: center;
     background-image: url(qr.png);
-    /* backdrop-filter: ; */
     background-size: cover;
     background-repeat: no-repeat;
     transition: opacity 3s ease-in-out, backdrop-filter 1s ease-in-out;
@@ -10,6 +9,9 @@ body {
 
 
 /* header!! */
+.indexTable {
+   
+}
 
 .headerImg {
     height: 100%;
