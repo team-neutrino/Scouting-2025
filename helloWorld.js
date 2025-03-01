@@ -3,7 +3,7 @@ let zoom = false;
 let madeBubbles = false;
 let regenOpen = false;
 let resetMenuVisible = false;
-let oldMatches = [];
+let oldMatches = []; //Make me sync up with old data for the regenerate old qr stuff
 
 function load(loadOut, windowLocation) {
   const targetElements = Array.from(document.querySelectorAll('div.flex-container *')).filter(element => {
@@ -177,7 +177,7 @@ function makeOldMatches() {
     oldMatches.push(i);
   } 
 }
-  makeOldMatches();
+  makeOldMatches(); // delete me for regen stuff
 function regenQR() {
   let container = document.getElementById('resetQr');
   let regenHTML = '<h2 class="matchHeader">What Match?</h2> \n<div class="matchSelect" id="matchSelect"> \n</div>';
