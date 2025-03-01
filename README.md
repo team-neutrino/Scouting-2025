@@ -6,16 +6,16 @@ Scouting app for the 2025 season.
 Index of each button: 
 
 Auton
-Remove Algae: 0 *
-Leave: 1 *
-Coral L1: 2 *
-Coral L2: 3 *
-Coral L3: 4 *
-Coral L4: 5 *
-Coral miss: 6 *
-Algae Processor: 7 *
-Algae Net: 8 *
-Algae Net Miss 9 *
+Remove Algae: 0
+Leave: 1
+Coral L1: 2
+Coral L2: 3
+Coral L3: 4
+Coral L4: 5
+Coral miss: 6
+Algae Processor: 7
+Algae Net: 8
+Algae Net Miss 9
 
 
 Teleop
