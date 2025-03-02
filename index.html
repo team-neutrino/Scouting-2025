@@ -167,7 +167,7 @@
 
 </head>
 
-<body onload="pullIPadID();setTeampull(matchNum.value);loadTransition(5, 0)" id="body" style="overflow: scroll;">
+<body onload="pullIPadID();setTeampull(matchNum.value);loadTransition(5, 0);alliancePick('grey')" id="body" style="overflow: scroll;">
     <table class="table" id="indexTable">
 
         <tr id="row1">
@@ -189,7 +189,6 @@
                 <input class="inputBox" type="number" name="matchBox" placeholder="Match" id="matchNum"
                     oninput="if(this.value.length > 3) { this.value = this.value.slice(0,3); }"
                     onchange="setTeam(this.value, iPadIDarea.value)" />
-
             </td>
         </tr>
 
@@ -227,6 +226,7 @@
                 <div class="labelText" id="fadeOnTrans2" style="position: relative; z-index: 1;">Regenerate Qr</div>
             </td>
         </tr>
+
     </table>
 </body>
 

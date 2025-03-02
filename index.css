@@ -1,13 +1,17 @@
 body {
     margin: 0;
-    background-color: #1d1e1e;
     background-position: center;
-    background-repeat: no-repeat;
+    background-image: url(qr.png);
     background-size: cover;
+    background-repeat: no-repeat;
     transition: opacity 3s ease-in-out, backdrop-filter 1s ease-in-out;
 }
 
+
 /* header!! */
+.indexTable {
+   
+}
 
 .headerImg {
     height: 100%;
@@ -16,7 +20,7 @@ body {
 }
 
 .headerIndex {
-    height: 15vw;
+    height: 18vw;
     width: 100vw;
 }
 

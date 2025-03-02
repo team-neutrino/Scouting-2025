@@ -948,9 +948,19 @@ function alliancePick(alliance) {
     document.getElementById('indexTable').style['backdrop-filter'] = 'hue-rotate(170deg)';
   }
   if (alliance == "Blue Alliance") {
-    document.getElementById('indexTable').style['-webkit-backdrop-filter'] = 'hue-rotate(40deg)';
-    document.getElementById('indexTable').style['backdrop-filter'] = 'hue-rotate(40deg)';
+    document.getElementById('indexTable').style['-webkit-backdrop-filter'] = 'hue-rotate(0deg)';
+    document.getElementById('indexTable').style['backdrop-filter'] = 'hue-rotate(0deg)';
+
   }
+  if (alliance == "grey") {
+    document.getElementById('indexTable').style['-webkit-backdrop-filter'] = 'saturate(0%)';
+    document.getElementById('indexTable').style['backdrop-filter'] = 'saturate(0%)';
+
+  }
+  // else {
+  //   document.getElementById('indexTable').style['-webkit-backdrop-filter'] = 'hue-rotate(-40deg)';
+  //   document.getElementById('indexTable').style['backdrop-filter'] = 'hue-rotate(-30deg)';
+  // }
   extraData[4] = alliance;
   console.log(extraData);
 }
