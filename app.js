@@ -952,7 +952,7 @@ function alliancePick(alliance) {
     document.getElementById('indexTable').style['backdrop-filter'] = 'hue-rotate(0deg)';
 
   }
-  if (alliance == "grey") {
+  if (alliance == "No Alliance") {
     document.getElementById('indexTable').style['-webkit-backdrop-filter'] = 'saturate(0%)';
     document.getElementById('indexTable').style['backdrop-filter'] = 'saturate(0%)';
 
