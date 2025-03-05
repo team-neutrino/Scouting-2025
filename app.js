@@ -1614,15 +1614,34 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const ratingContainers = document.querySelectorAll(".qualBox");
+  
+  ratingContainers.forEach(container => {
+      const stars = container.querySelectorAll(".star");
+      const ratingDisplay = container.querySelector(".rating");
+      const ratingCategory = container.getAttribute("data-rating");
+      
+      stars.forEach(star => {
+          star.addEventListener("click", function () {
+              const selectedRating = this.getAttribute("data-value");
+              ratingDisplay.textContent = `Selected Rating: ${selectedRating}`;
+              console.log(`Rating updated for category ${ratingCategory}: ${selectedRating}`);
+          });
+      });
+  });
+});
+
+
 function logStarRating(id, rating){
   if(id === 'ratingValue1') {
-  extraData[4] = rating;
+  extraData[5] = rating;
 } else if(id === 'ratingValue2') {
-extraData[5] = rating;
-} else if(id === 'ratingValue3') {
 extraData[6] = rating;
-} else if(id === 'ratingValue4') {
+} else if(id === 'ratingValue3') {
 extraData[7] = rating;
+} else if(id === 'ratingValue4') {
+extraData[8] = rating;
 }
 };
 
