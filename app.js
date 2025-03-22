@@ -516,7 +516,7 @@ function replaceLeave() {
   if (leaveAction > -1) {
     actionList.splice(leaveAction, 1);
   }
-  var leaveCompressed = compressedList.indexOf(14);
+  var leaveCompressed = compressedList.indexOf(1);
 
   if (leaveCompressed > -1) {
     compressedList.splice(leaveCompressed, 1);
@@ -1284,7 +1284,7 @@ function ChangeBorder(boxId) {
 //       const ratingDisplay = container.querySelector(".rating");
 //       const ratingCategory = container.getAttribute("data-rating");
       
-//       stars.forEach(star => {
+//s.forEach(star => {
 //           star.addEventListener("click", function () {
 //               const selectedRating = this.getAttribute("data-value");
 //               ratingDisplay.textContent = `Selected Rating: ${selectedRating}`;
@@ -1359,12 +1359,16 @@ function leaveCheck() {
 		console.log("Leave Pressed");
 	} else if(compressedList.includes(01) || compressedList.includes(2) || compressedList.includes(2) || compressedList.includes(3) || compressedList.includes(4) || compressedList.includes(5) || compressedList.includes(6) || compressedList.includes(7) || compressedList.includes(8) || compressedList.includes(9)) {
 		console.log("Someone forgot to press the button :(");
+		replaceLeave();
 		addAction("Leave", 1);
 	} else {
-		let leave = confirm("Has your robot left?");
+		let leave = confirm("Has your robot left? \n\nOk = Yes  \nCancel = No");
 		if(leave) {
 			console.log("Someone forgot to press it :(");
+			replaceLeave();
 			addAction("Leave", 1);
 	}
 	}
 }
+
+
