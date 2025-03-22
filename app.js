@@ -585,6 +585,7 @@ function addAction(action, number) { //Used for buttons that have a data validat
   updateLog(); //Update what the scouter sees on the app (actionList)
   addButtonGlowEffect(action);
   saveData();
+	console.log(compressedList);
 	
 }
 
@@ -1352,3 +1353,18 @@ function addStarRate(id) {
   saveData();
 }
 
+function leaveCheck() {
+
+	if(compressedList.includes(1)) {
+		console.log("Leave Pressed");
+	} else if(compressedList.includes(01) || compressedList.includes(2) || compressedList.includes(2) || compressedList.includes(3) || compressedList.includes(4) || compressedList.includes(5) || compressedList.includes(6) || compressedList.includes(7) || compressedList.includes(8) || compressedList.includes(9)) {
+		console.log("Someone forgot to press the button :(");
+		addAction("Leave", 1);
+	} else {
+		let leave = confirm("Has your robot left?");
+		if(leave) {
+			console.log("Someone forgot to press it :(");
+			addAction("Leave", 1);
+	}
+	}
+}
