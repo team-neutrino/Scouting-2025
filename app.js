@@ -1357,7 +1357,7 @@ function leaveCheck() {
 
 	if(compressedList.includes(1)) {
 		console.log("Leave Pressed");
-	} else if(compressedList.includes(01) || compressedList.includes(2) || compressedList.includes(2) || compressedList.includes(3) || compressedList.includes(4) || compressedList.includes(5) || compressedList.includes(6) || compressedList.includes(7) || compressedList.includes(8) || compressedList.includes(9)) {
+	} else if(compressedList.includes(0) || compressedList.includes(2) || compressedList.includes(3) || compressedList.includes(4) || compressedList.includes(5) || compressedList.includes(6) || compressedList.includes(7) || compressedList.includes(8) || compressedList.includes(9)) {
 		console.log("Someone forgot to press the button :(");
 		replaceLeave();
 		addAction("Leave", 1);
