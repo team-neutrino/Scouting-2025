@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styleSheet.css">
     <link rel="stylesheet" href="./qualStyle.css">
   </head>
-  <body style="overflow: scroll;" onload="loadTransition(4, 3);loadPage()" id="body">
+  <body style="overflow: scroll;" onload="loadTransition(4, 3);qualLoad();" id="body">
     <table class="qualBackground" id="table">
       <!-- Define 5 columns using colgroup -->
       <colgroup>
@@ -33,7 +33,7 @@
       <!-- Button Row: left buttons, spacer, right buttons -->
       <tr id="row2">
         <td>
-          <div class="halfHeightButton endGameColor1 qualBox" data-rating="1">
+          <div class="halfHeightButton endGameColor1 qualBox" id="rate5" data-rating="1">
             <h1 class=" boxHeader" id="clutterHeader" >Cluttering of field 1 - 5? <br> (1 = little clutter, 5 = lots of clutter)</h1>
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -42,7 +42,7 @@
             <span class="star" data-value="5">&#9733;</span>
             <p class="rating" id="ratingValue1">Selected Rating: 0</p>
           </div>
-          <div class="halfHeightButton endGameColor3 qualBox" data-rating="2">
+          <div class="halfHeightButton endGameColor3 qualBox" id="rate6" data-rating="2">
             <h1 class="boxHeader">Driver's skill 1 - 5? <br> (1 = worst, 5 = best)</h1>
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -56,7 +56,7 @@
           
         </td>
         <td class="buttonColumn">
-          <div class="halfHeightButton endGameColor6 qualBox" data-rating="3">
+          <div class="halfHeightButton endGameColor6 qualBox" id="rate7" data-rating="3">
             <h1 class="boxHeader">Accuaracy 1 - 5? <br> (1 = worst, 5 = best)</h1>
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>
@@ -65,7 +65,7 @@
             <span class="star" data-value="5">&#9733;</span>
             <p class="rating" id="ratingValue3">Selected Rating: 0</p>
           </div>
-          <div class="halfHeightButton endGameColor4 qualBox" data-rating="4">
+          <div class="halfHeightButton endGameColor4 qualBox" id="rate8" data-rating="4">
             <h1 class="boxHeader">Defense 1 - 5? <br> (1 = bad, 5 = Stupendous)</h1>
             <span class="star" data-value="1">&#9733;</span>
             <span class="star" data-value="2">&#9733;</span>

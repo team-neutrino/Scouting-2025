@@ -135,7 +135,7 @@ var blue2 = [167,
   7662,
   1723,
   3928,
-  2718,
+  2718,★
   5801,
   5126,
   2357,
@@ -198,7 +198,7 @@ var blue3 = [6419,
   5141,
   4522,
   1756,
-  3284,
+  3284,★
   6419,
   9031,
   9570,
@@ -585,6 +585,7 @@ function addAction(action, number) { //Used for buttons that have a data validat
   updateLog(); //Update what the scouter sees on the app (actionList)
   addButtonGlowEffect(action);
   saveData();
+	
 }
 
 function alliancePick(alliance) {
@@ -848,10 +849,12 @@ function loadPage() {
 function displayBoxData() {
   if (extraData[0] !== undefined) {
     document.getElementById('teamNumberBox').value = extraData[0];
+	  console.log(document.getElementById('teamNumberBox').value);
   }
   if (extraData[1] !== undefined) {
     document.getElementById('matchNumberBox').value = extraData[1];
   }
+	  console.log(document.getElementById('teamNumberBox').value);
   if (extraData[3] !== undefined) {
     document.getElementById('coment').value = extraData[3];
   }
