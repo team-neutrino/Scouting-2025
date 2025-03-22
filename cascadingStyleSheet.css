@@ -15,7 +15,7 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+/*    overflow: hidden;*/
     background-image: url(bg5.png);
     background-size: cover;
     background-color: #2D3A3F;
@@ -113,12 +113,12 @@ body {
 }
 
 img {
-  padding: min(1vh, 1vw) !important;
+  padding: min(1vh, 1vw);
   background-color: white;
 }
 
 table {
-	padding: min(1vh, 1vw) !important;
+	padding: min(1vh, 1vw);
 	background-color: white;
 }
 

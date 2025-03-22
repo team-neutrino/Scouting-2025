@@ -903,13 +903,14 @@ function Undo() {
 function pullIPadID() {
   document.getElementById("iPadIDarea").value = localStorage.getItem("iPadId");
   console.log(sessionStorage.getItem("matchNum"));
-  incmatchnumber = parseInt(sessionStorage.getItem("matchNum"));
   savescout = sessionStorage.getItem("scoutInitials");
-  console.log(incmatchnumber);
-  if (isNaN(incmatchnumber)) {
-    console.log("its NaN :(");
-    incmatchnumber = 1;
-  }
+
+	console.log(sessionStorage.getItem('matchNumber'));
+	if(sessionStorage.getItem('matchNumber') !== null) {
+  incmatchnumber = sessionStorage.getItem('matchNumber');
+		console.log("used the incremented match number");
+		console.log("new match number value: " + incmatchnumber);
+	}
   document.getElementById("matchNum").value = incmatchnumber;
   document.getElementById("scout").value = savescout;
 }
@@ -938,7 +939,11 @@ function setTeam(matchnumb, id) {
   var teamnumb = document.getElementById("teamNum");
 
   var ipadID = id
-
+	console.log(sessionStorage.getItem('matchNumber'));
+	if(sessionStorage.getItem('matchNumber') !== null) {
+  matchnum = sessionStorage.getItem('matchNumber');
+		console.log("used the incremented match number");
+	}
   matchnum = parseInt(matchnumb);
 
   if (blue1[0] != -12) {
@@ -976,6 +981,12 @@ function setTeampull(matchnumb) {
 
   var ipadID = localStorage.getItem("iPadId")
 
+/*	console.log(sessionStorage.getItem('matchNumber'));
+	if(sessionStorage.getItem('matchNumber') !== null) {
+  matchnum = sessionStorage.getItem('matchNumber');
+		console.log("used the incremented match number");
+		console.log("new match number value: " + matchnum);
+	}*/
   matchnum = parseInt(matchnumb);
 
   if (blue1[0] != -12) {
@@ -1530,6 +1541,10 @@ function toQuotes() {
   document.getElementById("yesButton").style.transform = "scale(1.2, 1.2)";
   document.getElementById('changeStyle').innerHTML = "";
   document.getElementById('waveHolder').style.animationName = "slide-in-no-fade";
+	extraData[1] = parseInt(extraData[1])
+	console.log(extraData[1] + " adding 1 gives.. " + (extraData[1]+1));
+	sessionStorage.setItem('matchNumber', extraData[1]+1);
+	console.log("New Match Number: " + sessionStorage.getItem('matchNumber'));
   setTimeout(() => {
     document.getElementById('path').style.animationDuration = "0.5s";
     document.getElementById('waveBottom').style.animationDuration = "0.5s";
