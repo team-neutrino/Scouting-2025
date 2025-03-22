@@ -1174,18 +1174,6 @@ function check() {
 //   });
 // });
 
-function logStarRating(id, rating){
-  if(id === 'ratingValue1') {
-  extraData[4] = rating;
-} else if(id === 'ratingValue2') {
-extraData[5] = rating;
-} else if(id === 'ratingValue3') {
-extraData[6] = rating;
-} else if(id === 'ratingValue4') {
-extraData[7] = rating;
-}
-};
-
 function replaceClimb() {
   var index19 = actionList.indexOf("Deep Climb");
   var index20 = actionList.indexOf("Deep Fail");
@@ -1307,7 +1295,13 @@ extraData[8] = rating;
 }
 };
 
-
+function ChangeRatingValue(selectedRating, value){
+  if(!isNaN(value)){
+    document.getElementById(selectedRating).innerText = "Selected Rating: " + value;
+  } else {
+    document.getElementById(selectedRating).innerText = "Selected Rating: 0";
+  }
+}
 
 function addStarRate(id) {
   let rateText = id.split(";")[0];
@@ -1334,18 +1328,22 @@ function addStarRate(id) {
     case "clutter":
       console.log("Updating Clutter Star Rating to " + value);
       extraData[5] = value;
+      ChangeRatingValue("ratingValue1", value)
       break;
     case "driver":
       console.log("Updating Driver Skill Star Rating. " + value);
       extraData[6] = value;
+      ChangeRatingValue("ratingValue1", value)
       break;
     case "accuracy":
       console.log("Updating Accuracy Star Rating " + value);
       extraData[7] = value;
+      ChangeRatingValue("ratingValue1", value)
       break;
     case "defence":
       console.log("Updating Defence Star Rating " + value);
       extraData[8] = value;
+      ChangeRatingValue("ratingValue1", value)
       break;
   }
 
