@@ -838,12 +838,24 @@ function getData() {
   console.log(actionList);
   console.log(compressedList);
   console.log(extraData);
+  if(document.getElementById('teamLog1') !== null) {
   updateLog();
+  }
 }
 
 function loadPage() {
   getData();
   displayBoxData();
+}
+
+function qualLoad() {
+  getData();
+  document.getElementById('teamNumberBox').value = extraData[0];
+  document.getElementById('matchNumberBox').value = extraData[1];
+  addStarRate("clutter;" + extraData[5]);
+  addStarRate("driver;" + extraData[6]);
+  addStarRate("accuracy;" + extraData[7]);
+  addStarRate("defence;" + extraData[8]);
 }
 
 function displayBoxData() {
@@ -1132,34 +1144,34 @@ function check() {
   }
 }
 
-//Star function on the qualitative page
-document.addEventListener("DOMContentLoaded", function () {
-  const qualBoxes = document.querySelectorAll(".qualBox");
+// //Star function on the qualitative page
+// document.addEventListener("DOMContentLoaded", function () {
+//   const qualBoxes = document.querySelectorAll(".qualBox");
 
-  qualBoxes.forEach(box => {
-      const stars = box.querySelectorAll(".star");
-      const ratingValueElement = box.querySelector("p"); // Get the correct <p> inside the box
+//   qualBoxes.forEach(box => {
+//       const stars = box.querySelectorAll(".star");
+//       const ratingValueElement = box.querySelector("p"); // Get the correct <p> inside the box
 
-      stars.forEach(star => {
-          star.addEventListener("click", function () {
-              let selectedValue = parseInt(star.getAttribute("data-value"));
-              let ratingId = ratingValueElement.id; // Get the ID of the <p> tag
+//       stars.forEach(star => {
+//           star.addEventListener("click", function () {
+//               let selectedValue = parseInt(star.getAttribute("data-value"));
+//               let ratingId = ratingValueElement.id; // Get the ID of the <p> tag
 
-              // Update stars in this specific box
-              stars.forEach(s => {
-                  let starValue = parseInt(s.getAttribute("data-value"));
-                  s.classList.toggle("filled", starValue <= selectedValue);
-              });
+//               // Update stars in this specific box
+//               stars.forEach(s => {
+//                   let starValue = parseInt(s.getAttribute("data-value"));
+//                   s.classList.toggle("filled", starValue <= selectedValue);
+//               });
 
-              // Update the rating display in this specific box
-              ratingValueElement.textContent = `Selected Rating: ${selectedValue}`;
-              logStarRating(ratingId, selectedValue);
-              // Log the updated extraData (for debugging)
-              console.log("Updated extraData:", extraData);
-          });
-      });
-  });
-});
+//               // Update the rating display in this specific box
+//               ratingValueElement.textContent = `Selected Rating: ${selectedValue}`;
+//               logStarRating(ratingId, selectedValue);
+//               // Log the updated extraData (for debugging)
+//               console.log("Updated extraData:", extraData);
+//           });
+//       });
+//   });
+// });
 
 function logStarRating(id, rating){
   if(id === 'ratingValue1') {
@@ -1234,52 +1246,52 @@ function ChangeBorder(boxId) {
     document.getElementById(boxId).style.border = "solid rgb(255, 255, 255)";
   }, 500);
 }
-//Star function on the qualitative page
-document.addEventListener("DOMContentLoaded", function () {
-  const qualBoxes = document.querySelectorAll(".qualBox");
+// //Star function on the qualitative page
+// document.addEventListener("DOMContentLoaded", function () {
+//   const qualBoxes = document.querySelectorAll(".qualBox");
 
-  qualBoxes.forEach(box => {
-      const stars = box.querySelectorAll(".star");
-      const ratingValueElement = box.querySelector("p"); // Get the correct <p> inside the box
+//   qualBoxes.forEach(box => {
+//       const stars = box.querySelectorAll(".star");
+//       const ratingValueElement = box.querySelector("p"); // Get the correct <p> inside the box
 
-      stars.forEach(star => {
-          star.addEventListener("click", function () {
-              let selectedValue = parseInt(star.getAttribute("data-value"));
-              let ratingId = ratingValueElement.id; // Get the ID of the <p> tag
+//       stars.forEach(star => {
+//           star.addEventListener("click", function () {
+//               let selectedValue = parseInt(star.getAttribute("data-value"));
+//               let ratingId = ratingValueElement.id; // Get the ID of the <p> tag
 
-              // Update stars in this specific box
-              stars.forEach(s => {
-                  let starValue = parseInt(s.getAttribute("data-value"));
-                  s.classList.toggle("filled", starValue <= selectedValue);
-              });
+//               // Update stars in this specific box
+//               stars.forEach(s => {
+//                   let starValue = parseInt(s.getAttribute("data-value"));
+//                   s.classList.toggle("filled", starValue <= selectedValue);
+//               });
 
-              // Update the rating display in this specific box
-              ratingValueElement.textContent = `Selected Rating: ${selectedValue}`;
-              logStarRating(ratingId, selectedValue);
-              // Log the updated extraData (for debugging)
-              console.log("Updated extraData:", extraData);
-          });
-      });
-  });
-});
+//               // Update the rating display in this specific box
+//               ratingValueElement.textContent = `Selected Rating: ${selectedValue}`;
+//               logStarRating(ratingId, selectedValue);
+//               // Log the updated extraData (for debugging)
+//               console.log("Updated extraData:", extraData);
+//           });
+//       });
+//   });
+// });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const ratingContainers = document.querySelectorAll(".qualBox");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const ratingContainers = document.querySelectorAll(".qualBox");
   
-  ratingContainers.forEach(container => {
-      const stars = container.querySelectorAll(".star");
-      const ratingDisplay = container.querySelector(".rating");
-      const ratingCategory = container.getAttribute("data-rating");
+//   ratingContainers.forEach(container => {
+//       const stars = container.querySelectorAll(".star");
+//       const ratingDisplay = container.querySelector(".rating");
+//       const ratingCategory = container.getAttribute("data-rating");
       
-      stars.forEach(star => {
-          star.addEventListener("click", function () {
-              const selectedRating = this.getAttribute("data-value");
-              ratingDisplay.textContent = `Selected Rating: ${selectedRating}`;
-              console.log(`Rating updated for category ${ratingCategory}: ${selectedRating}`);
-          });
-      });
-  });
-});
+//       stars.forEach(star => {
+//           star.addEventListener("click", function () {
+//               const selectedRating = this.getAttribute("data-value");
+//               ratingDisplay.textContent = `Selected Rating: ${selectedRating}`;
+//               console.log(`Rating updated for category ${ratingCategory}: ${selectedRating}`);
+//           });
+//       });
+//   });
+// });
 
 
 function logStarRating(id, rating){
@@ -1293,4 +1305,50 @@ extraData[7] = rating;
 extraData[8] = rating;
 }
 };
+
+
+
+function addStarRate(id) {
+  let rateText = id.split(";")[0];
+  console.log(rateText);
+  let value = Number(id.split(";")[1]);
+  console.log(value);
+  console.log("Clearing Stars...");
+
+  //Clears all the filled values regardless if they have them, screw optimizations
+  for(let i = 1; i < 6; i++) {
+    let starID = rateText + ";" + i;
+    document.getElementById(starID).classList.remove("filled");
+  }
+  console.log("Filling Stars...");
+
+  //Fills the stars that need it
+  for(let i = 1; i < value+1; i++) {
+    let starID = rateText + ";" + i;
+    document.getElementById(starID).classList.add("filled");
+  }
+
+  //Basicly a fancy if statement
+  switch (rateText) {
+    case "clutter":
+      console.log("Updating Clutter Star Rating to " + value);
+      extraData[5] = value;
+      break;
+    case "driver":
+      console.log("Updating Driver Skill Star Rating. " + value);
+      extraData[6] = value;
+      break;
+    case "accuracy":
+      console.log("Updating Accuracy Star Rating " + value);
+      extraData[7] = value;
+      break;
+    case "defence":
+      console.log("Updating Defence Star Rating " + value);
+      extraData[8] = value;
+      break;
+  }
+
+  console.log(extraData);
+  saveData();
+}
 
