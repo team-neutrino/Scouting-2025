@@ -37,3 +37,15 @@ Climb Shallow: 21
 Climb Shallow Fail: 22
 Park: 23
 Disabled: 24
+
+
+Extra Data
+0 - Team Number
+1 - Match Number
+2 - Scout Initials
+3 - Comment
+4 - Alliance
+5 - Clutter Star Rate
+6 - Driver Star Rate
+7 - Accuracy Star Rate
+8 - Align Star Rate
