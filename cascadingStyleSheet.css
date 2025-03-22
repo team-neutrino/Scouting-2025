@@ -94,7 +94,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(1vh);
   transition: transform 0.25s cubic-bezier(0, .5, .5, 1), opacity 0.5s cubic-bezier(0, .5, .5, 1);
-  border: 2px solid white;
+  border: 2px solid white; 
 }
 
 .oldQrs {
@@ -115,6 +115,11 @@ body {
 img {
   padding: min(1vh, 1vw) !important;
   background-color: white;
+}
+
+table {
+	padding: min(1vh, 1vw) !important;
+	background-color: white;
 }
 
 
