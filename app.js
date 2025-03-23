@@ -1333,17 +1333,17 @@ function addStarRate(id) {
     case "driver":
       console.log("Updating Driver Skill Star Rating. " + value);
       extraData[6] = value;
-      ChangeRatingValue("ratingValue1", value)
+      ChangeRatingValue("ratingValue2", value)
       break;
     case "accuracy":
       console.log("Updating Accuracy Star Rating " + value);
       extraData[7] = value;
-      ChangeRatingValue("ratingValue1", value)
+      ChangeRatingValue("ratingValue3", value)
       break;
     case "defence":
       console.log("Updating Defence Star Rating " + value);
       extraData[8] = value;
-      ChangeRatingValue("ratingValue1", value)
+      ChangeRatingValue("ratingValue4", value)
       break;
   }
 
