@@ -91,7 +91,7 @@ body {
   padding: min(6vh, 6vw);
   border-radius: min(5vh, 5vw);
   display: flex;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: white;
   backdrop-filter: blur(1vh);
   transition: transform 0.25s cubic-bezier(0, .5, .5, 1), opacity 0.5s cubic-bezier(0, .5, .5, 1);
   border: 2px solid white; 
