@@ -1,0 +1,6 @@
+<IfModule mod_headers.c>
+    # WEEK 604800
+    <FilesMatch "\.(js|css|html|png)$">
+        Header set Cache-Control "max-age=604800"
+    </FilesMatch>
+</IfModule>
