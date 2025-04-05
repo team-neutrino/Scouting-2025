@@ -514,68 +514,6 @@ The updateReview and updateList using the organizedActionList variable in 2022 c
 Combined lowerCounter and raiseCounter functions into the updateAvail function to make it easier.
 */
 
-function replaceFail() {
-  var index7 = actionList.indexOf("Climb");
-  var index8 = actionList.indexOf("Failed Climb");
-
-
-  if (index7 > -1) {
-    actionList.splice(index7, 1);
-  }
-  if (index8 > -1) {
-    actionList.splice(index8, 1);
-  }
-
-
-
-  var compressed7 = compressedList.indexOf(11);
-  var compressed8 = compressedList.indexOf(10);
-
-
-
-  if (compressed7 > -1) {
-    compressedList.splice(compressed7, 1);
-  }
-  if (compressed8 > -1) {
-    compressedList.splice(compressed8, 1);
-  }
-
-  console.log(actionList);
-  updateLog();
-
-}
-
-function replaceHarmony() {
-  var index9 = actionList.indexOf("Harmony");
-  var index8 = actionList.indexOf("Failed Climb");
-
-
-  if (index9 > -1) {
-    actionList.splice(index9, 1);
-  }
-  if (index8 > -1) {
-    actionList.splice(index8, 1);
-  }
-
-
-
-  var compressed9 = compressedList.indexOf(15);
-  var compressed8 = compressedList.indexOf(10);
-
-
-
-  if (compressed9 > -1) {
-    compressedList.splice(compressed9, 1);
-  }
-  if (compressed8 > -1) {
-    compressedList.splice(compressed8, 1);
-  }
-
-  console.log(actionList);
-  updateLog();
-
-}
-
 function replaceLeave() {
   var leaveAction = actionList.indexOf("Leave");
 
