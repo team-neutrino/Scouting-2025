@@ -23,11 +23,11 @@
     <tr id="row2">
       <td rowspan="2">
         <button class="halfHeightButton transparentBackground" id="Shallow Climb"
-          onclick=" replaceClimb();ChangeBorder('Shallow Climb');addAction(this.id,21)">Shallow Climb</button>
+          onclick=" replaceClimb(this.id);ChangeBorder('Shallow Climb');addAction(this.id,21)">Shallow Climb</button>
         <button class="halfHeightButton transparentBackground" id="Shallow Fail"
-          onclick=" replaceClimb();ChangeBorder('Shallow Fail');addAction(this.id,22)">Shallow Fail</button>
+          onclick=" replaceClimb(this.id);ChangeBorder('Shallow Fail');addAction(this.id,22)">Shallow Fail</button>
         <button class="halfHeightButton transparentBackground" id="Park"
-          onclick=" replaceClimb();ChangeBorder('Park');addAction(this.id,23)">Park</button>
+          onclick=" replaceClimb(this.id);ChangeBorder('Park');addAction(this.id,23)">Park</button>
       </td>
       <td colspan="3">
         <textarea class="coments" placeholder="Unleash your imagination" onchange="commentEdit(this.value)"
@@ -35,9 +35,9 @@
       </td>
       <td rowspan="2">
         <button class="halfHeightButton transparentBackground" id="Deep Climb"
-          onclick="replaceClimb();ChangeBorder('Deep Climb');addAction(this.id,19)">Deep Climb</button>
+          onclick="replaceClimb(this.id);ChangeBorder('Deep Climb');addAction(this.id,19)">Deep Climb</button>
         <button class="halfHeightButton transparentBackground" id="Deep Fail"
-          onclick="replaceClimb();ChangeBorder('Deep Fail');addAction(this.id,20)">Deep Fail</button>
+          onclick="replaceClimb(this.id);ChangeBorder('Deep Fail');addAction(this.id,20)">Deep Fail</button>
         <button class="halfHeightButton transparentBackground" id="Disabled"
           onclick=" replaceDisabled();ChangeBorder('Disabled');addAction(this.id,24)">Disabled</button>
       </td>

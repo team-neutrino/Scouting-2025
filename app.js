@@ -1253,27 +1253,30 @@ function check() {
 //   });
 // });
 
-function replaceClimb() {
+function replaceClimb(action, number) {
   var index19 = actionList.indexOf("Deep Climb");
   var index20 = actionList.indexOf("Deep Fail");
   var index21 = actionList.indexOf("Shallow Climb");
   var index22 = actionList.indexOf("Shallow Fail");
   var index23 = actionList.indexOf("Park");
+  var index = actionList.indexOf(action)
 
-
+  if (index > -1){
+    actionList.splice(index, 1)
+  }
   if (index19 > -1) {
     actionList.splice(index19, 1);
   }
-  if (index20 > -1) {
+  if (index20 > -1 && action != "Park") {
     actionList.splice(index20, 1);
   }
   if (index21 > -1) {
     actionList.splice(index21, 1);
   }
-  if (index22 > -1) {
+  if (index22 > -1 && action != "Park") {
     actionList.splice(index22, 1);
   }
-  if (index23 > -1) {
+  if (index23 > -1 && (action == "Deep Climb" || action == "Shallow Climb")) {
     actionList.splice(index23, 1);
   }
 
@@ -1283,22 +1286,24 @@ function replaceClimb() {
   var compressed21 = compressedList.indexOf(21);
   var compressed22 = compressedList.indexOf(22);
   var compressed23 = compressedList.indexOf(23);
+  var compressed = compressedList.indexOf(number);
 
-
-
+  if(compressed > -1){
+    compressedList.splice(compressed, 1)
+  }
   if (compressed19 > -1) {
     compressedList.splice(compressed19, 1);
   }
-  if (compressed20 > -1) {
+  if (compressed20 > -1 && (number != 23)) {
     compressedList.splice(compressed20, 1);
   }
   if (compressed21 > -1) {
     compressedList.splice(compressed21, 1);
   }
-  if (compressed22 > -1) {
+  if (compressed22 > -1 && number != 23) {
     compressedList.splice(compressed22, 1);
   }
-  if (compressed23 > -1) {
+  if (compressed23 > -1 && (number == 19 || number == 21)) {
     compressedList.splice(compressed23, 1);
   }
 
