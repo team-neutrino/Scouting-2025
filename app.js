@@ -1660,7 +1660,7 @@ function toQuotes() {
     
     
     //alert(compressedList);
-    var sums = Array(25).fill(0);
+    var sums = Array(27).fill(0);
     for (const item of compressedList) {
       sums[item]++;
     }
