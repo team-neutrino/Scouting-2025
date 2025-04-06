@@ -18,6 +18,9 @@
 .autonLongButton{
     width: 22vw;
 }
+#teamLog1{
+    height: 50vh;
+}
 #autonL4, #autonL2, #autonCoralMiss{
     background: #e69138;
 }
@@ -27,10 +30,10 @@
 #autonL3, #autonL1{
     background: #f6b26b;
 }
-#autonNetMiss, #autonProcesser{
+#autonNetMiss, #autonProcessor{
     background: #3c78d8;
 }
-#autonNetScore, #autonRemove{
+#autonNetScore, #autonRemove, #autonProcessorMiss{
     background: #6fa8dc;
 }
 #autonBack, #autonNext{

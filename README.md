@@ -14,29 +14,31 @@ Coral L3: 4
 Coral L4: 5
 Coral miss: 6
 Algae Processor: 7
-Algae Net: 8
-Algae Net Miss 9
+Algae Processor Miss: 8
+Algae Net: 9
+Algae Net Miss 10
 
 
 Teleop
-Remove Algae: 10
-Coral L1: 11
-Coral L2: 12
-Coral L3: 13
-Coral L4: 14
-Coral Miss: 15
-Algae Processor: 16
-Algae Net: 17
-Algae Net Miss: 18
+Remove Algae: 11
+Coral L1: 12
+Coral L2: 13
+Coral L3: 14
+Coral L4: 15
+Coral Miss: 16
+Algae Processor: 17
+Algae Processor Miss: 18
+Algae Net: 19
+Algae Net Miss: 20
 
 
 Endgame
-Climb Deep: 19
-Climb Deep Fail: 20
-Climb Shallow: 21
-Climb Shallow Fail: 22
-Park: 23
-Disabled: 24
+Climb Deep: 21
+Climb Deep Fail: 22
+Climb Shallow: 23
+Climb Shallow Fail: 24
+Park: 25
+Disabled: 26
 
 
 Extra Data

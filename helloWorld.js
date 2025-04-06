@@ -38,19 +38,19 @@ function load(loadOut, windowLocation) {
 function buttonEfffect(button) { 
   actionList.push(button.innerText);
   let buttonBg = getComputedStyle(button).backgroundColor;
-  let termnial = document.getElementById("termnial");
+  let terminal = document.getElementById("terminal");
   let buttonBgRGBA = buttonBg;
   buttonBg = buttonBg.substring(0, buttonBg.length - 8) + ")";
   buttonBg = buttonBg.replace("a" , "");
   //alert(buttonBg);
   button.style.boxShadow = "0 0 10vh " + buttonBg;
-  termnial.style.backgroundColor = buttonBgRGBA;
+  terminal.style.backgroundColor = buttonBgRGBA;
   setTimeout(() => {
     button.style.boxShadow = "";
-    termnial.style.backgroundColor = "";
+    terminal.style.backgroundColor = "";
   }, 1000);
   var logText = actionList.slice().reverse().join("\n");
-  document.getElementById("termnial").value = logText;
+  document.getElementById("terminal").value = logText;
   //alert(button.innerText);
 }
 

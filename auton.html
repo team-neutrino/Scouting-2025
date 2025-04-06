@@ -21,20 +21,23 @@
             <td rowspan='1' colspan='2'>
                 <button class="autonLongButton" id="autonL4" onclick="addAction('L4 (A)' ,5)">L4</button>
             </td> 
-            <td rowspan="5" colspan="1">
-                <textarea readonly id="teamLog1" class="termnial" placeholder="Nothing to undo"></textarea>
-                <br>
-                <button class="undo" id="undo" onclick="Undo()">Undo</button>
+            <td rowspan='1' colspan='1'>
+                <button id="autonLeave" onclick=" replaceLeave();addAction('Leave',1)">Leave</button>
             </td>
             <td rowspan='1' colspan='2'>
-                <button class="autonLongButton" id="autonNetScore" onclick="addAction('Robot Net Score (A)' ,8)">Robot Net Score</button>
+                <button class="autonLongButton" id="autonNetScore" onclick="addAction('Robot Net Score (A)' ,9)">Robot Net Score</button>
             </td> 
         </tr><tr> 
             <td rowspan='1' colspan='2'>
                 <button class="autonLongButton" id="autonL3" onclick="addAction('L3 (A)' ,4)">L3</button>
             </td> 
+            <td rowspan="4" colspan="1">
+                <textarea readonly id="teamLog1" class="terminal" placeholder="Nothing to undo"></textarea>
+                <br>
+                <button class="undo" id="undo" onclick="Undo()">Undo</button>
+            </td>
             <td rowspan='1' colspan='2'>
-                <button class="autonLongButton" id="autonNetMiss" onclick="addAction('Robot Net Miss (A)' ,9)">Robot Net Miss</button>
+                <button class="autonLongButton" id="autonNetMiss" onclick="addAction('Robot Net Miss (A)' ,10)">Robot Net Miss</button>
             </td> 
         </tr><tr>  
             <td rowspan='1' colspan='2'>
@@ -48,7 +51,7 @@
                 <button class="autonLongButton" id="autonL1" onclick="addAction('L1 (A)' ,2)">L1</button>
             </td> 
             <td rowspan='1' colspan='2'>
-                <button class="autonLongButton" id="autonProcesser" onclick="addAction('Processer (A)' ,7)">Processer</button>
+                <button class="autonLongButton" id="autonProcessor" onclick="addAction('Processor (A)' ,7)">Processor</button>
             </td> 
         </tr><tr> 
             <td rowspan='1' colspan='1'>
@@ -58,7 +61,7 @@
                 <button id="autonCoralMiss" onclick="addAction('Coral Miss (A)',6)">Coral Miss</button>
             </td> 
             <td rowspan='1' colspan='1'>
-                <button id="autonLeave" onclick=" replaceLeave();addAction('Leave',1)">Leave</button>
+                <button id="autonProcessorMiss" onclick=" replaceLeave();addAction('Processor Miss (A)',8)">Processor Miss</button>
             </td> 
             <td rowspan='1' colspan='1'>
                 <button id="autonNext" onclick="leaveCheck();saveData();window.location.href = './teleop.html'">&rarr;</button>

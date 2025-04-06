@@ -70,8 +70,8 @@ textarea {
 }
 
 .undo,
-.termnial,
-.termnialEndgame {
+.terminal,
+.terminalEndgame {
   width: 14vw;
   display: block;
   box-sizing: border-box;
@@ -85,7 +85,7 @@ textarea {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.termnialEndgame {
+.terminalEndgame {
   height: 45vh;
   font-size: 2vh;
 }
@@ -158,7 +158,7 @@ textarea {
   font-size: 3vh;
 }
 
-.termnial {
+.terminal {
   height: 27vw;
   resize: none;
   background-color: rgba(0, 0, 0, 0.2);

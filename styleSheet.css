@@ -62,7 +62,7 @@ table {
     height: 15vh;
     width: 13vw;  
   }
-  .undo, .termnial, .termnialEndgame {
+  .undo, .terminal, .terminalEndgame {
     width: 14vw; 
     display: block; 
     box-sizing: border-box;
@@ -74,7 +74,7 @@ table {
     font-size:2vh;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  .termnialEndgame {
+  .terminalEndgame {
     height: 45vh;
     font-size:2vh;
   }
@@ -131,21 +131,6 @@ table {
     background-color: rgba(255, 0, 0, 0.5);
     color: white;
     font-size: 3vh;
-  }
-  .termnial {
-    height: 27vw;
-    resize: none;
-    background-color: rgba(0, 0, 0, 0.2);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    border: 3px solid white;
-    text-align: left;
-    color: white;
-    font-size: 1.5vh;
-    scrollbar-width: thin;
-    scrollbar-color: white rgba(0, 0, 0, 0.2);
-    font-size:2vh;
-    line-height: 1.51vw;
   }
   
   .infoBox, .inputBox {
@@ -610,7 +595,7 @@ textarea {
     font-size: 1.5vh;
 }
 
-.termnial {
+.terminal {
     width: 20vw;
     height: 60vh;
     resize: none;
@@ -625,8 +610,6 @@ textarea {
     scrollbar-color: white rgba(0, 0, 0, 0.2);
     font-size:2vh;
     line-height: 1.51vw;
-  
-
 }
 
 .invisibleButton {
