@@ -541,7 +541,7 @@ function replaceDisabled() {
   if (disabledAction > -1) {
     actionList.splice(disabledAction, 1);
   }
-  var disabledCompressed = compressedList.indexOf(26);
+  var disabledCompressed = compressedList.indexOf(24);
 
   if (disabledCompressed > -1) {
     compressedList.splice(disabledCompressed, 1);
