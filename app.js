@@ -514,68 +514,6 @@ The updateReview and updateList using the organizedActionList variable in 2022 c
 Combined lowerCounter and raiseCounter functions into the updateAvail function to make it easier.
 */
 
-function replaceFail() {
-  var index7 = actionList.indexOf("Climb");
-  var index8 = actionList.indexOf("Failed Climb");
-
-
-  if (index7 > -1) {
-    actionList.splice(index7, 1);
-  }
-  if (index8 > -1) {
-    actionList.splice(index8, 1);
-  }
-
-
-
-  var compressed7 = compressedList.indexOf(11);
-  var compressed8 = compressedList.indexOf(10);
-
-
-
-  if (compressed7 > -1) {
-    compressedList.splice(compressed7, 1);
-  }
-  if (compressed8 > -1) {
-    compressedList.splice(compressed8, 1);
-  }
-
-  console.log(actionList);
-  updateLog();
-
-}
-
-function replaceHarmony() {
-  var index9 = actionList.indexOf("Harmony");
-  var index8 = actionList.indexOf("Failed Climb");
-
-
-  if (index9 > -1) {
-    actionList.splice(index9, 1);
-  }
-  if (index8 > -1) {
-    actionList.splice(index8, 1);
-  }
-
-
-
-  var compressed9 = compressedList.indexOf(15);
-  var compressed8 = compressedList.indexOf(10);
-
-
-
-  if (compressed9 > -1) {
-    compressedList.splice(compressed9, 1);
-  }
-  if (compressed8 > -1) {
-    compressedList.splice(compressed8, 1);
-  }
-
-  console.log(actionList);
-  updateLog();
-
-}
-
 function replaceLeave() {
   var leaveAction = actionList.indexOf("Leave");
 
@@ -1253,27 +1191,30 @@ function check() {
 //   });
 // });
 
-function replaceClimb() {
+function replaceClimb(action, number) {
   var index19 = actionList.indexOf("Deep Climb");
   var index20 = actionList.indexOf("Deep Fail");
   var index21 = actionList.indexOf("Shallow Climb");
   var index22 = actionList.indexOf("Shallow Fail");
   var index23 = actionList.indexOf("Park");
+  var index = actionList.indexOf(action)
 
-
+  if (index > -1){
+    actionList.splice(index, 1)
+  }
   if (index19 > -1) {
     actionList.splice(index19, 1);
   }
-  if (index20 > -1) {
+  if (index20 > -1 && action != "Park") {
     actionList.splice(index20, 1);
   }
   if (index21 > -1) {
     actionList.splice(index21, 1);
   }
-  if (index22 > -1) {
+  if (index22 > -1 && action != "Park") {
     actionList.splice(index22, 1);
   }
-  if (index23 > -1) {
+  if (index23 > -1 && (action == "Deep Climb" || action == "Shallow Climb")) {
     actionList.splice(index23, 1);
   }
 
@@ -1283,22 +1224,24 @@ function replaceClimb() {
   var compressed21 = compressedList.indexOf(21);
   var compressed22 = compressedList.indexOf(22);
   var compressed23 = compressedList.indexOf(23);
+  var compressed = compressedList.indexOf(number);
 
-
-
+  if(compressed > -1){
+    compressedList.splice(compressed, 1)
+  }
   if (compressed19 > -1) {
     compressedList.splice(compressed19, 1);
   }
-  if (compressed20 > -1) {
+  if (compressed20 > -1 && (number != 23)) {
     compressedList.splice(compressed20, 1);
   }
   if (compressed21 > -1) {
     compressedList.splice(compressed21, 1);
   }
-  if (compressed22 > -1) {
+  if (compressed22 > -1 && number != 23) {
     compressedList.splice(compressed22, 1);
   }
-  if (compressed23 > -1) {
+  if (compressed23 > -1 && (number == 19 || number == 21)) {
     compressedList.splice(compressed23, 1);
   }
 
