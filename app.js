@@ -494,7 +494,6 @@ let nonDblClick = true;
 var Notes = "";
 var Notes2 = "";
 var answer = "";
-
 /* Function List
 --- Direct Button Functions ---
 changeMatchNumber: Used to change the match number
@@ -513,6 +512,68 @@ updateAvail: This was created to enable/disable (validation) scoring buttons bas
 The updateReview and updateList using the organizedActionList variable in 2022 code was legacy code that was used to show the scouter the total # they put in. This might be useful to have on a review page.
 Combined lowerCounter and raiseCounter functions into the updateAvail function to make it easier.
 */
+
+function replaceFail() {
+  var index7 = actionList.indexOf("Climb");
+  var index8 = actionList.indexOf("Failed Climb");
+
+
+  if (index7 > -1) {
+    actionList.splice(index7, 1);
+  }
+  if (index8 > -1) {
+    actionList.splice(index8, 1);
+  }
+
+
+
+  var compressed7 = compressedList.indexOf(11);
+  var compressed8 = compressedList.indexOf(10);
+
+
+
+  if (compressed7 > -1) {
+    compressedList.splice(compressed7, 1);
+  }
+  if (compressed8 > -1) {
+    compressedList.splice(compressed8, 1);
+  }
+
+  console.log(actionList);
+  updateLog();
+
+}
+
+function replaceHarmony() {
+  var index9 = actionList.indexOf("Harmony");
+  var index8 = actionList.indexOf("Failed Climb");
+
+
+  if (index9 > -1) {
+    actionList.splice(index9, 1);
+  }
+  if (index8 > -1) {
+    actionList.splice(index8, 1);
+  }
+
+
+
+  var compressed9 = compressedList.indexOf(15);
+  var compressed8 = compressedList.indexOf(10);
+
+
+
+  if (compressed9 > -1) {
+    compressedList.splice(compressed9, 1);
+  }
+  if (compressed8 > -1) {
+    compressedList.splice(compressed8, 1);
+  }
+
+  console.log(actionList);
+  updateLog();
+
+}
 
 function replaceLeave() {
   var leaveAction = actionList.indexOf("Leave");
@@ -1191,30 +1252,27 @@ function check() {
 //   });
 // });
 
-function replaceClimb(action, number) {
+function replaceClimb() {
   var index19 = actionList.indexOf("Deep Climb");
   var index20 = actionList.indexOf("Deep Fail");
   var index21 = actionList.indexOf("Shallow Climb");
   var index22 = actionList.indexOf("Shallow Fail");
   var index23 = actionList.indexOf("Park");
-  var index = actionList.indexOf(action)
 
-  if (index > -1){
-    actionList.splice(index, 1)
-  }
+
   if (index19 > -1) {
     actionList.splice(index19, 1);
   }
-  if (index20 > -1 && action != "Park") {
+  if (index20 > -1) {
     actionList.splice(index20, 1);
   }
   if (index21 > -1) {
     actionList.splice(index21, 1);
   }
-  if (index22 > -1 && action != "Park") {
+  if (index22 > -1) {
     actionList.splice(index22, 1);
   }
-  if (index23 > -1 && (action == "Deep Climb" || action == "Shallow Climb")) {
+  if (index23 > -1) {
     actionList.splice(index23, 1);
   }
 
@@ -1224,24 +1282,22 @@ function replaceClimb(action, number) {
   var compressed21 = compressedList.indexOf(21);
   var compressed22 = compressedList.indexOf(22);
   var compressed23 = compressedList.indexOf(23);
-  var compressed = compressedList.indexOf(number);
 
-  if(compressed > -1){
-    compressedList.splice(compressed, 1)
-  }
+
+
   if (compressed19 > -1) {
     compressedList.splice(compressed19, 1);
   }
-  if (compressed20 > -1 && (number != 23)) {
+  if (compressed20 > -1) {
     compressedList.splice(compressed20, 1);
   }
   if (compressed21 > -1) {
     compressedList.splice(compressed21, 1);
   }
-  if (compressed22 > -1 && number != 23) {
+  if (compressed22 > -1) {
     compressedList.splice(compressed22, 1);
   }
-  if (compressed23 > -1 && (number == 19 || number == 21)) {
+  if (compressed23 > -1) {
     compressedList.splice(compressed23, 1);
   }
 
@@ -1329,8 +1385,17 @@ function addStarRate(id) {
   let rateText = id.split(";")[0];
   console.log(rateText);
   let value = Number(id.split(";")[1]);
+  const ogValue = value;
   console.log(value);
   console.log("Clearing Stars...");
+  let listOfClasses = "";
+  if(value > 0) {
+    listOfClasses = Array.from(document.getElementById(id).classList);
+  }
+  
+  if(listOfClasses.includes("lastClicked")) {
+    value = 0;
+  }
 
   //Clears all the filled values regardless if they have them, screw optimizations
   for(let i = 1; i < 6; i++) {
@@ -1340,11 +1405,10 @@ function addStarRate(id) {
   console.log("Filling Stars...");
 
   //Fills the stars that need it
-  for(let i = 1; i < value+1; i++) {
-    let starID = rateText + ";" + i;
-    document.getElementById(starID).classList.add("filled");
-  }
-
+    for(let i = 1; i < value+1; i++) {
+      let starID = rateText + ";" + i;
+      document.getElementById(starID).classList.add("filled");
+    }
   //Basicly a fancy if statement
   switch (rateText) {
     case "clutter":
@@ -1370,7 +1434,66 @@ function addStarRate(id) {
   }
 
   console.log(extraData);
+  
+  if(ogValue > 0) {
+    updateLastClicked(id);
+  } else {
+    resetAllClicked(rateText + ";" + 1);
+  }
+    
   saveData();
+}
+
+function resetQual() {
+  const goOn = confirm("Are you sure you want to reset the stars?");
+  if(goOn) {
+    addStarRate("defence;0");
+    addStarRate("clutter;0");
+    addStarRate("driver;0");
+    addStarRate("accuracy;0");
+  }
+}
+
+function resetAllClicked(elementID) {
+  const element = document.getElementById(elementID);
+  const parentElement = element.parentNode;
+  const parentId = parentElement.id;
+  
+  const nodesList = parentElement.getElementsByClassName("lastClicked");
+  
+  const nodes = Array.from(nodesList);
+  
+   for(let i in nodes) {
+     nodes[i].classList.remove("lastClicked");
+  }
+  const check = parentElement.getElementsByClassName("lastClicked");
+}
+
+function updateLastClicked(elementID) {
+  
+  const listOfClasses = Array.from(document.getElementById(elementID).classList);
+  
+  
+  const element = document.getElementById(elementID);
+  const parentElement = element.parentNode;
+  const parentId = parentElement.id;
+  
+  const nodesList = parentElement.getElementsByClassName("lastClicked");
+  
+  const nodes = Array.from(nodesList);
+  
+   for(let i in nodes) {
+     nodes[i].classList.remove("lastClicked");
+  }
+  
+  const check = parentElement.getElementsByClassName("lastClicked");
+  
+  if(listOfClasses.includes("lastClicked")) {
+    document.getElementById(elementID).classList.remove("lastClicked");
+  } else {
+    document.getElementById(elementID).classList.add("lastClicked");
+  }
+  
 }
 
 function leaveCheck() {
