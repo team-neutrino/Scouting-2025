@@ -1329,8 +1329,17 @@ function addStarRate(id) {
   let rateText = id.split(";")[0];
   console.log(rateText);
   let value = Number(id.split(";")[1]);
+  const ogValue = value;
   console.log(value);
   console.log("Clearing Stars...");
+  let listOfClasses = "";
+  if(value > 0) {
+    listOfClasses = Array.from(document.getElementById(id).classList);
+  }
+  
+  if(listOfClasses.includes("lastClicked")) {
+    value = 0;
+  }
 
   //Clears all the filled values regardless if they have them, screw optimizations
   for(let i = 1; i < 6; i++) {
@@ -1340,11 +1349,10 @@ function addStarRate(id) {
   console.log("Filling Stars...");
 
   //Fills the stars that need it
-  for(let i = 1; i < value+1; i++) {
-    let starID = rateText + ";" + i;
-    document.getElementById(starID).classList.add("filled");
-  }
-
+    for(let i = 1; i < value+1; i++) {
+      let starID = rateText + ";" + i;
+      document.getElementById(starID).classList.add("filled");
+    }
   //Basicly a fancy if statement
   switch (rateText) {
     case "clutter":
@@ -1370,7 +1378,66 @@ function addStarRate(id) {
   }
 
   console.log(extraData);
+  
+  if(ogValue > 0) {
+    updateLastClicked(id);
+  } else {
+    resetAllClicked(rateText + ";" + 1);
+  }
+    
   saveData();
+}
+
+function resetQual() {
+  const goOn = confirm("Are you sure you want to reset the stars?");
+  if(goOn) {
+    addStarRate("defence;0");
+    addStarRate("clutter;0");
+    addStarRate("driver;0");
+    addStarRate("accuracy;0");
+  }
+}
+
+function resetAllClicked(elementID) {
+  const element = document.getElementById(elementID);
+  const parentElement = element.parentNode;
+  const parentId = parentElement.id;
+  
+  const nodesList = parentElement.getElementsByClassName("lastClicked");
+  
+  const nodes = Array.from(nodesList);
+  
+   for(let i in nodes) {
+     nodes[i].classList.remove("lastClicked");
+  }
+  const check = parentElement.getElementsByClassName("lastClicked");
+}
+
+function updateLastClicked(elementID) {
+  
+  const listOfClasses = Array.from(document.getElementById(elementID).classList);
+  
+  
+  const element = document.getElementById(elementID);
+  const parentElement = element.parentNode;
+  const parentId = parentElement.id;
+  
+  const nodesList = parentElement.getElementsByClassName("lastClicked");
+  
+  const nodes = Array.from(nodesList);
+  
+   for(let i in nodes) {
+     nodes[i].classList.remove("lastClicked");
+  }
+  
+  const check = parentElement.getElementsByClassName("lastClicked");
+  
+  if(listOfClasses.includes("lastClicked")) {
+    document.getElementById(elementID).classList.remove("lastClicked");
+  } else {
+    document.getElementById(elementID).classList.add("lastClicked");
+  }
+  
 }
 
 function leaveCheck() {
@@ -1711,5 +1778,3 @@ function regenQR() {
     
   }
 }
-
-
