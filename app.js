@@ -541,7 +541,7 @@ function replaceDisabled() {
   if (disabledAction > -1) {
     actionList.splice(disabledAction, 1);
   }
-  var disabledCompressed = compressedList.indexOf(13);
+  var disabledCompressed = compressedList.indexOf(24);
 
   if (disabledCompressed > -1) {
     compressedList.splice(disabledCompressed, 1);
@@ -1444,7 +1444,7 @@ function leaveCheck() {
 
 	if(compressedList.includes(1)) {
 		console.log("Leave Pressed");
-	} else if(compressedList.includes(0) || compressedList.includes(2) || compressedList.includes(3) || compressedList.includes(4) || compressedList.includes(5) || compressedList.includes(6) || compressedList.includes(7) || compressedList.includes(8) || compressedList.includes(9)) {
+	} else if(compressedList.includes(0) || compressedList.includes(2) || compressedList.includes(3) || compressedList.includes(4) || compressedList.includes(5) || compressedList.includes(6) || compressedList.includes(7) || compressedList.includes(8) || compressedList.includes(9) || compressedList.includes(25)) {
 		console.log("Someone forgot to press the button :(");
 		replaceLeave();
 		addAction("Leave", 1);
@@ -1540,19 +1540,19 @@ function load(loadOut, windowLocation) {
 function buttonEfffect(button) { 
   actionList.push(button.innerText);
   let buttonBg = getComputedStyle(button).backgroundColor;
-  let termnial = document.getElementById("termnial");
+  let terminal = document.getElementById("terminal");
   let buttonBgRGBA = buttonBg;
   buttonBg = buttonBg.substring(0, buttonBg.length - 8) + ")";
   buttonBg = buttonBg.replace("a" , "");
   //alert(buttonBg);
   button.style.boxShadow = "0 0 10vh " + buttonBg;
-  termnial.style.backgroundColor = buttonBgRGBA;
+  terminal.style.backgroundColor = buttonBgRGBA;
   setTimeout(() => {
     button.style.boxShadow = "";
-    termnial.style.backgroundColor = "";
+    terminal.style.backgroundColor = "";
   }, 1000);
   var logText = actionList.slice().reverse().join("\n");
-  document.getElementById("termnial").value = logText;
+  document.getElementById("terminal").value = logText;
   //alert(button.innerText);
 }
 
@@ -1660,7 +1660,7 @@ function toQuotes() {
     
     
     //alert(compressedList);
-    var sums = Array(25).fill(0);
+    var sums = Array(27).fill(0);
     for (const item of compressedList) {
       sums[item]++;
     }

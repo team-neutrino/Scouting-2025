@@ -30,11 +30,11 @@
     background: #a64d79;
 }
 
-#teleopNetMiss, #teleopProcesser{
+#teleopNetMiss, #teleopProcessor{
     background: #93c47d;
 }
 
-#teleopNetScore, #teleopRemove{
+#teleopNetScore, #teleopRemove, #teleopProcessorMiss{
     background: #6aa84f;
 }
 

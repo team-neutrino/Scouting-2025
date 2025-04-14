@@ -16,6 +16,7 @@ Coral miss: 6
 Algae Processor: 7
 Algae Net: 8
 Algae Net Miss 9
+Algae Processor Miss: 25
 
 
 Teleop
@@ -28,6 +29,7 @@ Coral Miss: 15
 Algae Processor: 16
 Algae Net: 17
 Algae Net Miss: 18
+Algae Processor Niss:26
 
 
 Endgame
