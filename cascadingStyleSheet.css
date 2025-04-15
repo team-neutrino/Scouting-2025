@@ -233,7 +233,7 @@ h1 {
   height: 40%;
 }
 .reset-pop-up-bottom {
-  height: 60%;x
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -337,7 +337,7 @@ svg {
   font-size: 3vh;
   text-align: center;
   line-height: 5vh;
-  font-family:"Playwrite IT Moderna", cursive;
+  font-family: 'Comic Sans MS', cursive;
   font-weight: 200;
   display: flex;
   flex-direction: column;
@@ -464,4 +464,13 @@ svg {
 
 #oldQr {
   transition: opacity 0.5s ease;
+}
+
+.continuieButton {
+  box-shadow: 0 0 5vh hotpink;
+  background-color: hotpink;
+  font-family: 'Comic Sans MS', cursive;
+  text-shadow: none;
+  margin-top:10vh;
+  transition: transform 2s ease-out;
 }
