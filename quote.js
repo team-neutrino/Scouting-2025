@@ -76,7 +76,6 @@ const quotes = {
 "Vienna [to Jackson]": ["Are you cosplaying as Matthias?", ""],
 "Yehang C": ["I didn't loose it, I just didn't find it today ", "Wait where is Adam?? Where did my father go?", ""],
 "Laura C": ["Laura!!?", ""],
-
 "Archer N": ["Yesss I knew it ", ""],
 "Fyona S": ["Money", ""],
 "Hanna K": ["Dab me up wifey", "Everyday I colonize my mother.", ""],
@@ -87,13 +86,7 @@ const quotes = {
 "Hanna to Yehang": ["Yes wifey!", ""],
 "Shreya [to Chetas]": ["Hey, move your grimy fingers!", ""],
 "Dr. Steward ": ["So I want to say something ", "We're known in the state of California for spreading cancer ", ""],
-"""Shreya and Micah"": [""“Is Mick a monkey?”
--Micah
-“No, he’s a pig.”
--Shreya
-“Just like us!”
--Micah"", """"],"
-"Sisis": ["Isosososos", ""],
+"A pen": ["Isosososos", ""],
 "Allen C": ["We gave them away so that other people could tie up kids", "We're just farming quotes now.", ""],
 "Lily C": ["We spread Nutella, not Neutrino.", ""],
 "Anika and Sarah": ["If we win chanmps we shall shaveeth our heads", ""],
