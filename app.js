@@ -1646,20 +1646,7 @@ function toQuotes() {
     }
     setTimeout(() => {
     insertQuote.innerHTML += "<br><br><strong>" + author + "</strong>";
-}, 20 * repeat);
-
-  }, 3400);
-  
-  setTimeout(() => {
-    insertQuote.style.transition = "opacity 1s ease, transform 1s ease";
-    insertQuote.style.opacity = "0";
-    insertQuote.style.transform = "scale(1.5, 1.5)";
-  }, 3500+length);
-  setTimeout(() => {
-    
-    
-    
-    //alert(compressedList);
+    insertQuote.innerHTML += "<button onclick='resetToIndex()' class='continuieButton' id='contineButton'>Continue</button>";
     var sums = Array(27).fill(0);
     for (const item of compressedList) {
       sums[item]++;
@@ -1667,11 +1654,21 @@ function toQuotes() {
     //alert(sums);
     localStorage.setItem("oldCompList" + extraData[1], sums);
     localStorage.setItem("oldExtraData" + extraData[1], extraData);
-    window.location.href = `./index.html`;
+}, 20 * repeat);
+
+  }, 3400);
+  
+  setTimeout(() => {
     
     
     
-  }, 3500+length+1000);
+    //alert(compressedList);
+    
+    //window.location.href = `./index.html`;
+    
+    
+    
+  }, 3500+length);
   
   
 }
@@ -1777,4 +1774,19 @@ function regenQR() {
     
     
   }
+}
+
+
+function resetToIndex() {
+  
+  document.getElementById('contineButton').innerText = "";
+  document.getElementById('contineButton').style.transform = 'scale(7,30)';
+
+  setTimeout(() => {
+    window.location.href = `./index.html`;
+  }, 750);
+  setTimeout(() => {
+    
+  }, 850);
+  
 }
