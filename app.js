@@ -880,6 +880,11 @@ function addAction(action, number) { //Used for buttons that have a data validat
 	
 }
 
+function addScore(number){
+  var score = 0;
+  
+}
+
 function alliancePick(alliance) {
   addButtonGlowEffect(alliance);
   if (alliance == "Red Alliance") {
