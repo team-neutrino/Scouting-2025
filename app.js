@@ -880,8 +880,42 @@ function addAction(action, number) { //Used for buttons that have a data validat
 }
 
 function addScore(num) {
-  // var score = score + num;
-  score = score + num;
+  var tempScore = 0;
+  switch (num) {
+    case 11:
+    case 23:
+      tempScore = 2;
+      break;
+    case 1:
+    case 2:
+    case 12:
+      tempScore = 3;
+      break;
+    case 3:
+    case 8:
+    case 13:
+    case 17:
+      tempScore = 4;
+      break;
+    case 14:
+      tempScore = 5;
+      break;
+    case 4:
+    case 7:
+    case 16:
+    case 21:
+      tempScore = 6;
+      break;
+    case 5:
+      tempScore = 7;
+      break;
+    case 19:
+      tempScore = 12;
+      break;
+    default:
+      tempScore = 0;
+  }
+  score = score + tempScore;
   document.getElementById("teamLog2").value = score;
 }
 
@@ -1107,6 +1141,7 @@ function saveData() {
   sessionStorage.setItem("selectedOption", JSON.stringify(selectedOption));
   sessionStorage.setItem("Notes", JSON.stringify(Notes));
   sessionStorage.setItem("Notes2", JSON.stringify(Notes2));
+  sessionStorage.setItem("score", score.toString());
 }
 
 function displaySavedData() {
@@ -1116,6 +1151,7 @@ function displaySavedData() {
   actList = JSON.parse(actList);
   let exData = sessionStorage.getItem("extraData");
   exData = JSON.parse(exData);
+  score = parseInt(sessionStorage.getItem("score"), 10);
   return "compressed list: " + compList + " action list: " + actList + " extra data: " + exData;
 }
 function getData() {
@@ -1126,6 +1162,7 @@ function getData() {
   let unparsedSoption = sessionStorage.getItem("selectedOption");
   let unparsedNotes = sessionStorage.getItem("Notes");
   let unparsedNotes2 = sessionStorage.getItem("Notes2");
+  score = parseInt(sessionStorage.getItem("score"), 10);
   selectedOption = JSON.parse(unparsedSoption);
   Notes = JSON.parse(unparsedNotes);
   Notes2 = JSON.parse(unparsedNotes2)
@@ -1143,6 +1180,7 @@ function getData() {
 function loadPage() {
   getData();
   displayBoxData();
+  document.getElementById("teamLog2").value = score;
 }
 
 function qualLoad() {
@@ -1494,18 +1532,21 @@ function replaceClimb(action, number) {
   }
   if (index19 > -1) {
     actionList.splice(index19, 1);
+    score = score - 12;
   }
   if (index20 > -1 && action != "Park") {
     actionList.splice(index20, 1);
   }
   if (index21 > -1) {
     actionList.splice(index21, 1);
+    score = score - 6;
   }
   if (index22 > -1 && action != "Park") {
     actionList.splice(index22, 1);
   }
-  if (index23 > -1 && (action == "Deep Climb" || action == "Shallow Climb")) {
+  if (index23 > -1 && (action == "Deep Climb" || action == "Shallow Climb" || "Park")) {
     actionList.splice(index23, 1);
+    score = score - 2;
   }
 
 
