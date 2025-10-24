@@ -1,42 +1,67 @@
-
-.autonBody{
+.autonBody {
     background-image: url(autonBackground.png);
     background-size: cover;
 }
-.autonHeader{
+
+.autonHeader {
     color: lightblue;
     font-size: 12vh;
     text-shadow: 0px 0px 50px black;
 }
-.autonInfoBox{
+
+.autonInfoBox {
     background-color: rgba(0, 0, 0, 0.5);
     border-color: white;
     width: 5vw;
     height: 4vh;
     color: white;
 }
-.autonLongButton{
+
+.autonLongButton {
     width: 22vw;
 }
-#teamLog1{
+
+.score {
+    width: 14vw;
+    display: block;
+    box-sizing: border-box;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+#teamLog1 {
     height: 50vh;
 }
-#autonL4, #autonL2, #autonCoralMiss{
+
+#autonL4,
+#autonL2,
+#autonCoralMiss {
     background: #e69138;
 }
-#autonLeave{
+
+#autonLeave {
     background: #999999;
 }
-#autonL3, #autonL1{
+
+#autonL3,
+#autonL1 {
     background: #f6b26b;
 }
-#autonNetMiss, #autonProcessor{
+
+#autonNetMiss,
+#autonProcessor {
     background: #3c78d8;
 }
-#autonNetScore, #autonRemove, #autonProcessorMiss{
+
+#autonNetScore,
+#autonRemove,
+#autonProcessorMiss {
     background: #6fa8dc;
 }
-#autonBack, #autonNext{
+
+#autonBack,
+#autonNext {
     background: #674ea7;
     font-size: 8vh;
 }

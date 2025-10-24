@@ -78,6 +78,15 @@ textarea {
   margin: auto;
 }
 
+.score {
+  width: 14vw;
+  display: block;
+  box-sizing: border-box;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
 .coments {
   height: 12vh;
   width: 30vw;

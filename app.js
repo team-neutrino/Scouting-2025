@@ -8,755 +8,755 @@ var compressedList = []; //This is the list that collects all the IDs for the QR
 var comments = ""; //Comments Box
 var OU = "1";
 var selectedOption = "";
-var blue1 = [ 6647,
-2080,
-3656,
-3473,
-6621,
-5013,
-230,
-8595,
-2383,
-5193,
-3130,
-3197,
-86,
-5987,
-3339,
-1768,
-3473,
-3656,
-9496,
-3197,
-33,
-2200,
-5985,
-2960,
-1153,
-9450,
-781,
-4728,
-467,
-195,
-973,
-70,
-9245,
-2470,
-2706,
-2522,
-6652,
-6324,
-3882,
-1038,
-1700,
-3130,
-9545,
-9635,
-5736,
-2783,
-86,
-10479,
-7632,
-2491,
-230,
-51,
-9635,
-8570,
-1506,
-5817,
-7421,
-5013,
-10224,
-4907,
-3339,
-3794,
-6621,
-9496,
-1241,
-3130,
-3928,
-9450,
-540,
-3794,
-70,
-86,
-33,
-3197,
-2200,
-467,
-5736,
-2706,
-3928,
-2783,
-4145,
-3473,
-4009,
-1700,
-8570,
-5985,
-2075,
-2383,
-8177,
-70,
-3882,
-2539,
-7632,
-1038,
-9134,
-2470,
-5193,
-1700,
-2767,
-6652,
-3045,
-3882,
-2080,
-8595,
-9635,
-51,
-1768,
-1241,
-5987,
-973,
-3339,
-781,
-1902,
-7421,
-9134,
-1768,
-7902,
-2706,
-5193,
-5181,
-2522,
-2783,
-5987,
-5736,
-195];
-var blue2 = [ 1241,
-7421,
-4728,
-2783,
-6652,
-9134,
-2539,
-973,
-467,
-9245,
-195,
-4009,
-2706,
-2080,
-7902,
-2075,
-5181,
-8570,
-5193,
-4145,
-195,
-10479,
-5736,
-70,
-9245,
-3814,
-3882,
-86,
-540,
-801,
-51,
-3970,
-3045,
-5987,
-1902,
-33,
-2485,
-9134,
-9450,
-2877,
-973,
-1768,
-1241,
-801,
-6873,
-781,
-5817,
-2383,
-3473,
-2200,
-3814,
-6647,
-467,
-1700,
-9496,
-7902,
-3970,
-2075,
-2485,
-86,
-1153,
-2960,
-2470,
-1902,
-5817,
-9635,
-10479,
-51,
-4907,
-1768,
-2539,
-2383,
-2767,
-2960,
-3339,
-9450,
-9496,
-781,
-888,
-1506,
-540,
-1038,
-3045,
-33,
-3970,
-9245,
-2767,
-7902,
-10157,
-540,
-6873,
-5987,
-5013,
-7421,
-1153,
-7902,
-3130,
-3656,
-4145,
-2200,
-801,
-10479,
-2522,
-10157,
-3794,
-888,
-2470,
-4728,
-3197,
-10224,
-5985,
-3814,
-2075,
-2877,
-3794,
-6647,
-3656,
-6324,
-4009,
-9545,
-3814,
-10224,
-230,
-86,
-8177];
+var blue1 = [6647,
+  2080,
+  3656,
+  3473,
+  6621,
+  5013,
+  230,
+  8595,
+  2383,
+  5193,
+  3130,
+  3197,
+  86,
+  5987,
+  3339,
+  1768,
+  3473,
+  3656,
+  9496,
+  3197,
+  33,
+  2200,
+  5985,
+  2960,
+  1153,
+  9450,
+  781,
+  4728,
+  467,
+  195,
+  973,
+  70,
+  9245,
+  2470,
+  2706,
+  2522,
+  6652,
+  6324,
+  3882,
+  1038,
+  1700,
+  3130,
+  9545,
+  9635,
+  5736,
+  2783,
+  86,
+  10479,
+  7632,
+  2491,
+  230,
+  51,
+  9635,
+  8570,
+  1506,
+  5817,
+  7421,
+  5013,
+  10224,
+  4907,
+  3339,
+  3794,
+  6621,
+  9496,
+  1241,
+  3130,
+  3928,
+  9450,
+  540,
+  3794,
+  70,
+  86,
+  33,
+  3197,
+  2200,
+  467,
+  5736,
+  2706,
+  3928,
+  2783,
+  4145,
+  3473,
+  4009,
+  1700,
+  8570,
+  5985,
+  2075,
+  2383,
+  8177,
+  70,
+  3882,
+  2539,
+  7632,
+  1038,
+  9134,
+  2470,
+  5193,
+  1700,
+  2767,
+  6652,
+  3045,
+  3882,
+  2080,
+  8595,
+  9635,
+  51,
+  1768,
+  1241,
+  5987,
+  973,
+  3339,
+  781,
+  1902,
+  7421,
+  9134,
+  1768,
+  7902,
+  2706,
+  5193,
+  5181,
+  2522,
+  2783,
+  5987,
+  5736,
+  195];
+var blue2 = [1241,
+  7421,
+  4728,
+  2783,
+  6652,
+  9134,
+  2539,
+  973,
+  467,
+  9245,
+  195,
+  4009,
+  2706,
+  2080,
+  7902,
+  2075,
+  5181,
+  8570,
+  5193,
+  4145,
+  195,
+  10479,
+  5736,
+  70,
+  9245,
+  3814,
+  3882,
+  86,
+  540,
+  801,
+  51,
+  3970,
+  3045,
+  5987,
+  1902,
+  33,
+  2485,
+  9134,
+  9450,
+  2877,
+  973,
+  1768,
+  1241,
+  801,
+  6873,
+  781,
+  5817,
+  2383,
+  3473,
+  2200,
+  3814,
+  6647,
+  467,
+  1700,
+  9496,
+  7902,
+  3970,
+  2075,
+  2485,
+  86,
+  1153,
+  2960,
+  2470,
+  1902,
+  5817,
+  9635,
+  10479,
+  51,
+  4907,
+  1768,
+  2539,
+  2383,
+  2767,
+  2960,
+  3339,
+  9450,
+  9496,
+  781,
+  888,
+  1506,
+  540,
+  1038,
+  3045,
+  33,
+  3970,
+  9245,
+  2767,
+  7902,
+  10157,
+  540,
+  6873,
+  5987,
+  5013,
+  7421,
+  1153,
+  7902,
+  3130,
+  3656,
+  4145,
+  2200,
+  801,
+  10479,
+  2522,
+  10157,
+  3794,
+  888,
+  2470,
+  4728,
+  3197,
+  10224,
+  5985,
+  3814,
+  2075,
+  2877,
+  3794,
+  6647,
+  3656,
+  6324,
+  4009,
+  9545,
+  3814,
+  10224,
+  230,
+  86,
+  8177];
 var blue3 = [3045,
-2470,
-2075,
-3882,
-5181,
-5987,
-1700,
-8570,
-3928,
-9635,
-2960,
-33,
-10157,
-6647,
-230,
-1241,
-9450,
-8177,
-781,
-2539,
-3928,
-9134,
-3970,
-7632,
-2522,
-6873,
-2877,
-6324,
-4009,
-8595,
-6621,
-5013,
-9545,
-2491,
-10479,
-5985,
-1153,
-4145,
-10157,
-6647,
-2767,
-4728,
-8595,
-3970,
-2539,
-5985,
-10224,
-7421,
-6621,
-8177,
-3130,
-9545,
-1241,
-5736,
-4009,
-2783,
-4145,
-8177,
-2767,
-2080,
-540,
-2383,
-5736,
-4728,
-2706,
-5013,
-801,
-6652,
-3473,
-888,
-3656,
-1038,
-9245,
-5181,
-8595,
-5013,
-9545,
-2080,
-4907,
-70,
-2877,
-5817,
-9134,
-1902,
-3814,
-8595,
-2200,
-4907,
-230,
-801,
-6621,
-1506,
-2783,
-781,
-1902,
-2485,
-3473,
-888,
-3339,
-2383,
-1506,
-6324,
-1902,
-7632,
-2706,
-2485,
-8177,
-2491,
-9496,
-6652,
-195,
-1153,
-3882,
-6621,
-3130,
-2485,
-2491,
-1506,
-6873,
-5817,
-51,
-801,
-70,
-973,
-3197];
-var red1 = [ 6324,
-5985,
-3339,
-2485,
-2767,
-7902,
-3794,
-1153,
-1902,
-1506,
-888,
-10479,
-2522,
-4728,
-4907,
-6873,
-2877,
-3814,
-8595,
-801,
-5013,
-3130,
-10157,
-2485,
-2470,
-7421,
-3656,
-2539,
-6647,
-230,
-3197,
-9496,
-2080,
-5181,
-3473,
-5817,
-5736,
-8177,
-195,
-7902,
-2075,
-51,
-2960,
-540,
-9245,
-888,
-1506,
-6652,
-33,
-3794,
-973,
-2877,
-801,
-9134,
-9450,
-1902,
-7632,
-2539,
-781,
-2491,
-1038,
-6873,
-2200,
-10157,
-4009,
-9545,
-5985,
-781,
-1506,
-3814,
-6873,
-6621,
-2485,
-2075,
-3045,
-1241,
-8177,
-801,
-10157,
-195,
-4728,
-2491,
-2960,
-6324,
-2485,
-6652,
-1153,
-10224,
-2877,
-5817,
-9545,
-3045,
-8570,
-4728,
-5181,
-3970,
-10224,
-33,
-1768,
-3814,
-6873,
-9245,
-2539,
-4009,
-6647,
-9134,
-4907,
-2767,
-2783,
-3970,
-1700,
-86,
-4145,
-888,
-9450,
-2383,
-10479,
-3928,
-2080,
-2200,
-467,
-1153,
-4145,
-540,
-3970];
-var red2 = [ 4907,
-51,
-2706,
-801,
-8177,
-781,
-3970,
-4145,
-7632,
-2491,
-5736,
-70,
-1038,
-2767,
-2783,
-10224,
-6324,
-7421,
-5817,
-4009,
-2491,
-1506,
-6621,
-9635,
-9545,
-2783,
-4907,
-5193,
-8570,
-1038,
-10157,
-3130,
-2383,
-7632,
-2200,
-3339,
-1506,
-10224,
-5193,
-70,
-4009,
-3045,
-1902,
-3656,
-9496,
-2706,
-5013,
-2470,
-2080,
-2485,
-3928,
-5987,
-1768,
-4728,
-888,
-6652,
-3045,
-3473,
-2522,
-8595,
-6324,
-33,
-6647,
-973,
-7632,
-4145,
-8177,
-1700,
-9134,
-2080,
-1153,
-8570,
-2877,
-2522,
-3882,
-230,
-7632,
-973,
-6873,
-6621,
-3794,
-2539,
-3882,
-5987,
-5181,
-3197,
-5193,
-9450,
-9635,
-51,
-2491,
-467,
-2522,
-3928,
-5985,
-8595,
-3197,
-1241,
-2960,
-195,
-8570,
-6621,
-540,
-5181,
-7421,
-3656,
-3130,
-2383,
-3928,
-9545,
-3473,
-230,
-5736,
-8595,
-9245,
-5013,
-9496,
-2767,
-3339,
-4907,
-2075,
-1700,
-6652,
-5985,
-1241];
-var red3 = [ 9496,
-10224,
-9450,
-86,
-540,
-6873,
-2200,
-1768,
-2877,
-3814,
-5817,
-9545,
-6652,
-3882,
-51,
-540,
-973,
-1902,
-467,
-2383,
-3045,
-1038,
-3794,
-1700,
-888,
-2767,
-1768,
-7902,
-3928,
-9134,
-1241,
-2075,
-1700,
-888,
-2960,
-9635,
-3794,
-467,
-8570,
-3814,
-4907,
-230,
-3928,
-5987,
-5181,
-4145,
-3197,
-3339,
-1153,
-2522,
-3882,
-195,
-5181,
-2706,
-5985,
-10157,
-5193,
-9245,
-10479,
-70,
-3197,
-3656,
-467,
-195,
-230,
-2783,
-5193,
-2491,
-7421,
-6324,
-2470,
-5987,
-3970,
-7902,
-10224,
-10479,
-3130,
-9635,
-1768,
-2470,
-6647,
-2522,
-7421,
-3339,
-3656,
-86,
-5736,
-2080,
-10479,
-2706,
-973,
-6324,
-9245,
-6647,
-4009,
-3794,
-86,
-9496,
-2075,
-2877,
-5817,
-9450,
-5013,
-7902,
-5193,
-33,
-70,
-2200,
-1038,
-467,
-2960,
-9635,
-2539,
-7632,
-10157,
-8570,
-2470,
-1038,
-4728,
-33,
-2960,
-3473,
-3045,
-781];
+  2470,
+  2075,
+  3882,
+  5181,
+  5987,
+  1700,
+  8570,
+  3928,
+  9635,
+  2960,
+  33,
+  10157,
+  6647,
+  230,
+  1241,
+  9450,
+  8177,
+  781,
+  2539,
+  3928,
+  9134,
+  3970,
+  7632,
+  2522,
+  6873,
+  2877,
+  6324,
+  4009,
+  8595,
+  6621,
+  5013,
+  9545,
+  2491,
+  10479,
+  5985,
+  1153,
+  4145,
+  10157,
+  6647,
+  2767,
+  4728,
+  8595,
+  3970,
+  2539,
+  5985,
+  10224,
+  7421,
+  6621,
+  8177,
+  3130,
+  9545,
+  1241,
+  5736,
+  4009,
+  2783,
+  4145,
+  8177,
+  2767,
+  2080,
+  540,
+  2383,
+  5736,
+  4728,
+  2706,
+  5013,
+  801,
+  6652,
+  3473,
+  888,
+  3656,
+  1038,
+  9245,
+  5181,
+  8595,
+  5013,
+  9545,
+  2080,
+  4907,
+  70,
+  2877,
+  5817,
+  9134,
+  1902,
+  3814,
+  8595,
+  2200,
+  4907,
+  230,
+  801,
+  6621,
+  1506,
+  2783,
+  781,
+  1902,
+  2485,
+  3473,
+  888,
+  3339,
+  2383,
+  1506,
+  6324,
+  1902,
+  7632,
+  2706,
+  2485,
+  8177,
+  2491,
+  9496,
+  6652,
+  195,
+  1153,
+  3882,
+  6621,
+  3130,
+  2485,
+  2491,
+  1506,
+  6873,
+  5817,
+  51,
+  801,
+  70,
+  973,
+  3197];
+var red1 = [6324,
+  5985,
+  3339,
+  2485,
+  2767,
+  7902,
+  3794,
+  1153,
+  1902,
+  1506,
+  888,
+  10479,
+  2522,
+  4728,
+  4907,
+  6873,
+  2877,
+  3814,
+  8595,
+  801,
+  5013,
+  3130,
+  10157,
+  2485,
+  2470,
+  7421,
+  3656,
+  2539,
+  6647,
+  230,
+  3197,
+  9496,
+  2080,
+  5181,
+  3473,
+  5817,
+  5736,
+  8177,
+  195,
+  7902,
+  2075,
+  51,
+  2960,
+  540,
+  9245,
+  888,
+  1506,
+  6652,
+  33,
+  3794,
+  973,
+  2877,
+  801,
+  9134,
+  9450,
+  1902,
+  7632,
+  2539,
+  781,
+  2491,
+  1038,
+  6873,
+  2200,
+  10157,
+  4009,
+  9545,
+  5985,
+  781,
+  1506,
+  3814,
+  6873,
+  6621,
+  2485,
+  2075,
+  3045,
+  1241,
+  8177,
+  801,
+  10157,
+  195,
+  4728,
+  2491,
+  2960,
+  6324,
+  2485,
+  6652,
+  1153,
+  10224,
+  2877,
+  5817,
+  9545,
+  3045,
+  8570,
+  4728,
+  5181,
+  3970,
+  10224,
+  33,
+  1768,
+  3814,
+  6873,
+  9245,
+  2539,
+  4009,
+  6647,
+  9134,
+  4907,
+  2767,
+  2783,
+  3970,
+  1700,
+  86,
+  4145,
+  888,
+  9450,
+  2383,
+  10479,
+  3928,
+  2080,
+  2200,
+  467,
+  1153,
+  4145,
+  540,
+  3970];
+var red2 = [4907,
+  51,
+  2706,
+  801,
+  8177,
+  781,
+  3970,
+  4145,
+  7632,
+  2491,
+  5736,
+  70,
+  1038,
+  2767,
+  2783,
+  10224,
+  6324,
+  7421,
+  5817,
+  4009,
+  2491,
+  1506,
+  6621,
+  9635,
+  9545,
+  2783,
+  4907,
+  5193,
+  8570,
+  1038,
+  10157,
+  3130,
+  2383,
+  7632,
+  2200,
+  3339,
+  1506,
+  10224,
+  5193,
+  70,
+  4009,
+  3045,
+  1902,
+  3656,
+  9496,
+  2706,
+  5013,
+  2470,
+  2080,
+  2485,
+  3928,
+  5987,
+  1768,
+  4728,
+  888,
+  6652,
+  3045,
+  3473,
+  2522,
+  8595,
+  6324,
+  33,
+  6647,
+  973,
+  7632,
+  4145,
+  8177,
+  1700,
+  9134,
+  2080,
+  1153,
+  8570,
+  2877,
+  2522,
+  3882,
+  230,
+  7632,
+  973,
+  6873,
+  6621,
+  3794,
+  2539,
+  3882,
+  5987,
+  5181,
+  3197,
+  5193,
+  9450,
+  9635,
+  51,
+  2491,
+  467,
+  2522,
+  3928,
+  5985,
+  8595,
+  3197,
+  1241,
+  2960,
+  195,
+  8570,
+  6621,
+  540,
+  5181,
+  7421,
+  3656,
+  3130,
+  2383,
+  3928,
+  9545,
+  3473,
+  230,
+  5736,
+  8595,
+  9245,
+  5013,
+  9496,
+  2767,
+  3339,
+  4907,
+  2075,
+  1700,
+  6652,
+  5985,
+  1241];
+var red3 = [9496,
+  10224,
+  9450,
+  86,
+  540,
+  6873,
+  2200,
+  1768,
+  2877,
+  3814,
+  5817,
+  9545,
+  6652,
+  3882,
+  51,
+  540,
+  973,
+  1902,
+  467,
+  2383,
+  3045,
+  1038,
+  3794,
+  1700,
+  888,
+  2767,
+  1768,
+  7902,
+  3928,
+  9134,
+  1241,
+  2075,
+  1700,
+  888,
+  2960,
+  9635,
+  3794,
+  467,
+  8570,
+  3814,
+  4907,
+  230,
+  3928,
+  5987,
+  5181,
+  4145,
+  3197,
+  3339,
+  1153,
+  2522,
+  3882,
+  195,
+  5181,
+  2706,
+  5985,
+  10157,
+  5193,
+  9245,
+  10479,
+  70,
+  3197,
+  3656,
+  467,
+  195,
+  230,
+  2783,
+  5193,
+  2491,
+  7421,
+  6324,
+  2470,
+  5987,
+  3970,
+  7902,
+  10224,
+  10479,
+  3130,
+  9635,
+  1768,
+  2470,
+  6647,
+  2522,
+  7421,
+  3339,
+  3656,
+  86,
+  5736,
+  2080,
+  10479,
+  2706,
+  973,
+  6324,
+  9245,
+  6647,
+  4009,
+  3794,
+  86,
+  9496,
+  2075,
+  2877,
+  5817,
+  9450,
+  5013,
+  7902,
+  5193,
+  33,
+  70,
+  2200,
+  1038,
+  467,
+  2960,
+  9635,
+  2539,
+  7632,
+  10157,
+  8570,
+  2470,
+  1038,
+  4728,
+  33,
+  2960,
+  3473,
+  3045,
+  781];
 var ipadID = localStorage.getItem("iPadId");
 let savedComments = [];
 var incmatchnumber = "1";
@@ -779,6 +779,7 @@ let nonDblClick = true;
 var Notes = "";
 var Notes2 = "";
 var answer = "";
+var score = 0;
 
 /* Function List
 --- Direct Button Functions ---
@@ -801,8 +802,6 @@ Combined lowerCounter and raiseCounter functions into the updateAvail function t
 
 function replaceLeave() {
   var leaveAction = actionList.indexOf("Leave");
-
-
 
   if (leaveAction > -1) {
     actionList.splice(leaveAction, 1);
@@ -876,8 +875,48 @@ function addAction(action, number) { //Used for buttons that have a data validat
   updateLog(); //Update what the scouter sees on the app (actionList)
   addButtonGlowEffect(action);
   saveData();
-	console.log(compressedList);
-	
+  console.log(compressedList);
+  addScore(number);
+}
+
+function addScore(num) {
+  var tempScore = 0;
+  switch (num) {
+    case 11:
+    case 23:
+      tempScore = 2;
+      break;
+    case 1:
+    case 2:
+    case 12:
+      tempScore = 3;
+      break;
+    case 3:
+    case 8:
+    case 13:
+    case 17:
+      tempScore = 4;
+      break;
+    case 14:
+      tempScore = 5;
+      break;
+    case 4:
+    case 7:
+    case 16:
+    case 21:
+      tempScore = 6;
+      break;
+    case 5:
+      tempScore = 7;
+      break;
+    case 19:
+      tempScore = 12;
+      break;
+    default:
+      tempScore = 0;
+  }
+  score = score + tempScore;
+  document.getElementById("teamLog2").value = score;
 }
 
 function alliancePick(alliance) {
@@ -1102,6 +1141,7 @@ function saveData() {
   sessionStorage.setItem("selectedOption", JSON.stringify(selectedOption));
   sessionStorage.setItem("Notes", JSON.stringify(Notes));
   sessionStorage.setItem("Notes2", JSON.stringify(Notes2));
+  sessionStorage.setItem("score", score.toString());
 }
 
 function displaySavedData() {
@@ -1111,6 +1151,7 @@ function displaySavedData() {
   actList = JSON.parse(actList);
   let exData = sessionStorage.getItem("extraData");
   exData = JSON.parse(exData);
+  score = parseInt(sessionStorage.getItem("score"), 10);
   return "compressed list: " + compList + " action list: " + actList + " extra data: " + exData;
 }
 function getData() {
@@ -1121,6 +1162,7 @@ function getData() {
   let unparsedSoption = sessionStorage.getItem("selectedOption");
   let unparsedNotes = sessionStorage.getItem("Notes");
   let unparsedNotes2 = sessionStorage.getItem("Notes2");
+  score = parseInt(sessionStorage.getItem("score"), 10);
   selectedOption = JSON.parse(unparsedSoption);
   Notes = JSON.parse(unparsedNotes);
   Notes2 = JSON.parse(unparsedNotes2)
@@ -1130,14 +1172,15 @@ function getData() {
   console.log(actionList);
   console.log(compressedList);
   console.log(extraData);
-  if(document.getElementById('teamLog1') !== null) {
-  updateLog();
+  if (document.getElementById('teamLog1') !== null) {
+    updateLog();
   }
 }
 
 function loadPage() {
   getData();
   displayBoxData();
+  document.getElementById("teamLog2").value = score;
 }
 
 function qualLoad() {
@@ -1153,12 +1196,12 @@ function qualLoad() {
 function displayBoxData() {
   if (extraData[0] !== undefined) {
     document.getElementById('teamNumberBox').value = extraData[0];
-	  console.log(document.getElementById('teamNumberBox').value);
+    console.log(document.getElementById('teamNumberBox').value);
   }
   if (extraData[1] !== undefined) {
     document.getElementById('matchNumberBox').value = extraData[1];
   }
-	  console.log(document.getElementById('teamNumberBox').value);
+  console.log(document.getElementById('teamNumberBox').value);
   if (extraData[3] !== undefined) {
     document.getElementById('coment').value = extraData[3];
   }
@@ -1196,12 +1239,12 @@ function pullIPadID() {
   console.log(sessionStorage.getItem("matchNum"));
   savescout = sessionStorage.getItem("scoutInitials");
 
-	console.log(sessionStorage.getItem('matchNumber'));
-	if(sessionStorage.getItem('matchNumber') !== null) {
-  incmatchnumber = sessionStorage.getItem('matchNumber');
-		console.log("used the incremented match number");
-		console.log("new match number value: " + incmatchnumber);
-	}
+  console.log(sessionStorage.getItem('matchNumber'));
+  if (sessionStorage.getItem('matchNumber') !== null) {
+    incmatchnumber = sessionStorage.getItem('matchNumber');
+    console.log("used the incremented match number");
+    console.log("new match number value: " + incmatchnumber);
+  }
   document.getElementById("matchNum").value = incmatchnumber;
   document.getElementById("scout").value = savescout;
 }
@@ -1230,11 +1273,11 @@ function setTeam(matchnumb, id) {
   var teamnumb = document.getElementById("teamNum");
 
   var ipadID = id
-	console.log(sessionStorage.getItem('matchNumber'));
-	if(sessionStorage.getItem('matchNumber') !== null) {
-  matchnum = sessionStorage.getItem('matchNumber');
-		console.log("used the incremented match number");
-	}
+  console.log(sessionStorage.getItem('matchNumber'));
+  if (sessionStorage.getItem('matchNumber') !== null) {
+    matchnum = sessionStorage.getItem('matchNumber');
+    console.log("used the incremented match number");
+  }
   matchnum = parseInt(matchnumb);
 
   if (blue1[0] != -12) {
@@ -1272,12 +1315,12 @@ function setTeampull(matchnumb) {
 
   var ipadID = localStorage.getItem("iPadId")
 
-/*	console.log(sessionStorage.getItem('matchNumber'));
-	if(sessionStorage.getItem('matchNumber') !== null) {
-  matchnum = sessionStorage.getItem('matchNumber');
-		console.log("used the incremented match number");
-		console.log("new match number value: " + matchnum);
-	}*/
+  /*	console.log(sessionStorage.getItem('matchNumber'));
+    if(sessionStorage.getItem('matchNumber') !== null) {
+    matchnum = sessionStorage.getItem('matchNumber');
+      console.log("used the incremented match number");
+      console.log("new match number value: " + matchnum);
+    }*/
   matchnum = parseInt(matchnumb);
 
   if (blue1[0] != -12) {
@@ -1484,23 +1527,26 @@ function replaceClimb(action, number) {
   var index23 = actionList.indexOf("Park");
   var index = actionList.indexOf(action)
 
-  if (index > -1){
+  if (index > -1) {
     actionList.splice(index, 1)
   }
   if (index19 > -1) {
     actionList.splice(index19, 1);
+    score = score - 12;
   }
   if (index20 > -1 && action != "Park") {
     actionList.splice(index20, 1);
   }
   if (index21 > -1) {
     actionList.splice(index21, 1);
+    score = score - 6;
   }
   if (index22 > -1 && action != "Park") {
     actionList.splice(index22, 1);
   }
-  if (index23 > -1 && (action == "Deep Climb" || action == "Shallow Climb")) {
+  if (index23 > -1 && (action == "Deep Climb" || action == "Shallow Climb" || "Park")) {
     actionList.splice(index23, 1);
+    score = score - 2;
   }
 
 
@@ -1511,7 +1557,7 @@ function replaceClimb(action, number) {
   var compressed23 = compressedList.indexOf(23);
   var compressed = compressedList.indexOf(number);
 
-  if(compressed > -1){
+  if (compressed > -1) {
     compressedList.splice(compressed, 1)
   }
   if (compressed19 > -1) {
@@ -1573,12 +1619,12 @@ function ChangeBorder(boxId) {
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   const ratingContainers = document.querySelectorAll(".qualBox");
-  
+
 //   ratingContainers.forEach(container => {
 //       const stars = container.querySelectorAll(".star");
 //       const ratingDisplay = container.querySelector(".rating");
 //       const ratingCategory = container.getAttribute("data-rating");
-      
+
 //s.forEach(star => {
 //           star.addEventListener("click", function () {
 //               const selectedRating = this.getAttribute("data-value");
@@ -1590,20 +1636,20 @@ function ChangeBorder(boxId) {
 // });
 
 
-function logStarRating(id, rating){
-  if(id === 'ratingValue1') {
-  extraData[5] = rating;
-} else if(id === 'ratingValue2') {
-extraData[6] = rating;
-} else if(id === 'ratingValue3') {
-extraData[7] = rating;
-} else if(id === 'ratingValue4') {
-extraData[8] = rating;
-}
+function logStarRating(id, rating) {
+  if (id === 'ratingValue1') {
+    extraData[5] = rating;
+  } else if (id === 'ratingValue2') {
+    extraData[6] = rating;
+  } else if (id === 'ratingValue3') {
+    extraData[7] = rating;
+  } else if (id === 'ratingValue4') {
+    extraData[8] = rating;
+  }
 };
 
-function ChangeRatingValue(selectedRating, value){
-  if(!isNaN(value)){
+function ChangeRatingValue(selectedRating, value) {
+  if (!isNaN(value)) {
     document.getElementById(selectedRating).innerText = "Selected Rating: " + value;
   } else {
     document.getElementById(selectedRating).innerText = "Selected Rating: 0";
@@ -1618,26 +1664,26 @@ function addStarRate(id) {
   console.log(value);
   console.log("Clearing Stars...");
   let listOfClasses = "";
-  if(value > 0) {
+  if (value > 0) {
     listOfClasses = Array.from(document.getElementById(id).classList);
   }
-  
-  if(listOfClasses.includes("lastClicked")) {
+
+  if (listOfClasses.includes("lastClicked")) {
     value = 0;
   }
 
   //Clears all the filled values regardless if they have them, screw optimizations
-  for(let i = 1; i < 6; i++) {
+  for (let i = 1; i < 6; i++) {
     let starID = rateText + ";" + i;
     document.getElementById(starID).classList.remove("filled");
   }
   console.log("Filling Stars...");
 
   //Fills the stars that need it
-    for(let i = 1; i < value+1; i++) {
-      let starID = rateText + ";" + i;
-      document.getElementById(starID).classList.add("filled");
-    }
+  for (let i = 1; i < value + 1; i++) {
+    let starID = rateText + ";" + i;
+    document.getElementById(starID).classList.add("filled");
+  }
   //Basicly a fancy if statement
   switch (rateText) {
     case "clutter":
@@ -1663,19 +1709,19 @@ function addStarRate(id) {
   }
 
   console.log(extraData);
-  
-  if(ogValue > 0) {
+
+  if (ogValue > 0) {
     updateLastClicked(id);
   } else {
     resetAllClicked(rateText + ";" + 1);
   }
-    
+
   saveData();
 }
 
 function resetQual() {
   const goOn = confirm("Are you sure you want to reset the stars?");
-  if(goOn) {
+  if (goOn) {
     addStarRate("defence;0");
     addStarRate("clutter;0");
     addStarRate("driver;0");
@@ -1687,60 +1733,60 @@ function resetAllClicked(elementID) {
   const element = document.getElementById(elementID);
   const parentElement = element.parentNode;
   const parentId = parentElement.id;
-  
+
   const nodesList = parentElement.getElementsByClassName("lastClicked");
-  
+
   const nodes = Array.from(nodesList);
-  
-   for(let i in nodes) {
-     nodes[i].classList.remove("lastClicked");
+
+  for (let i in nodes) {
+    nodes[i].classList.remove("lastClicked");
   }
   const check = parentElement.getElementsByClassName("lastClicked");
 }
 
 function updateLastClicked(elementID) {
-  
+
   const listOfClasses = Array.from(document.getElementById(elementID).classList);
-  
-  
+
+
   const element = document.getElementById(elementID);
   const parentElement = element.parentNode;
   const parentId = parentElement.id;
-  
+
   const nodesList = parentElement.getElementsByClassName("lastClicked");
-  
+
   const nodes = Array.from(nodesList);
-  
-   for(let i in nodes) {
-     nodes[i].classList.remove("lastClicked");
+
+  for (let i in nodes) {
+    nodes[i].classList.remove("lastClicked");
   }
-  
+
   const check = parentElement.getElementsByClassName("lastClicked");
-  
-  if(listOfClasses.includes("lastClicked")) {
+
+  if (listOfClasses.includes("lastClicked")) {
     document.getElementById(elementID).classList.remove("lastClicked");
   } else {
     document.getElementById(elementID).classList.add("lastClicked");
   }
-  
+
 }
 
 function leaveCheck() {
 
-	if(compressedList.includes(1)) {
-		console.log("Leave Pressed");
-	} else if(compressedList.includes(0) || compressedList.includes(2) || compressedList.includes(3) || compressedList.includes(4) || compressedList.includes(5) || compressedList.includes(6) || compressedList.includes(7) || compressedList.includes(8) || compressedList.includes(9) || compressedList.includes(25)) {
-		console.log("Someone forgot to press the button :(");
-		replaceLeave();
-		addAction("Leave", 1);
-	} else {
-		let leave = confirm("Has your robot left? \n\nOk = Yes  \nCancel = No");
-		if(leave) {
-			console.log("Someone forgot to press it :(");
-			replaceLeave();
-			addAction("Leave", 1);
-	}
-	}
+  if (compressedList.includes(1)) {
+    console.log("Leave Pressed");
+  } else if (compressedList.includes(0) || compressedList.includes(2) || compressedList.includes(3) || compressedList.includes(4) || compressedList.includes(5) || compressedList.includes(6) || compressedList.includes(7) || compressedList.includes(8) || compressedList.includes(9) || compressedList.includes(25)) {
+    console.log("Someone forgot to press the button :(");
+    replaceLeave();
+    addAction("Leave", 1);
+  } else {
+    let leave = confirm("Has your robot left? \n\nOk = Yes  \nCancel = No");
+    if (leave) {
+      console.log("Someone forgot to press it :(");
+      replaceLeave();
+      addAction("Leave", 1);
+    }
+  }
 }
 
 let zoom = false;
@@ -1754,10 +1800,10 @@ function reset(action) {
   let resetQr = document.getElementById('resetQr');
   let qrHtml = '<div class="qr-holder" id="qrArea"  onclick="qrZoom()" style="opacity:0;transform:scale(1.1, 1.1) rotate(3deg)"> \n </div>';
   let resetHTML = '<div class="reset-pop-up" id="resetPopUp" style="opacity:0;transform:scale(0.9, 0.9) rotate(-3deg)"> \n <div class="reset-pop-up-top"> \n <h2>Do You Really Want To Reset?</h2> \n </div> \n <div class="reset-pop-up-bottom"> \n <button class="reset-pop-up-button color1" onclick="toQuotes()" id="yesButton">Yes</button> \n<button class="reset-pop-up-button color2" onclick="reset(\'no\')" id="noButton">No</button> \n </div> \n </div>';
-  if(regenOpen) {
+  if (regenOpen) {
     regenQR();
   }
-  if(action == 'reset') {
+  if (action == 'reset') {
     resetMenuVisible = true;
     let qrArea = document.getElementById('qrArea');
     qrArea.style.transition = 'transform 0.4s ease-out, opacity 0.25s ease-out';
@@ -1772,7 +1818,7 @@ function reset(action) {
       document.getElementById("resetPopUp").style.removeProperty("transform");
     }, 300);
   }
-  if(action == 'no') {
+  if (action == 'no') {
     resetMenuVisible = false;
     let resetPopUp = document.getElementById("resetPopUp");
     resetPopUp.style.opacity = 0;
@@ -1784,33 +1830,33 @@ function reset(action) {
     }, 260);
     setTimeout(() => {
       document.getElementById("qrArea").style.removeProperty("opacity");
-        document.getElementById("qrArea").style.removeProperty("transform");
+      document.getElementById("qrArea").style.removeProperty("transform");
     }, 300);
   }
-  
+
 }
 
 
 
 function load(loadOut, windowLocation) {
   const targetElements = Array.from(document.querySelectorAll('div.flex-container *')).filter(element => {
-  const children = element.children;
-  return (
-    element.tagName !== 'SVG' && // Exclude <svg> elements
-    !(element.tagName === 'DIV' && children.length > 0 && children[0].tagName === 'SVG') && // Exclude <div> where the first child is <svg>
-    (children.length === 0 || // Childless element
-      (children.length === 1 && children[0].tagName === 'SPAN')) // Only one child, and it's a <span>
-  );
-});
+    const children = element.children;
+    return (
+      element.tagName !== 'SVG' && // Exclude <svg> elements
+      !(element.tagName === 'DIV' && children.length > 0 && children[0].tagName === 'SVG') && // Exclude <div> where the first child is <svg>
+      (children.length === 0 || // Childless element
+        (children.length === 1 && children[0].tagName === 'SPAN')) // Only one child, and it's a <span>
+    );
+  });
 
 
 
-  if(loadOut) {
+  if (loadOut) {
     targetElements.reverse();
   }
-  for(let b in targetElements) {
+  for (let b in targetElements) {
     setTimeout(() => {
-      if(loadOut) {
+      if (loadOut) {
         targetElements[b].style.opacity = "0";
         targetElements[b].style.transform = "scale(0.5, 0.5)";
         window.location.href = `./${windowLocation}.html`;
@@ -1818,17 +1864,17 @@ function load(loadOut, windowLocation) {
         targetElements[b].style.opacity = "1";
         targetElements[b].style.transform = "scale(1, 1)";
       }
-    }, 15*b);
+    }, 15 * b);
   }
 }
 
-function buttonEfffect(button) { 
+function buttonEfffect(button) {
   actionList.push(button.innerText);
   let buttonBg = getComputedStyle(button).backgroundColor;
   let terminal = document.getElementById("terminal");
   let buttonBgRGBA = buttonBg;
   buttonBg = buttonBg.substring(0, buttonBg.length - 8) + ")";
-  buttonBg = buttonBg.replace("a" , "");
+  buttonBg = buttonBg.replace("a", "");
   //alert(buttonBg);
   button.style.boxShadow = "0 0 10vh " + buttonBg;
   terminal.style.backgroundColor = buttonBgRGBA;
@@ -1843,13 +1889,13 @@ function buttonEfffect(button) {
 
 function qrZoom() {
   let qr = document.getElementById('qrArea');
-  if(zoom) {
+  if (zoom) {
     qr.style.transform = "scale(1, 1)";
     zoom = false;
-	  qr.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    qr.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     return;
   }
-  if(!zoom) {
+  if (!zoom) {
     qr.style.transform = "scale(1.25, 1.25)";
     qr.style.backgroundColor = "white";
     zoom = true;
@@ -1902,106 +1948,106 @@ function toQuotes() {
   document.getElementById("yesButton").style.transform = "scale(1.2, 1.2)";
   document.getElementById('changeStyle').innerHTML = "";
   document.getElementById('waveHolder').style.animationName = "slide-in-no-fade";
-	extraData[1] = parseInt(extraData[1])
-	console.log(extraData[1] + " adding 1 gives.. " + (extraData[1]+1));
-	sessionStorage.setItem('matchNumber', extraData[1]+1);
-	console.log("New Match Number: " + sessionStorage.getItem('matchNumber'));
+  extraData[1] = parseInt(extraData[1])
+  console.log(extraData[1] + " adding 1 gives.. " + (extraData[1] + 1));
+  sessionStorage.setItem('matchNumber', extraData[1] + 1);
+  console.log("New Match Number: " + sessionStorage.getItem('matchNumber'));
   setTimeout(() => {
     document.getElementById('path').style.animationDuration = "0.5s";
     document.getElementById('waveBottom').style.animationDuration = "0.5s";
     document.getElementById('path').style.animationName = "color-shift";
     document.getElementById('waveBottom').style.animationName = "color-shift";
-    
+
   }, 2800);
   let takeout = getQuote();
-    let quote = takeout[0];
-    let author = takeout[1];
-    let length = takeout[2];
+  let quote = takeout[0];
+  let author = takeout[1];
+  let length = takeout[2];
   setTimeout(() => {
-    
+
     document.getElementById('body').innerHTML = '<div class="quoteDiv" id="insertQuote"></div>';
     let insertQuote = document.getElementById('insertQuote');
     let repeat = quote.length;
-    for(let i = 0; i < repeat; i++) {
-      
+    for (let i = 0; i < repeat; i++) {
+
       setTimeout(() => {
         insertQuote.innerHTML += quote[i];
-      }, 15*i);
-        
+      }, 15 * i);
+
     }
     setTimeout(() => {
-    insertQuote.innerHTML += "<br><br><strong>" + author + "</strong>";
-    insertQuote.innerHTML += "<button onclick='resetToIndex()' class='continuieButton' id='contineButton'>Continue</button>";
-    var sums = Array(27).fill(0);
-    for (const item of compressedList) {
-      sums[item]++;
-    }
-    //alert(sums);
-    localStorage.setItem("oldCompList" + extraData[1], sums);
-    localStorage.setItem("oldExtraData" + extraData[1], extraData);
-}, 20 * repeat);
+      insertQuote.innerHTML += "<br><br><strong>" + author + "</strong>";
+      insertQuote.innerHTML += "<button onclick='resetToIndex()' class='continuieButton' id='contineButton'>Continue</button>";
+      var sums = Array(27).fill(0);
+      for (const item of compressedList) {
+        sums[item]++;
+      }
+      //alert(sums);
+      localStorage.setItem("oldCompList" + extraData[1], sums);
+      localStorage.setItem("oldExtraData" + extraData[1], extraData);
+    }, 20 * repeat);
 
   }, 3400);
-  
+
   setTimeout(() => {
-    
-    
-    
+
+
+
     //alert(compressedList);
-    
+
     //window.location.href = `./index.html`;
-    
-    
-    
-  }, 3500+length);
-  
-  
+
+
+
+  }, 3500 + length);
+
+
 }
 
-  
-  
+
+
 
 function makeBubble() {
-  let offset = Math.random()*110;
+  let offset = Math.random() * 110;
   let size = Math.random() * (50 - 5) + 5;
-  let topOffset = ((Math.random() * (30 - 5) + 5)/2)+100;
-  let time= Math.random() * (2 - 0) + 0;
-  return `<svg width="100" height="100"  id="bubble" style="right:${offset+10}vw;top:${topOffset}vh;animation: slide-in ${time + 0.8}s linear;animation-delay: ${time};"> \n <circle cx="50" cy="50" r="${size}" stroke="white" stroke r="${size}" stroke="white" stroke-width="4" fill="white" /> \n </svg>`;
+  let topOffset = ((Math.random() * (30 - 5) + 5) / 2) + 100;
+  let time = Math.random() * (2 - 0) + 0;
+  return `<svg width="100" height="100"  id="bubble" style="right:${offset + 10}vw;top:${topOffset}vh;animation: slide-in ${time + 0.8}s linear;animation-delay: ${time};"> \n <circle cx="50" cy="50" r="${size}" stroke="white" stroke r="${size}" stroke="white" stroke-width="4" fill="white" /> \n </svg>`;
 }
-            // <div class="oldMatch" id="m1" onclick="makeOldQr(this.id)">Match 1; 3928; JD</div>
-            // <div class="oldMatch" id="m2" onclick="makeOldQr(this.id)">Match 2; 3928; JD</div>
-            // <div class="oldMatch" id="m3" onclick="makeOldQr(this.id)">Match 3; 3928; JD</div>
-            // <div class="oldMatch" id="m4" onclick="makeOldQr(this.id)">Match 4; 3928; JD</div>
-            // <div class="oldMatch" id="m5" onclick="makeOldQr(this.id)">Match 5; 3928; JD</div>
+// <div class="oldMatch" id="m1" onclick="makeOldQr(this.id)">Match 1; 3928; JD</div>
+// <div class="oldMatch" id="m2" onclick="makeOldQr(this.id)">Match 2; 3928; JD</div>
+// <div class="oldMatch" id="m3" onclick="makeOldQr(this.id)">Match 3; 3928; JD</div>
+// <div class="oldMatch" id="m4" onclick="makeOldQr(this.id)">Match 4; 3928; JD</div>
+// <div class="oldMatch" id="m5" onclick="makeOldQr(this.id)">Match 5; 3928; JD</div>
 
 
 function makeOldMatches() {
-  for(let i = 1; i < 30; i++) {
+  for (let i = 1; i < 30; i++) {
     oldMatches.push(i);
-  } 
+  }
 }
-  makeOldMatches(); // delete me for regen stuff
+makeOldMatches(); // delete me for regen stuff
 function regenQR() {
   let container = document.getElementById('resetQr');
   let regenHTML = '<h2 class="matchHeader">What Match?</h2> \n<div class="matchSelect" id="matchSelect"> \n</div>';
-  if(resetMenuVisible) {
-      regenHTML = '<h2 class="matchHeader">Ya Ha Ha! You found me!</h2>';
+  if (resetMenuVisible) {
+    regenHTML = '<h2 class="matchHeader">Ya Ha Ha! You found me!</h2>';
   }
-  if(!regenOpen) {
+  if (!regenOpen) {
 
     const boxes = [...container.children];
     const firstRects = boxes.map(box => box.getBoundingClientRect());
-    
-    
+
+
     const newBox = document.createElement('div');
     newBox.classList.add("oldQrs");
-      newBox.innerHTML = regenHTML;
+    newBox.innerHTML = regenHTML;
     newBox.setAttribute('id', 'oldQr');
     container.appendChild(newBox);
-    if(!resetMenuVisible) {
+    if (!resetMenuVisible) {
       addOldMatches();
     }
-    
+
     const lastRects = [...container.children].map(box => box.getBoundingClientRect());
     // Step 3: Apply FLIP animation
     boxes.forEach((box, i) => {
@@ -2012,58 +2058,58 @@ function regenQR() {
       box.style.transition = 'none';
       box.style.transform = `translate(${dx}px, ${dy}px)`;
       let newBoxx = document.getElementById('oldQr');
-      newBoxx.style.transform = `translate(${dx*4}px, ${dy}px)`;
+      newBoxx.style.transform = `translate(${dx * 4}px, ${dy}px)`;
       setTimeout(() => {
         requestAnimationFrame(() => {
-            box.style.transition = 'transform 0.5s ease';
-            box.style.transform = "";
-            newBoxx.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-            newBoxx.style.transform = "";
-          });
+          box.style.transition = 'transform 0.5s ease';
+          box.style.transform = "";
+          newBoxx.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+          newBoxx.style.transform = "";
+        });
       }, 1);
-      
+
     });
-    
-    
+
+
     regenOpen = true;
   } else {
     regenOpen = false;
     const boxes = [...container.children];
     const firstRects = boxes.map(box => box.getBoundingClientRect());
-    
+
     document.getElementById('oldQr').style.transform = 'translate(50vw, 0)'
     document.getElementById('oldQr').style.opacity = '0'
-    
+
     setTimeout(() => {
-    container.removeChild(document.getElementById('oldQr'));
-    
-    const lastRects = [...container.children].map(box => box.getBoundingClientRect());
-    
-    // Step 3: Apply FLIP animation
-    boxes.forEach((box, i) => {
-      const dx = firstRects[i].left - lastRects[i].left;
-      console.log(dx);
-      const dy = firstRects[i].top - lastRects[i].top;
-      console.log(dy);
-      box.style.transition = 'none';
-      box.style.transform = `translate(${dx}px, ${dy}px)`;
-      setTimeout(() => {
-        requestAnimationFrame(() => {
+      container.removeChild(document.getElementById('oldQr'));
+
+      const lastRects = [...container.children].map(box => box.getBoundingClientRect());
+
+      // Step 3: Apply FLIP animation
+      boxes.forEach((box, i) => {
+        const dx = firstRects[i].left - lastRects[i].left;
+        console.log(dx);
+        const dy = firstRects[i].top - lastRects[i].top;
+        console.log(dy);
+        box.style.transition = 'none';
+        box.style.transform = `translate(${dx}px, ${dy}px)`;
+        setTimeout(() => {
+          requestAnimationFrame(() => {
             box.style.transition = 'transform 0.5s ease';
             box.style.transform = "";
           });
-      }, 1);
-    });
-  }, 200);
-    
-    
-    
+        }, 1);
+      });
+    }, 200);
+
+
+
   }
 }
 
 
 function resetToIndex() {
-  
+
   document.getElementById('contineButton').innerText = "";
   document.getElementById('contineButton').style.transform = 'scale(7,30)';
 
@@ -2071,7 +2117,7 @@ function resetToIndex() {
     window.location.href = `./index.html`;
   }, 750);
   setTimeout(() => {
-    
+
   }, 850);
-  
+
 }

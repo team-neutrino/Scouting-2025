@@ -1,69 +1,84 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>teleop</title>
-        <script src="app.js"></script>
-        <link rel="styleSheet" type="text/css" href="styleSheet.css">
-        <link rel="styleSheet" type="text/css" href="teleop.css"> 
-    </head>
-    <body class="teleopBody" style="overflow: scroll;" onload="loadTransition(4, 1);loadPage()">
+
+<head>
+    <meta charset="utf-8">
+    <title>teleop</title>
+    <script src="app.js"></script>
+    <link rel="styleSheet" type="text/css" href="styleSheet.css">
+    <link rel="styleSheet" type="text/css" href="teleop.css">
+</head>
+
+<body class="teleopBody" style="overflow: scroll;" onload="loadTransition(4, 1);loadPage()">
     <table id="table">
         <tr class="top" id="row1">
             <th class="topSideBox">
-                <input class="infoBox" type="text" name="teamBox" id="teamNumberBox" readonly/>
+                <input class="infoBox" type="text" name="teamBox" id="teamNumberBox" readonly />
             </th>
             <th colspan="3" class="teleopHeader" id="color">T<span style="display: inline-block;">e</span>leop</th>
             <th class="topSideBox">
-                <input class="infoBox" type="text" name="matchBox" id="matchNumberBox" readonly/>
+                <input class="infoBox" type="text" name="matchBox" id="matchNumberBox" readonly />
             </th>
-        </tr><tr> 
+        </tr>
+        <tr>
             <td rowspan='1' colspan='2'>
                 <button class="teleopLongButton" id="teleopL4" onclick="addAction('L4 (T)' ,14)">L4</button>
-            </td> 
+            </td>
             <td rowspan="5" colspan="1">
                 <textarea readonly id="teamLog1" class="terminal" placeholder="Nothing to undo"></textarea>
+                <br>
+                <textarea readonly id="teamLog2" class="score" placeholder="Nothing yet"></textarea>
                 <br>
                 <button class="undo" id="undo" onclick="Undo()">Undo</button>
             </td>
             <td rowspan='1' colspan='2'>
-                <button class="teleopLongButton" id="teleopNetScore" onclick="addAction('Robot Net Score (T)' ,17)">Robot Net Score</button>
-            </td> 
-        </tr><tr> 
+                <button class="teleopLongButton" id="teleopNetScore"
+                    onclick="addAction('Robot Net Score (T)' ,17)">Robot Net Score</button>
+            </td>
+        </tr>
+        <tr>
             <td rowspan='1' colspan='2'>
                 <button class="teleopLongButton" id="teleopL3" onclick="addAction('L3 (T)' ,13)">L3</button>
-            </td> 
+            </td>
             <td rowspan='1' colspan='2'>
-                <button class="teleopLongButton" id="teleopNetMiss" onclick="addAction('Robot Net Miss (T)' ,18)">Robot Net Miss</button>
-            </td> 
-        </tr><tr>  
+                <button class="teleopLongButton" id="teleopNetMiss" onclick="addAction('Robot Net Miss (T)' ,18)">Robot
+                    Net Miss</button>
+            </td>
+        </tr>
+        <tr>
             <td rowspan='1' colspan='2'>
                 <button class="teleopLongButton" id="teleopL2" onclick="addAction('L2 (T)' ,12)">L2</button>
             </td>
             <td rowspan='1' colspan='2'>
                 <button class="teleopLongButton" id="teleopRemove" onclick="addAction('Remove (T)' ,10)">Remove</button>
             </td>
-        </tr><tr>
+        </tr>
+        <tr>
             <td rowspan='1' colspan='2'>
                 <button class="teleopLongButton" id="teleopL1" onclick="addAction('L1 (T)' ,11)">L1</button>
-            </td> 
+            </td>
             <td rowspan='1' colspan='2'>
-                <button class="teleopLongButton" id="teleopProcessor" onclick="addAction('Processor (T)' ,16)">Processor</button>
-            </td> 
-        </tr><tr> 
+                <button class="teleopLongButton" id="teleopProcessor"
+                    onclick="addAction('Processor (T)' ,16)">Processor</button>
+            </td>
+        </tr>
+        <tr>
             <td rowspan='1' colspan='1'>
-            <button id="teleopBack"onclick="saveData();saveData();window.location.href = './' + 'auton' + '.html';">&larr;</button>
+                <button id="teleopBack"
+                    onclick="saveData();saveData();window.location.href = './' + 'auton' + '.html';">&larr;</button>
             </td>
             <td rowspan='1' colspan='1'>
                 <button id="teleopCoralMiss" onclick="addAction('Coral Miss (T)',15)">Coral Miss</button>
-            </td> 
+            </td>
             <td rowspan='1' colspan='1'>
                 <button id="teleopProcessorMiss" onclick="addAction('Processor Miss (T)',26)">Processor Miss</button>
-            </td> 
+            </td>
             <td rowspan='1' colspan='1'>
-                <button id="teleopNext" onclick="saveData();saveData();window.location.href = './' + 'endgame' + '.html';">&rarr;</button>
-            </td> 
+                <button id="teleopNext"
+                    onclick="saveData();saveData();window.location.href = './' + 'endgame' + '.html';">&rarr;</button>
+            </td>
         </tr>
     </table>
-    </body>
+</body>
+
 </html>
